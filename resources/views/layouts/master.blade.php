@@ -33,7 +33,7 @@
     <!-- Navbar Start -->
     <div class="container-fluid bg-light position-relative shadow">
         <nav class="navbar navbar-expand-lg bg-light navbar-light py-3 py-lg-0 px-0 px-lg-5">
-            <a href="" class="navbar-brand font-weight-bold text-secondary" style="font-size: 50px">
+            <a href="{{url('')}}" class="navbar-brand font-weight-bold text-secondary" style="font-size: 50px">
                 <i class="flaticon-043-teddy-bear"></i>
                 <span class="text-primary">KidKinder</span>
             </a>
@@ -42,19 +42,19 @@
             </button>
             <div class="collapse navbar-collapse justify-content-between" id="navbarCollapse">
                 <div class="navbar-nav font-weight-bold mx-auto py-0">
-                    <a href="{{url('')}}" class="nav-item nav-link active">Home</a>
-                    <a href="{{url('about')}}" class="nav-item nav-link">About</a>
-                    <a href="{{url('class')}}" class="nav-item nav-link">Classes</a>
-                    <a href="{{url('team')}}" class="nav-item nav-link">Teachers</a>
-                    <a href="{{url('gallery')}}" class="nav-item nav-link">Gallery</a>
+                    <a href="{{url('')}}" class="nav-item nav-link @yield('menuHome')">Home</a>
+                    <a href="{{url('about')}}" class="nav-item nav-link @yield('menuAbout')">About</a>
+                    <a href="{{url('classes')}}" class="nav-item nav-link @yield('menuClass')">Classes</a>
+                    <a href="{{url('teachers')}}" class="nav-item nav-link @yield('menuTeachers')">Teachers</a>
+                    <a href="{{url('gallery')}}" class="nav-item nav-link @yield('menuGallery')">Gallery</a>
                     <div class="nav-item dropdown">
                         <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Pages</a>
                         <div class="dropdown-menu rounded-0 m-0">
-                            <a href="{{url('blog')}}" class="dropdown-item">Blog Grid</a>
-                            <a href="{{url('single')}}" class="dropdown-item">Blog Detail</a>
+                            <a href="{{url('blog')}}" class="dropdown-item @yield('menuBlog')">Blog Grid</a>
+                            <a href="{{url('single')}}" class="dropdown-item @yield('menuSingle')">Blog Detail</a>
                         </div>
                     </div>
-                    <a href="{{url('contact')}}" class="nav-item nav-link">Contact</a>
+                    <a href="{{url('contact')}}" class="nav-item nav-link @yield('menuContact')">Contact</a>
                 </div>
                 <a href="{{url('login')}}" class="btn btn-primary px-4">Join Class</a>
             </div>
