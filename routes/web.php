@@ -22,6 +22,30 @@ Route::get('/about', function () {
     return view('about');
 });
 
+Route::get('/classes', function() {
+    return view('classes');
+});
+
+Route::get('/teachers', function() {
+    return view('teachers');
+});
+
+Route::get('/gallery', function() {
+    return view('gallery');
+});
+
+Route::get('/blog', function() {
+    return view('blog');
+});
+
+Route::get('/single', function() {
+    return view('single');
+});
+
+Route::get('/contact', function() {
+    return view('contact');
+});
+
 Route::get('/login', function () {
     return view('auth.login');
 });
