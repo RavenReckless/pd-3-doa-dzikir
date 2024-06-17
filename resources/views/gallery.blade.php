@@ -1,5 +1,6 @@
 @extends('layouts.master')
 @section('menuGallery', 'active')
+@section('title', 'Gallery')
 
 @section('content')
 

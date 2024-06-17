@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="utf-8" />
-    <title>KidKinder - Kindergarten Website Template</title>
+    <title>Doa & Dzikir | @yield('title')</title>
     <meta content="width=device-width, initial-scale=1.0" name="viewport" />
     <meta content="Free HTML Templates" name="keywords" />
     <meta content="Free HTML Templates" name="description" />
@@ -56,7 +56,7 @@
                     </div>
                     <a href="{{url('contact')}}" class="nav-item nav-link @yield('menuContact')">Contact</a>
                 </div>
-                <a href="{{url('login')}}" class="btn btn-primary px-4">Join Class</a>
+                <a href="{{url('auth')}}" class="btn btn-primary px-4">Join Class</a>
             </div>
         </nav>
     </div>

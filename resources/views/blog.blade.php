@@ -1,5 +1,6 @@
 @extends('layouts.master')
 @section('menuBlog', 'active')
+@section('title', 'Blog')
 
 @section('content')
 

@@ -1,5 +1,6 @@
 @extends('layouts.master')
 @section('menuTeachers', 'active')
+@section('title', 'Teachers')
 
 @section('content')
 

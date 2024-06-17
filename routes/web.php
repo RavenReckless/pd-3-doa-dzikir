@@ -46,8 +46,8 @@ Route::get('/contact', function() {
     return view('contact');
 });
 
-Route::get('/login', function () {
-    return view('auth.login');
+Route::get('/auth', function () {
+    return view('auth.auth');
 });
 
 Route::get('/dashboard', function () {

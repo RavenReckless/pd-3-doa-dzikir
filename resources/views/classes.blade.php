@@ -1,5 +1,6 @@
 @extends('layouts.master')
 @section('menuClass', 'active')
+@section('title', 'Classes')
 
 @section('content')
 

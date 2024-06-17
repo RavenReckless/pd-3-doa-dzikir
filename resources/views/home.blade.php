@@ -1,5 +1,6 @@
 @extends('layouts.master')
 @section('menuHome', 'active')
+@section('title', 'Home')
 @section('content')
 
 <!-- Header Start -->
