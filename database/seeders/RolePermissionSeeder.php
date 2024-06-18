@@ -1,0 +1,50 @@
+<?php
+
+namespace Database\Seeders;
+
+use Illuminate\Database\Console\Seeds\WithoutModelEvents;
+use Illuminate\Database\Seeder;
+use Spatie\Permission\Models\Permission;
+use Spatie\Permission\Models\Role;
+
+class RolePermissionSeeder extends Seeder
+{
+    /**
+     * Run the database seeds.
+     */
+    public function run(): void
+    {
+        Permission::create(['name' => 'create-user']);
+        Permission::create(['name' => 'read-user']);
+        Permission::create(['name' => 'update-user']);
+        Permission::create(['name' => 'delete-user']);
+
+
+        Role::create(['name' => 'admin'])->givePermissionTo([
+            'create-user',
+            'read-user',
+            'update-user',
+            'delete-user',
+            'memproses-pesanan',
+            'memproses-pembayaran',
+            'memproses-voucher',
+            'create-menu',
+            'read-menu',
+            'update-menu',
+            'delete-menu',
+        ]);
+
+        $roleAdmin = Role::findByName('admin');
+        $roleAdmin->givePermissionTo('create-user');
+        $roleAdmin->givePermissionTo('read-user');
+        $roleAdmin->givePermissionTo('update-user');
+        $roleAdmin->givePermissionTo('delete-user');
+        $roleAdmin->givePermissionTo('memproses-pesanan');
+        $roleAdmin->givePermissionTo('memproses-pembayaran');
+        $roleAdmin->givePermissionTo('memproses-voucher');
+        $roleAdmin->givePermissionTo('create-menu');
+        $roleAdmin->givePermissionTo('read-menu');
+        $roleAdmin->givePermissionTo('update-menu');
+        $roleAdmin->givePermissionTo('delete-menu');
+    }
+}

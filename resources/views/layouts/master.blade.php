@@ -48,7 +48,7 @@
                     <a href="{{ url('teachers') }}" class="nav-item nav-link @yield('menuTeachers')">Teachers</a>
                     <a href="{{ url('gallery') }}" class="nav-item nav-link @yield('menuGallery')">Gallery</a>
                     <div class="nav-item dropdown">
-                        <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Pages</a>
+                        <a href="#" class="nav-link dropdown-toggle @yield('menuBlog') @yield('menuSingle')" data-toggle="dropdown">Pages</a>
                         <div class="dropdown-menu rounded-0 m-0">
                             <a href="{{ url('blog') }}" class="dropdown-item @yield('menuBlog')">Blog Grid</a>
                             <a href="{{ url('single') }}" class="dropdown-item @yield('menuSingle')">Blog Detail</a>
