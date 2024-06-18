@@ -27,6 +27,9 @@
 
     <!-- Customized Bootstrap Stylesheet -->
     <link href="{{ asset('assets/css/style.css') }}" rel="stylesheet" />
+    
+    <!-- SweetAlert2 -->
+    <link href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css" rel="stylesheet">
 </head>
 
 <body>
@@ -153,12 +156,10 @@
                 <h3 class="text-primary mb-4">Newsletter</h3>
                 <form action="">
                     <div class="form-group">
-                        <input type="text" class="form-control border-0 py-4" placeholder="Your Name"
-                            required="required" />
+                        <input type="text" class="form-control border-0 py-4" placeholder="Your Name" required="required" />
                     </div>
                     <div class="form-group">
-                        <input type="email" class="form-control border-0 py-4" placeholder="Your Email"
-                            required="required" />
+                        <input type="email" class="form-control border-0 py-4" placeholder="Your Email" required="required" />
                     </div>
                     <div>
                         <button class="btn btn-primary btn-block border-0 py-3" type="submit">
@@ -168,24 +169,21 @@
                 </form>
             </div>
         </div>
-        <div class="container-fluid pt-5" style="border-top: 1px solid rgba(23, 162, 184, 0.2) ;">
+        <div class="container border-top border-dark pt-5">
             <p class="m-0 text-center text-white">
                 &copy;
-                <a class="text-primary font-weight-bold" href="#">Your Site Name</a>.
-                All Rights Reserved.
-
-                <!--/*** This template is free as long as you keep the footer author’s credit link/attribution link/backlink. If you'd like to use the template without the footer author’s credit link/attribution link/backlink, you can purchase the Credit Removal License from "https://htmlcodex.com/credit-removal". Thank you for your support. ***/-->
+                <a class="text-primary font-weight-bold" href="#">Your Site Name</a>. All Rights Reserved.
                 Designed by
                 <a class="text-primary font-weight-bold" href="https://htmlcodex.com">HTML Codex</a>
-                <br />Distributed By:
-                <a href="https://themewagon.com" target="_blank">ThemeWagon</a>
+                <br />
+                Distributed By: <a href="https://themewagon.com" target="_blank">ThemeWagon</a>
             </p>
         </div>
     </div>
     <!-- Footer End -->
 
     <!-- Back to Top -->
-    <a href="#" class="btn btn-primary p-3 back-to-top"><i class="fa fa-angle-double-up"></i></a>
+    <a href="#" class="btn btn-primary back-to-top"><i class="fa fa-angle-double-up"></i></a>
 
     <!-- JavaScript Libraries -->
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
@@ -201,6 +199,10 @@
 
     <!-- Template Javascript -->
     <script src="{{ asset('assets/js/main.js') }}"></script>
-</body>
 
+    <!-- SweetAlert2 -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    
+    @stack('scripts')
+</body>
 </html>
