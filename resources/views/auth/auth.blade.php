@@ -28,42 +28,33 @@
                 <!-- Login Form End -->
 
                 <!-- Registration Form Start -->
-                <form method="POST" action="{{ route('register') }}" class="sign-up-form">
+                <form method="POST" action="{{ route('register') }}" class="sign-up-form" id="register-form">
                     @csrf
                     <h2 class="title">Register</h2>
-                    @if ($errors->any() && !$errors->has('email') && !$errors->has('password') && !$errors->has('password_confirmation'))
-                        <div class="error-message">Please correct the errors below and try again.</div>
-                    @endif
-                    @if ($errors->has('name'))
-                        <span class="error-message">{{ $errors->first('name') }}</span>
-                    @endif
+                    <span class="error-message" id="name-error"></span>
                     <div class="input-field">
                         <i class="fas fa-user"></i>
-                        <input type="text" placeholder="Username" name="name" value="{{ old('name') }}" />
+                        <input type="text" placeholder="Username" name="name" value="{{ old('name') }}" id="name" />
                     </div>
                     @if ($errors->has('email'))
                         <span class="error-message">{{ $errors->first('email') }}</span>
                     @endif
                     <div class="input-field">
                         <i class="fas fa-envelope"></i>
-                        <input type="email" placeholder="Email" name="email" value="{{ old('email') }}" />
+                        <input type="email" placeholder="Email" name="email" value="{{ old('email') }}" id="email" />
                     </div>
-                    @if ($errors->has('password'))
-                        <span class="error-message">{{ $errors->first('password') }}</span>
-                    @endif
+                    <span class="error-message" id="password-error"></span>
                     <div class="input-field">
                         <i class="fas fa-lock"></i>
-                        <input type="password" placeholder="Password" name="password" />
+                        <input type="password" placeholder="Password" name="password" id="password" />
                     </div>
-                    @if ($errors->has('password_confirmation'))
-                        <span class="error-message">{{ $errors->first('password_confirmation') }}</span>
-                    @endif
+                    <span class="error-message" id="password-confirmation-error"></span>
                     <div class="input-field">
                         <i class="fas fa-lock"></i>
                         <input type="password" placeholder="Confirm Password" name="password_confirmation"
-                            autocomplete="new-password" />
+                            autocomplete="new-password" id="password_confirmation" />
                     </div>
-                    <button class="btn">Register</button>
+                    <button class="btn" type="submit">Register</button>
                 </form>
                 <!-- Registration Form End -->
             </div>
