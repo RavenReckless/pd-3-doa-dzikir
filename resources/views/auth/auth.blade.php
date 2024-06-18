@@ -38,37 +38,37 @@
                     @csrf
                     <h2 class="title">Register</h2>
                     @if ($errors->has('name'))
-                            <span class="error-message">{{ $errors->first('name') }}</span>
-                        @endif
+                        <span class="error-message">{{ $errors->first('name') }}</span>
+                    @endif
                     <div class="input-field">
                         <i class="fas fa-user"></i>
                         <input type="text" placeholder="Username" name="name" value="{{ old('name') }}" />
                     </div>
                     @if ($errors->has('email'))
-                            <span class="error-message">{{ $errors->first('email') }}</span>
-                        @endif
+                        <span class="error-message">{{ $errors->first('email') }}</span>
+                    @endif
                     <div class="input-field">
-                        
+
                         <i class="fas fa-envelope"></i>
                         <input type="email" placeholder="Email" name="email" value="{{ old('email') }}" />
 
                     </div>
                     @if ($errors->has('password'))
-                            <span class="error-message">{{ $errors->first('password') }}</span>
-                        @endif
+                        <span class="error-message">{{ $errors->first('password') }}</span>
+                    @endif
                     <div class="input-field">
-                        
+
                         <i class="fas fa-lock"></i>
                         <input type="password" placeholder="Password" name="password" />
 
                     </div>
                     @if ($errors->has('password_confirmation'))
-                            <span class="error-message">{{ $errors->first('password_confirmation') }}</span>
-                        @endif
+                        <span class="error-message">{{ $errors->first('password_confirmation') }}</span>
+                    @endif
                     <div class="input-field">
-                        
+
                         <i class="fas fa-lock"></i>
-                        <input type="password" placeholder="Konfirmasi Password" name="password_confirmation" required
+                        <input type="password" placeholder="Konfirmasi Password" name="password_confirmation"
                             autocomplete="new-password" />
 
                     </div>

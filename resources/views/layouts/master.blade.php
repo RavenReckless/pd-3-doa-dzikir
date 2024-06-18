@@ -56,7 +56,26 @@
                     </div>
                     <a href="{{url('contact')}}" class="nav-item nav-link @yield('menuContact')">Contact</a>
                 </div>
-                <a href="{{url('auth')}}" class="btn btn-primary px-4">Join Class</a>
+                @auth
+                <div class="nav-item dropdown">
+                    <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">
+                        <i class="fas fa-user"></i>
+                    </a>
+                    <div class="dropdown-menu rounded-0 m-0">
+                        <a href="{{url('/profile')}}" class="dropdown-item">
+                            <i class="fas fa-user-edit"></i> Edit Profile
+                        </a>
+                        <form method="POST" action="{{ route('logout') }}">
+                            @csrf
+                            <button type="submit" class="dropdown-item">
+                                <i class="fas fa-sign-out-alt"></i> Logout
+                            </button>
+                        </form>
+                    </div>
+                </div>
+                @else
+                <a href="{{url('auth')}}" class="btn btn-primary px-4">Login</a>
+                @endauth
             </div>
         </nav>
     </div>
