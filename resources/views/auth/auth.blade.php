@@ -1,15 +1,6 @@
-<!DOCTYPE html>
-<html lang="en">
+@extends('layouts.auth')
+@section('content')
 
-<head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <script src="https://kit.fontawesome.com/64d58efce2.js" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="{{ asset('assets/css/auth.css') }}" />
-    <title>Doa & Dzikir | Login Register</title>
-</head>
-
-<body>
     <div class="container">
         <div class="forms-container">
             <div class="signin-signup {{ $errors->any() ? 'sign-up-mode' : '' }}">
@@ -22,7 +13,8 @@
                     @enderror
                     <div class="input-field">
                         <i class="fas fa-envelope"></i>
-                        <input type="email" placeholder="Email" name="email" value="{{ old('email') }}" autocomplete="off" />
+                        <input type="email" placeholder="Email" name="email" value="{{ old('email') }}"
+                            autocomplete="off" />
                     </div>
                     @error('password')
                         <span class="error-message">{{ $message }}</span>
@@ -68,7 +60,8 @@
                     @endif
                     <div class="input-field">
                         <i class="fas fa-lock"></i>
-                        <input type="password" placeholder="Confirm Password" name="password_confirmation" autocomplete="new-password" />
+                        <input type="password" placeholder="Confirm Password" name="password_confirmation"
+                            autocomplete="new-password" />
                     </div>
                     <button class="btn">Register</button>
                 </form>
@@ -103,8 +96,4 @@
             </div>
         </div>
     </div>
-
-    <script src="{{ asset('assets/js/auth.js') }}"></script>
-</body>
-
-</html>
+@endsection

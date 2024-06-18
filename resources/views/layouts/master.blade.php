@@ -74,7 +74,7 @@
                     </div>
                 </div>
                 @else
-                <a href="{{url('auth')}}" class="btn btn-primary px-4">Login</a>
+                <a href="{{url('/login')}}" class="btn btn-primary px-4">Login</a>
                 @endauth
             </div>
         </nav>
