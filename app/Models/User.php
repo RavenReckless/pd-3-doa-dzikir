@@ -42,4 +42,29 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    public function dzikirGroups()
+    {
+        return $this->belongsToMany(DzikirGroup::class);
+    }
+
+    public function dzikirRecords()
+    {
+        return $this->hasMany(DzikirRecord::class);
+    }
+
+    public function spiritualMonitoring()
+    {
+        return $this->hasMany(SpiritualMonitoring::class);
+    }
+
+    public function communities()
+    {
+        return $this->belongsToMany(Community::class);
+    }
+
+    public function sharedExperiences()
+    {
+        return $this->hasMany(SharedExperience::class);
+    }
 }

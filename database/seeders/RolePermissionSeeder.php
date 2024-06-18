@@ -18,6 +18,7 @@ class RolePermissionSeeder extends Seeder
         Permission::create(['name' => 'read-user']);
         Permission::create(['name' => 'update-user']);
         Permission::create(['name' => 'delete-user']);
+        Permission::create(['name' => 'create-']);
 
 
         Role::create(['name' => 'admin'])->givePermissionTo([
@@ -25,13 +26,6 @@ class RolePermissionSeeder extends Seeder
             'read-user',
             'update-user',
             'delete-user',
-            'memproses-pesanan',
-            'memproses-pembayaran',
-            'memproses-voucher',
-            'create-menu',
-            'read-menu',
-            'update-menu',
-            'delete-menu',
         ]);
 
         $roleAdmin = Role::findByName('admin');
@@ -39,12 +33,5 @@ class RolePermissionSeeder extends Seeder
         $roleAdmin->givePermissionTo('read-user');
         $roleAdmin->givePermissionTo('update-user');
         $roleAdmin->givePermissionTo('delete-user');
-        $roleAdmin->givePermissionTo('memproses-pesanan');
-        $roleAdmin->givePermissionTo('memproses-pembayaran');
-        $roleAdmin->givePermissionTo('memproses-voucher');
-        $roleAdmin->givePermissionTo('create-menu');
-        $roleAdmin->givePermissionTo('read-menu');
-        $roleAdmin->givePermissionTo('update-menu');
-        $roleAdmin->givePermissionTo('delete-menu');
     }
 }
