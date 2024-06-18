@@ -40,10 +40,10 @@ class LoginRequest extends FormRequest
     public function messages(): array
     {
         return [
-            'email.required' => 'Please enter your email address.',
+            'email.required' => 'Tolong isi alamat email terlebih dahulu.',
             'email.string' => 'The email address must be a valid string.',
-            'email.email' => 'Please enter a valid email address.',
-            'password.required' => 'Please enter your password.',
+            'email.email' => 'Tolong masukkan alamat email yang valid.',
+            'password.required' => 'Tolong isi password terlebih dahulu.',
             'password.string' => 'The password must be a valid string.',
         ];
     }
