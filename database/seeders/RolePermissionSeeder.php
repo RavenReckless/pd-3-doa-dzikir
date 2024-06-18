@@ -18,7 +18,6 @@ class RolePermissionSeeder extends Seeder
         Permission::create(['name' => 'read-user']);
         Permission::create(['name' => 'update-user']);
         Permission::create(['name' => 'delete-user']);
-        Permission::create(['name' => 'create-']);
 
 
         Role::create(['name' => 'admin'])->givePermissionTo([
