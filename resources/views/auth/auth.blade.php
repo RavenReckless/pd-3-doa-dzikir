@@ -1,6 +1,5 @@
 @extends('layouts.auth')
 @section('content')
-
     <div class="container">
         <div class="forms-container">
             <div class="signin-signup {{ $errors->any() ? 'sign-up-mode' : '' }}">
@@ -34,14 +33,16 @@
                     <span class="error-message" id="name-error"></span>
                     <div class="input-field">
                         <i class="fas fa-user"></i>
-                        <input type="text" placeholder="Username" name="name" value="{{ old('name') }}" id="name" />
+                        <input type="text" placeholder="Username" name="name" value="{{ old('name') }}"
+                            id="name" />
                     </div>
                     @if ($errors->has('email'))
                         <span class="error-message">{{ $errors->first('email') }}</span>
                     @endif
                     <div class="input-field">
                         <i class="fas fa-envelope"></i>
-                        <input type="email" placeholder="Email" name="email" value="{{ old('email') }}" id="email" />
+                        <input type="email" placeholder="Email" name="email" value="{{ old('email') }}"
+                            id="email" />
                     </div>
                     <span class="error-message" id="password-error"></span>
                     <div class="input-field">
