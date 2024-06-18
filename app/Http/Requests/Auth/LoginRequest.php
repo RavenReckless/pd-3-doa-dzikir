@@ -33,6 +33,22 @@ class LoginRequest extends FormRequest
     }
 
     /**
+     * Get custom messages for validator errors.
+     *
+     * @return array<string, string>
+     */
+    public function messages(): array
+    {
+        return [
+            'email.required' => 'Please enter your email address.',
+            'email.string' => 'The email address must be a valid string.',
+            'email.email' => 'Please enter a valid email address.',
+            'password.required' => 'Please enter your password.',
+            'password.string' => 'The password must be a valid string.',
+        ];
+    }
+
+    /**
      * Attempt to authenticate the request's credentials.
      *
      * @throws \Illuminate\Validation\ValidationException
@@ -45,7 +61,7 @@ class LoginRequest extends FormRequest
             RateLimiter::hit($this->throttleKey());
 
             throw ValidationException::withMessages([
-                'email' => trans('auth.failed'),
+                'email' => 'Email atau password salah.',
             ]);
         }
 

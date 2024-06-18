@@ -63,7 +63,7 @@
                     </a>
                     <div class="dropdown-menu rounded-0 m-0">
                         <a href="{{url('/profile')}}" class="dropdown-item">
-                            <i class="fas fa-user-edit"></i> Edit Profile
+                            <i class="fas fa-user-edit"></i> Ubah Profil
                         </a>
                         <form method="POST" action="{{ route('logout') }}">
                             @csrf
