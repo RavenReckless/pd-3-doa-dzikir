@@ -62,4 +62,15 @@ Route::middleware('auth')->group(function () {
     Route::post('/profile/update', [ProfileController::class, 'update'])->name('profile.update');
 });
 
+// Route admin
+Route::middleware('role:admin')->group(function () {
+    Route::get('/admin', function () {
+        return view('admin.dashboard');
+    });
+});
+
+Route::get('/admindashboard', function () {
+    return view('admin.dashboard');
+});
+
 require __DIR__.'/auth.php';
