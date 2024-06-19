@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 
@@ -50,9 +51,7 @@ Route::get('/auth', function () {
     return view('auth.auth');
 });
 
-Route::get('/dashboard', function () {
-    return view('dashboard');
-})->middleware(['auth', 'verified'])->name('dashboard');
+
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', function () {
@@ -62,15 +61,10 @@ Route::middleware('auth')->group(function () {
     Route::post('/profile/update', [ProfileController::class, 'update'])->name('profile.update');
 });
 
-// Route admin
-Route::middleware('role:admin')->group(function () {
-    Route::get('/admin', function () {
-        return view('admin.dashboard');
-    });
-});
-
-Route::get('/admindashboard', function () {
-    return view('admin.dashboard');
+// Admin routes
+Route::middleware(['auth', 'verified', 'role:admin'])->group(function () {
+    Route::get('/dashboard', [DashboardController::class, 'index'])->name('admin.dashboard');
+ 
 });
 
 require __DIR__.'/auth.php';
