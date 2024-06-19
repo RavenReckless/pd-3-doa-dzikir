@@ -83,7 +83,7 @@
         <li>
           <!-- Dark Mode Toggler -->
           <label
-            :class="darkMode ? 'bg-primary' : 'bg-stroke'"
+            :class="darkMode ? 'bg-cyan-500' : 'bg-stroke'"
             class="relative m-0 block h-7.5 w-14 rounded-full"
           >
             <input
@@ -452,7 +452,7 @@
             <li>
               <a
                 href="profile.html"
-                class="flex items-center gap-3.5 text-sm font-medium duration-300 ease-in-out hover:text-primary lg:text-base"
+                class="flex items-center gap-3.5 text-sm font-medium duration-300 ease-in-out hover:text-cyan-500 lg:text-base"
               >
                 <svg
                   class="fill-current"
@@ -477,7 +477,7 @@
             <li>
               <a
                 href="messages.html"
-                class="flex items-center gap-3.5 text-sm font-medium duration-300 ease-in-out hover:text-primary lg:text-base"
+                class="flex items-center gap-3.5 text-sm font-medium duration-300 ease-in-out hover:text-cyan-500 lg:text-base"
               >
                 <svg
                   class="fill-current"
@@ -498,7 +498,7 @@
             <li>
               <a
                 href="settings.html"
-                class="flex items-center gap-3.5 text-sm font-medium duration-300 ease-in-out hover:text-primary lg:text-base"
+                class="flex items-center gap-3.5 text-sm font-medium duration-300 ease-in-out hover:text-cyan-500 lg:text-base"
               >
                 <svg
                   class="fill-current"

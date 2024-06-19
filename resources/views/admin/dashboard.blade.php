@@ -1,4 +1,5 @@
 @extends('admin.layouts.master')
+@section('menuDashboard', 'active')
 @section('content')
 
 <!-- ===== Main Content Start ===== -->
@@ -251,7 +252,7 @@
                                     <span class="text-xs"> . Sun</span>
                                 </p>
                             </div>
-                            <div class="flex h-6 w-6 items-center justify-center rounded-full bg-primary">
+                            <div class="flex h-6 w-6 items-center justify-center rounded-full bg-cyan-500">
                                 <span class="text-sm font-medium text-white">2</span>
                             </div>
                         </div>

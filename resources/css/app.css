@@ -215,3 +215,9 @@ span.flatpickr-weekday,
 [x-cloak] {
   display: none !important;
 }
+
+.sidebar-menu.active {
+  @apply -translate-x-0;
+  background-color: rgb(51 58 72);
+  color: #17a2b8;
+}
