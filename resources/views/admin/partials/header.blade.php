@@ -47,7 +47,7 @@
         <div class="relative">
           <button class="absolute left-0 top-1/2 -translate-y-1/2">
             <svg
-              class="fill-body hover:fill-primary dark:fill-bodydark dark:hover:fill-primary"
+              class="fill-body hover:fill-cyan-500 dark:fill-bodydark dark:hover:fill-cyan-500"
               width="20"
               height="20"
               viewBox="0 0 20 20"
@@ -525,7 +525,7 @@
             @csrf
             <button
                 type="submit"
-                class="flex items-center gap-3.5 px-6 py-4 text-sm font-medium duration-300 ease-in-out hover:text-primary lg:text-base"
+                class="flex items-center gap-3.5 px-6 py-4 text-sm font-medium duration-300 ease-in-out hover:text-cyan-500 lg:text-base"
             >
                 <svg
                     class="fill-current"

@@ -5,8 +5,8 @@
 >
   <!-- SIDEBAR HEADER -->
   <div class="flex items-center justify-between gap-2 px-6 py-5.5 lg:py-6.5">
-    <a href="index.html">
-      <img src="{{asset('adminassets/images/logo/logo.svg')}}" alt="Logo" />
+    <a href="{{url('/dashboard')}}" class="text-3xl flex items-center text-teal-500">
+      Admin Dashboard
     </a>
 
     <button
