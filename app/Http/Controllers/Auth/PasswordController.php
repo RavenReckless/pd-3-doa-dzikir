@@ -16,9 +16,9 @@ class PasswordController extends Controller
     public function update(Request $request): RedirectResponse
     {
         $messages = [
-            'current_password.required' => 'Password saat ini wajib diisi.',
+            'current_password.required' => 'Password saat ini wajib diisi jika ingin mengganti.',
             'current_password.current_password' => 'Password saat ini tidak sesuai.',
-            'password.required' => 'Password baru wajib diisi.',
+            'password.required' => 'Password baru wajib diisi jika ingin mengganti.',
             'password.confirmed' => 'Konfirmasi password baru tidak cocok.',
         ];
 

@@ -414,9 +414,9 @@
         >
           <span class="hidden text-right lg:block">
             <span class="block text-sm font-medium text-black dark:text-white"
-              >Thomas Anree</span
+              >{{Auth::user()->name}}</span
             >
-            <span class="block text-xs font-medium">UX Designer</span>
+            <span class="block text-xs font-medium">Administrator</span>
           </span>
 
           <span class="h-12 w-12 rounded-full">
