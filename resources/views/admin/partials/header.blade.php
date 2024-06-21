@@ -451,7 +451,7 @@
           >
             <li>
               <a
-                href="profile.html"
+                href="{{url('adminprofile')}}"
                 class="flex items-center gap-3.5 text-sm font-medium duration-300 ease-in-out hover:text-cyan-500 lg:text-base"
               >
                 <svg

@@ -64,7 +64,17 @@ Route::middleware('auth')->group(function () {
 // Admin routes
 Route::middleware(['auth', 'verified', 'role:admin'])->group(function () {
     Route::get('/dashboard', [DashboardController::class, 'index'])->name('admin.dashboard');
- 
+    Route::get('/adminprofile', function(){
+        return view('admin.adminprofile');
+    });
+});
+
+Route::middleware('auth')->group(function () {
+    Route::get('/adminprofile', function () {
+        return view('admin.adminprofile');
+    });
+
+    Route::post('/profile/update', [ProfileController::class, 'update'])->name('profile.update');
 });
 
 require __DIR__.'/auth.php';
