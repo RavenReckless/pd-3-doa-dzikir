@@ -419,8 +419,8 @@
             <span class="block text-xs font-medium">Administrator</span>
           </span>
 
-          <span class="h-12 w-12 rounded-full">
-            <img src="{{asset('adminassets/images/user/user-01.png')}}" alt="User" />
+          <span class="h-12 w-12 rounded-full pt-2">
+            <img src="{{asset('adminassets/images/admin_placeholder-removebg-preview.png')}}" alt="User" />
           </span>
 
           <svg
