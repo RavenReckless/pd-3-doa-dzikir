@@ -139,20 +139,10 @@
                 <div class="mt-4 flex items-end justify-between">
                     <div>
                         <h4 class="text-title-md font-bold text-black dark:text-white">
-                            3.456
+                            {{ Auth::user()->count() }}
                         </h4>
                         <span class="text-sm font-medium">Total Users</span>
                     </div>
-
-                    <span class="flex items-center gap-1 text-sm font-medium text-meta-5">
-                        0.95%
-                        <svg class="fill-meta-5" width="10" height="11" viewBox="0 0 10 11" fill="none"
-                            xmlns="http://www.w3.org/2000/svg">
-                            <path
-                                d="M5.64284 7.69237L9.09102 4.33987L10 5.22362L5 10.0849L-8.98488e-07 5.22362L0.908973 4.33987L4.35716 7.69237L4.35716 0.0848701L5.64284 0.0848704L5.64284 7.69237Z"
-                                fill="" />
-                        </svg>
-                    </span>
                 </div>
             </div>
             <!-- Card Item End -->
@@ -167,7 +157,7 @@
             <!-- ====== Table One End -->
 
             <!-- ====== Chat Card Start -->
-            <div
+            {{-- <div
                 class="col-span-12 rounded-sm border border-stroke bg-white py-6 shadow-default dark:border-strokedark dark:bg-boxdark xl:col-span-4">
                 <h4 class="mb-6 px-7.5 text-xl font-bold text-black dark:text-white">
                     Chats
@@ -295,7 +285,7 @@
                         </div>
                     </a>
                 </div>
-            </div>
+            </div> --}}
             <!-- ====== Chat Card End -->
         </div>
     </div>
