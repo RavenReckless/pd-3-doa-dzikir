@@ -63,6 +63,7 @@ Route::middleware('auth')->group(function () {
     Route::post('/profile/update', [ProfileController::class, 'update'])->name('profile.update');
 });
 
+
 // Admin routes
 Route::middleware('auth')->group(function () {
     Route::get('/admin', function () {
