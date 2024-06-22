@@ -8,7 +8,7 @@ class CreateMateriDzikirTable extends Migration
 {
     public function up()
     {
-        Schema::create('materi_dzikir', function (Blueprint $table) {
+        Schema::create('materi_dzikirs', function (Blueprint $table) {
             $table->id();
             $table->foreignId('language_id')->constrained()->onDelete('cascade');
             $table->string('title');
@@ -19,6 +19,6 @@ class CreateMateriDzikirTable extends Migration
 
     public function down()
     {
-        Schema::dropIfExists('materi_dzikir');
+        Schema::dropIfExists('materi_dzikirs');
     }
 }

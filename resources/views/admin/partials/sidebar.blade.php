@@ -240,9 +240,8 @@
           <!-- Menu Item Tables -->
           <li>
             <a
-              class="sidebar-menu @yield('menuTables') group relative flex items-center gap-2.5 rounded-sm py-2 px-4 font-medium text-bodydark1 duration-300 ease-in-out hover:bg-graydark dark:hover:bg-meta-4"
-              href="tables.html"
-              @click="selected = (selected === 'Tables' ? '':'Tables')"
+              class="sidebar-menu @yield('menuDzikirs') group relative flex items-center gap-2.5 rounded-sm py-2 px-4 font-medium text-bodydark1 duration-300 ease-in-out hover:bg-graydark dark:hover:bg-meta-4"
+              href="{{url('admin/materi-dzikir')}}"
               :class="{ 'bg-graydark dark:bg-meta-4': (selected === 'Tables') && (page === 'tables') }"
             >
               <svg
