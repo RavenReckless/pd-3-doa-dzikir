@@ -29,7 +29,12 @@ class AuthenticatedSessionController extends Controller
 
         $request->session()->regenerate();
 
-        if (Auth::user()->hasRole('admin')) {
+        // Update the is_online status for the authenticated user
+        $user = Auth::user();
+        $user->is_online = true;
+        $user->save();
+
+        if ($user->hasRole('admin')) {
             return redirect()->to('admin');
         }
 
@@ -41,11 +46,17 @@ class AuthenticatedSessionController extends Controller
      */
     public function destroy(Request $request): RedirectResponse
     {
+        // Get the authenticated user before logout
+        $user = Auth::user();
+
         Auth::guard('web')->logout();
 
         $request->session()->invalidate();
-
         $request->session()->regenerateToken();
+
+        // Update the is_online status
+        $user->is_online = false;
+        $user->save();
 
         return redirect('/');
     }

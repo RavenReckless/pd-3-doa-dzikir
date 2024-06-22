@@ -3,10 +3,8 @@
 @section('menuUsers', 'active')
 @section('content')
 
-    <!-- ===== Main Content Start ===== -->
     <main>
         <div class="mx-auto max-w-screen-2xl p-4 md:p-6 2xl:p-10">
-            <!-- Breadcrumb Start -->
             <div class="mb-6 flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
                 <h2 class="text-title-md2 font-bold text-black dark:text-white">
                     Tables
@@ -15,16 +13,15 @@
                 <nav>
                     <ol class="flex items-center gap-2">
                         <li>
-                          <a href="{{route('admin.users.create')}}" class="flex bg-white p-3 border rounded-md text-cyan-500 text-lg dark:bg-boxdark">+ Add User</a>
+                            <a href="{{ route('admin.users.create') }}"
+                                class="flex bg-white p-3 border rounded-md text-cyan-500 text-lg dark:bg-boxdark">+ Add
+                                User</a>
                         </li>
                     </ol>
                 </nav>
             </div>
-            <!-- Breadcrumb End -->
 
-            <!-- ====== Table Section Start -->
             <div class="flex flex-col gap-10">
-                <!-- ====== Table One Start -->
                 <div
                     class="rounded-sm border border-stroke bg-white px-5 pb-2.5 pt-6 shadow-default dark:border-strokedark dark:bg-boxdark sm:px-7.5 xl:pb-1">
                     <div class="max-w-full overflow-x-auto">
@@ -32,17 +29,11 @@
                             <thead>
                                 <tr class="bg-gray-2 text-left dark:bg-meta-4">
                                     <th class="min-w-[220px] px-4 py-4 font-medium text-black dark:text-white xl:pl-11">
-                                        Users
+                                        Users</th>
+                                    <th class="min-w-[150px] px-4 py-4 font-medium text-black dark:text-white">Created at
                                     </th>
-                                    <th class="min-w-[150px] px-4 py-4 font-medium text-black dark:text-white">
-                                        Created at
-                                    </th>
-                                    <th class="min-w-[120px] px-4 py-4 font-medium text-black dark:text-white">
-                                        Status
-                                    </th>
-                                    <th class="px-4 py-4 font-medium text-black dark:text-white">
-                                        Actions
-                                    </th>
+                                    <th class="min-w-[120px] px-4 py-4 font-medium text-black dark:text-white">Status</th>
+                                    <th class="px-4 py-4 font-medium text-black dark:text-white">Actions</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -59,21 +50,18 @@
                                                     {{ \Carbon\Carbon::parse($user->created_at)->format('l, d F Y') }}</p>
                                             </td>
                                             <td class="border-b border-[#eee] px-4 py-5 dark:border-strokedark">
-                                                @auth
+                                                @if ($user->is_online)
                                                     <p
                                                         class="inline-flex rounded-full bg-green-500 px-3 py-1 text-sm font-medium text-white">
-                                                        Online
-                                                    </p>
+                                                        Online</p>
                                                 @else
                                                     <p
                                                         class="inline-flex rounded-full bg-success bg-opacity-10 px-3 py-1 text-sm font-medium text-success">
-                                                        Offline
-                                                    </p>
-                                                @endauth
+                                                        Offline</p>
+                                                @endif
                                             </td>
                                             <td class="border-b border-[#eee] px-4 py-5 dark:border-strokedark">
                                                 <div class="flex items-center space-x-3.5">
-                                                    <!-- Tombol Edit -->
                                                     <a href="{{ route('admin.users.edit', $user->id) }}"
                                                         class="hover:text-primary">
                                                         <svg class="fill-current" width="18" height="18"
@@ -86,8 +74,6 @@
                                                                 fill="currentColor" />
                                                         </svg>
                                                     </a>
-
-                                                    <!-- Tombol Hapus -->
                                                     <form action="{{ route('admin.users.destroy', $user->id) }}"
                                                         method="POST" onsubmit="return confirm('Are you sure?')">
                                                         @csrf
@@ -109,6 +95,9 @@
                                                                     fill="currentColor" />
                                                             </svg>
                                                         </button>
+                                                    </form>
+                                                </div>
+                                            </td>
                                         </tr>
                                     @endif
                                 @endforeach
@@ -116,13 +105,7 @@
                         </table>
                     </div>
                 </div>
-
-                <!-- ====== Table One End -->
-
             </div>
-            <!-- ====== Table Section End -->
         </div>
     </main>
-    <!-- ===== Main Content End ===== -->
-
 @endsection

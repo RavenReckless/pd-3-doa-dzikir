@@ -59,6 +59,7 @@ class AdminUsersController extends Controller
             'name' => $request->name,
             'email' => $request->email,
             'password' => bcrypt($request->password),
+            'is_online' => false // Default value for new user
         ];
 
         User::create($data);
@@ -78,10 +79,10 @@ class AdminUsersController extends Controller
      * Show the form for editing the specified resource.
      */
     public function edit(string $id)
-{
-    $user = User::findOrFail($id);
-    return view('admin.users.edit')->with('user', $user);
-}
+    {
+        $user = User::findOrFail($id);
+        return view('admin.users.edit')->with('user', $user);
+    }
 
     /**
      * Update the specified resource in storage.
@@ -113,9 +114,8 @@ class AdminUsersController extends Controller
      */
     public function destroy(string $id)
     {
-    User::where('id', $id)->delete();
+        User::where('id', $id)->delete();
 
-    return redirect()->to('admin/users')->with('success', 'User deleted successfully.');
-    
-}
+        return redirect()->to('admin/users')->with('success', 'User deleted successfully.');
+    }
 }
