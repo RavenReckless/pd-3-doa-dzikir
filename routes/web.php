@@ -1,8 +1,10 @@
 <?php
 
 use App\Http\Controllers\Admin\DashboardController;
+use App\Http\Controllers\Admin\LanguageController;
 use App\Http\Controllers\AdminProfileController;
 use App\Http\Controllers\Auth\AuthenticatedSessionController;
+use App\Http\Controllers\Admin\MateriDzikirController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 
@@ -25,27 +27,27 @@ Route::get('/about', function () {
     return view('about');
 });
 
-Route::get('/classes', function() {
+Route::get('/classes', function () {
     return view('classes');
 });
 
-Route::get('/teachers', function() {
+Route::get('/teachers', function () {
     return view('teachers');
 });
 
-Route::get('/gallery', function() {
+Route::get('/gallery', function () {
     return view('gallery');
 });
 
-Route::get('/blog', function() {
+Route::get('/blog', function () {
     return view('blog');
 });
 
-Route::get('/single', function() {
+Route::get('/single', function () {
     return view('single');
 });
 
-Route::get('/contact', function() {
+Route::get('/contact', function () {
     return view('contact');
 });
 
@@ -76,7 +78,22 @@ Route::middleware('auth')->group(function () {
     Route::get('/admin/users/{user}/edit', [App\Http\Controllers\Admin\AdminUsersController::class, 'edit'])->name('admin.users.edit');
     Route::put('/admin/users/{user}', [App\Http\Controllers\Admin\AdminUsersController::class, 'update'])->name('admin.users.update');
     Route::delete('/admin/users/{user}', [App\Http\Controllers\Admin\AdminUsersController::class, 'destroy'])->name('admin.users.destroy');
-
+    Route::get('/admin/languages', [LanguageController::class, 'index'])->name('admin.languages.index');
+    Route::get('/admin/languages/create', [LanguageController::class, 'create'])->name('admin.languages.create');
+    Route::post('/admin/languages', [LanguageController::class, 'store'])->name('admin.languages.store');
+    Route::get('/admin/languages/{language}', [LanguageController::class, 'show'])->name('admin.languages.show');
+    Route::get('/admin/languages/{language}/edit', [LanguageController::class, 'edit'])->name('admin.languages.edit');
+    Route::put('/admin/languages/{language}', [LanguageController::class, 'update'])->name('admin.languages.update');
+    Route::delete('/admin/languages/{language}', [LanguageController::class, 'destroy'])->name('admin.languages.destroy');
+    Route::get('/admin/materi-dzikir', [MateriDzikirController::class, 'index'])->name('admin.materi-dzikir.index');
+    Route::get('/admin/materi-dzikir/create', [MateriDzikirController::class, 'create'])->name('admin.materi-dzikir.create');
+    Route::post('/admin/materi-dzikir', [MateriDzikirController::class, 'store'])->name('admin.materi-dzikir.store');
+    Route::get('/admin/materi-dzikir/{materiDzikir}', [MateriDzikirController::class, 'show'])->name('admin.materi-dzikir.show');
+    Route::get('/admin/materi-dzikir/{materiDzikir}/edit', [MateriDzikirController::class, 'edit'])->name('admin.materi-dzikir.edit');
+    Route::put('/admin/materi-dzikir/{materiDzikir}', [MateriDzikirController::class, 'update'])->name('admin.materi-dzikir.update');
+    Route::delete('/admin/materi-dzikir/{materiDzikir}', [MateriDzikirController::class, 'destroy'])->name('admin.materi-dzikir.destroy');
 });
 
-require __DIR__.'/auth.php';
+
+
+require __DIR__ . '/auth.php';

@@ -13,6 +13,7 @@ class MateriDzikir extends Model
         'language_id',
         'title',
         'content',
+        'image'
     ];
 
     public function language()
