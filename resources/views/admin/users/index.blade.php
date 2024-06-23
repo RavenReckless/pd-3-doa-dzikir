@@ -1,5 +1,5 @@
 @extends('admin.layouts.master')
-@section('title', 'Users')
+@section('title', 'Tabel User')
 @section('menuUsers', 'active')
 @section('content')
 
@@ -7,15 +7,14 @@
         <div class="mx-auto max-w-screen-2xl p-4 md:p-6 2xl:p-10">
             <div class="mb-6 flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
                 <h2 class="text-title-md2 font-bold text-black dark:text-white">
-                    Users Table
+                    Tabel User
                 </h2>
 
                 <nav>
                     <ol class="flex items-center gap-2">
                         <li>
                             <a href="{{ route('admin.users.create') }}"
-                                class="flex bg-white p-3 border rounded-md text-cyan-500 text-lg dark:bg-boxdark">+ Add
-                                User</a>
+                                class="flex bg-white p-3 border rounded-md text-cyan-500 text-lg dark:bg-boxdark">+ Tambah User</a>
                         </li>
                     </ol>
                 </nav>
@@ -28,12 +27,10 @@
                         <table class="w-full table-auto">
                             <thead>
                                 <tr class="bg-gray-2 text-left dark:bg-meta-4">
-                                    <th class="min-w-[220px] px-4 py-4 font-medium text-black dark:text-white xl:pl-11">
-                                        Users</th>
-                                    <th class="min-w-[150px] px-4 py-4 font-medium text-black dark:text-white">Created at
-                                    </th>
+                                    <th class="min-w-[220px] px-4 py-4 font-medium text-black dark:text-white xl:pl-11">Nama User</th>
+                                    <th class="min-w-[150px] px-4 py-4 font-medium text-black dark:text-white">Dibuat di tanggal</th>
                                     <th class="min-w-[120px] px-4 py-4 font-medium text-black dark:text-white">Status</th>
-                                    <th class="px-4 py-4 font-medium text-black dark:text-white">Actions</th>
+                                    <th class="px-4 py-4 font-medium text-black dark:text-white">Aksi</th>
                                 </tr>
                             </thead>
                             <tbody>

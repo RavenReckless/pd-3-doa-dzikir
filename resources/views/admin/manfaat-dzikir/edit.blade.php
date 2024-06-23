@@ -1,6 +1,6 @@
 @extends('admin.layouts.master')
-@section('title', 'Tambah Materi Dzikir')
-@section('menuDzikirs', 'active')
+@section('title', 'Ubah Manfaat Dzikir')
+@section('menuManfaat', 'active')
 @section('content')
 
 <!-- ===== Main Content Start ===== -->
@@ -11,7 +11,7 @@
         class="mb-6 flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between"
       >
         <h2 class="text-title-md2 font-bold text-black dark:text-white">
-          Tambah Materi Dzikir
+          Ubah Manfaat Dzikir
         </h2>
 
         <nav>
@@ -19,7 +19,7 @@
             <li>
               <a class="font-medium" href="index.html">Form /</a>
             </li>
-            <li class="font-medium text-primary">Tambah Materi Dzikir</li>
+            <li class="font-medium text-primary">Ubah Manfaat Dzikir</li>
           </ol>
         </nav>
       </div>
@@ -28,10 +28,11 @@
       <!-- ====== Form Layout Section Start -->
       <div class="rounded-sm border border-stroke bg-white shadow-default dark:border-strokedark dark:bg-boxdark w-full">
         <div class="border-b border-stroke px-6.5 py-4 dark:border-strokedark">
-          <h3 class="font-medium text-black dark:text-white">Form Tambah Materi Dzikir</h3>
+          <h3 class="font-medium text-black dark:text-white">Form Ubah Manfaat Dzikir</h3>
         </div>
-        <form action="{{ route('admin.materi-dzikir.store') }}" method="POST" enctype="multipart/form-data">
+        <form action="{{ route('admin.manfaat-dzikir.update') }}" method="POST" enctype="multipart/form-data">
             @csrf
+            @method('PUT')
             <div class="p-6.5">
                 <!-- Title Field -->
                 <div class="mb-4.5">
@@ -41,35 +42,22 @@
                         placeholder="Masukkan judul materi dzikir" 
                         class="w-full rounded border-[1.5px] border-stroke bg-transparent px-5 py-3 font-normal text-black outline-none transition focus:border-primary active:border-primary disabled:cursor-default disabled:bg-whiter dark:border-form-strokedark dark:bg-form-input dark:text-white dark:focus:border-primary" 
                         id="title" 
-                        name="title" 
+                        name="title"
+                        value="{{ $dzikir->title }}"
                         required 
                     />
                 </div>
         
-                <!-- Language Select Field -->
+                <!-- Description Field -->
                 <div class="mb-4.5">
-                    <label class="mb-3 block text-sm font-medium text-black dark:text-white">Bahasa</label>
-                    <select 
-                        class="form-control w-full rounded border-[1.5px] border-stroke bg-transparent px-5 py-3 font-normal text-black outline-none transition focus:border-primary active:border-primary disabled:cursor-default disabled:bg-whiter dark:border-form-strokedark dark:bg-form-input dark:text-white dark:focus:border-primary" 
-                        id="language_id" 
-                        name="language_id" 
-                        required
-                    >
-                        @foreach($languages as $language)
-                            <option value="{{ $language->id }}">{{ $language->name }}</option>
-                        @endforeach
-                    </select>
-                </div>
-        
-                <!-- Content Field -->
-                <div class="mb-4.5">
-                    <label class="mb-3 block text-sm font-medium text-black dark:text-white">Konten</label>
+                    <label class="mb-3 block text-sm font-medium text-black dark:text-white">Deskripsi</label>
                     <textarea 
-                        placeholder="Masukkan konten materi dzikir" 
+                        placeholder="Masukkan konten dari materi dzikir" 
                         class="w-full rounded border-[1.5px] border-stroke bg-transparent px-5 py-3 font-normal text-black outline-none transition focus:border-primary active:border-primary disabled:cursor-default disabled:bg-whiter dark:border-form-strokedark dark:bg-form-input dark:text-white dark:focus:border-primary" 
-                        id="content" 
-                        name="content" 
+                        id="description" 
+                        name="description" 
                         rows="4" 
+                        value="{{ $dzikir->description }}"
                         required
                     ></textarea>
                 </div>

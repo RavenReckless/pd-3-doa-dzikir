@@ -3,7 +3,6 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
-
 use App\Models\MateriDzikir;
 use App\Models\Language;
 use Illuminate\Http\Request;
@@ -35,7 +34,7 @@ class MateriDzikirController extends Controller
         $data = $request->all();
 
         if ($request->hasFile('image')) {
-            $data['image'] = $request->file('image')->store('images', 'public');
+            $data['image'] = $request->file('image')->store('gambar_materi_dzikir', 'public');
         }
 
         MateriDzikir::create($data);
@@ -68,7 +67,7 @@ class MateriDzikirController extends Controller
             if ($materiDzikir->image) {
                 Storage::disk('public')->delete($materiDzikir->image);
             }
-            $data['image'] = $request->file('image')->store('images', 'public');
+            $data['image'] = $request->file('image')->store('gambar_materi_dzikir', 'public');
         }
 
         $materiDzikir->update($data);

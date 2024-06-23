@@ -1,5 +1,5 @@
 @extends('admin.layouts.master')
-@section('title', 'Edit Dzikir')
+@section('title', 'Ubah Materi Dzikir')
 @section('menuDzikirs', 'active')
 @section('content')
 
@@ -11,15 +11,15 @@
         class="mb-6 flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between"
       >
         <h2 class="text-title-md2 font-bold text-black dark:text-white">
-          Edit Dzikir
+          Ubah Materi Dzikir
         </h2>
 
         <nav>
           <ol class="flex items-center gap-2">
             <li>
-              <a class="font-medium" href="index.html">Dashboard /</a>
+              <a class="font-medium" href="index.html">Form /</a>
             </li>
-            <li class="font-medium text-primary">Form Layout</li>
+            <li class="font-medium text-primary">Ubah Materi Dzikir</li>
           </ol>
         </nav>
       </div>
@@ -28,7 +28,7 @@
       <!-- ====== Form Layout Section Start -->
       <div class="rounded-sm border border-stroke bg-white shadow-default dark:border-strokedark dark:bg-boxdark w-full">
         <div class="border-b border-stroke px-6.5 py-4 dark:border-strokedark">
-          <h3 class="font-medium text-black dark:text-white">Create Dzikir Form</h3>
+          <h3 class="font-medium text-black dark:text-white">Form Ubah Materi Dzikir</h3>
         </div>
         <form action="{{ route('admin.materi-dzikir.update') }}" method="POST" enctype="multipart/form-data">
             @csrf
@@ -36,10 +36,10 @@
             <div class="p-6.5">
                 <!-- Title Field -->
                 <div class="mb-4.5">
-                    <label class="mb-3 block text-sm font-medium text-black dark:text-white">Title</label>
+                    <label class="mb-3 block text-sm font-medium text-black dark:text-white">Judul</label>
                     <input 
                         type="text" 
-                        placeholder="Enter a Dzikir Title" 
+                        placeholder="Masukkan judul materi dzikir" 
                         class="w-full rounded border-[1.5px] border-stroke bg-transparent px-5 py-3 font-normal text-black outline-none transition focus:border-primary active:border-primary disabled:cursor-default disabled:bg-whiter dark:border-form-strokedark dark:bg-form-input dark:text-white dark:focus:border-primary" 
                         id="title" 
                         name="title"
@@ -50,7 +50,7 @@
         
                 <!-- Language Select Field -->
                 <div class="mb-4.5">
-                    <label class="mb-3 block text-sm font-medium text-black dark:text-white">Language</label>
+                    <label class="mb-3 block text-sm font-medium text-black dark:text-white">Bahasa</label>
                     <select 
                         class="form-control w-full rounded border-[1.5px] border-stroke bg-transparent px-5 py-3 font-normal text-black outline-none transition focus:border-primary active:border-primary disabled:cursor-default disabled:bg-whiter dark:border-form-strokedark dark:bg-form-input dark:text-white dark:focus:border-primary" 
                         id="language_id" 
@@ -65,9 +65,9 @@
         
                 <!-- Content Field -->
                 <div class="mb-4.5">
-                    <label class="mb-3 block text-sm font-medium text-black dark:text-white">Content</label>
+                    <label class="mb-3 block text-sm font-medium text-black dark:text-white">Konten</label>
                     <textarea 
-                        placeholder="Enter the content of the Dzikir" 
+                        placeholder="Masukkan konten dari materi dzikir" 
                         class="w-full rounded border-[1.5px] border-stroke bg-transparent px-5 py-3 font-normal text-black outline-none transition focus:border-primary active:border-primary disabled:cursor-default disabled:bg-whiter dark:border-form-strokedark dark:bg-form-input dark:text-white dark:focus:border-primary" 
                         id="content" 
                         name="content" 
@@ -79,7 +79,7 @@
         
                 <!-- Image Field -->
                 <div class="mb-4.5">
-                    <label class="mb-3 block text-sm font-medium text-black dark:text-white">Image</label>
+                    <label class="mb-3 block text-sm font-medium text-black dark:text-white">Gambar</label>
                     <input 
                         type="file" 
                         class="w-full rounded border-[1.5px] border-stroke bg-transparent px-5 py-3 font-normal text-black outline-none transition focus:border-primary active:border-primary disabled:cursor-default disabled:bg-whiter dark:border-form-strokedark dark:bg-form-input dark:text-white dark:focus:border-primary" 
@@ -93,7 +93,7 @@
                     type="submit" 
                     class="flex w-full justify-center rounded bg-primary p-3 font-medium text-gray hover:bg-opacity-90"
                 >
-                    Submit
+                    Simpan
                 </button>
             </div>
         </form>

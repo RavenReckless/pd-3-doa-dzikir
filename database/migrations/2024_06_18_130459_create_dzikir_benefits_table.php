@@ -4,11 +4,11 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateDzikirBenefitsTable extends Migration
+class CreateManfaatDzikirTable extends Migration
 {
     public function up()
     {
-        Schema::create('dzikir_benefits', function (Blueprint $table) {
+        Schema::create('manfaat_dzikirs', function (Blueprint $table) {
             $table->id();
             $table->string('title');
             $table->text('description')->nullable();
@@ -18,6 +18,6 @@ class CreateDzikirBenefitsTable extends Migration
 
     public function down()
     {
-        Schema::dropIfExists('dzikir_benefits');
+        Schema::dropIfExists('manfaat_dzikirs');
     }
 }

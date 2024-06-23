@@ -141,7 +141,7 @@
                         <h4 class="text-title-md font-bold text-black dark:text-white">
                             {{ Auth::user()->count() }}
                         </h4>
-                        <span class="text-sm font-medium">Total Users</span>
+                        <span class="text-sm font-medium">Total User</span>
                     </div>
                 </div>
             </div>
