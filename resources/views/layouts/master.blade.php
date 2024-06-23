@@ -45,19 +45,18 @@
             </button>
             <div class="collapse navbar-collapse justify-content-between" id="navbarCollapse">
                 <div class="navbar-nav font-weight-bold mx-auto py-0">
-                    <a href="{{ url('') }}" class="nav-item nav-link @yield('menuHome')">Home</a>
-                    <a href="{{ url('about') }}" class="nav-item nav-link @yield('menuAbout')">About</a>
-                    <a href="{{ url('classes') }}" class="nav-item nav-link @yield('menuClass')">Classes</a>
-                    <a href="{{ url('teachers') }}" class="nav-item nav-link @yield('menuTeachers')">Teachers</a>
-                    <a href="{{ url('gallery') }}" class="nav-item nav-link @yield('menuGallery')">Gallery</a>
+                    <a href="{{ url('') }}" class="nav-item nav-link @yield('menuHome')">Beranda</a>
+                    <a href="{{ url('dzikir') }}" class="nav-item nav-link @yield('menuDzikir')">Dzikir</a>
+                    <a href="{{ url('komunitas') }}" class="nav-item nav-link @yield('menuKomunitas')">Komunitas</a>
+                    <a href="{{ url('pengingat') }}" class="nav-item nav-link @yield('menuPengingat')">Pengingat</a>
                     <div class="nav-item dropdown">
-                        <a href="#" class="nav-link dropdown-toggle @yield('menuBlog') @yield('menuSingle')" data-toggle="dropdown">Pages</a>
+                        <a href="#" class="nav-link dropdown-toggle @yield('menuSharing') @yield('menuManfaat')" data-toggle="dropdown">Pengalaman</a>
                         <div class="dropdown-menu rounded-0 m-0">
-                            <a href="{{ url('blog') }}" class="dropdown-item @yield('menuBlog')">Blog Grid</a>
-                            <a href="{{ url('single') }}" class="dropdown-item @yield('menuSingle')">Blog Detail</a>
+                            <a href="{{ url('sharing') }}" class="dropdown-item @yield('menuSharing')">Sharing Pengalaman Doa</a>
+                            <a href="{{ url('manfaat') }}" class="dropdown-item @yield('menuManfaat')">Manfaat</a>
                         </div>
                     </div>
-                    <a href="{{ url('contact') }}" class="nav-item nav-link @yield('menuContact')">Contact</a>
+                    <a href="{{ url('contact') }}" class="nav-item nav-link @yield('menuContact')">Kontak</a>
                 </div>
                 @auth
                     <div class="nav-item dropdown">

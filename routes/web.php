@@ -24,28 +24,28 @@ Route::get('/', function () {
     return view('home');
 });
 
-Route::get('/about', function () {
-    return view('about');
+Route::get('/pengingat', function () {
+    return view('pengingat');
 });
 
-Route::get('/classes', function () {
-    return view('classes');
+Route::get('/komunitas', function () {
+    return view('komunitas');
 });
 
 Route::get('/teachers', function () {
     return view('teachers');
 });
 
-Route::get('/gallery', function () {
-    return view('gallery');
+Route::get('/dzikir', function () {
+    return view('dzikir');
 });
 
-Route::get('/blog', function () {
-    return view('blog');
+Route::get('/sharing', function () {
+    return view('sharing');
 });
 
-Route::get('/single', function () {
-    return view('single');
+Route::get('/manfaat', function () {
+    return view('manfaat');
 });
 
 Route::get('/contact', function () {
