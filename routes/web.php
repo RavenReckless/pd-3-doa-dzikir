@@ -40,9 +40,9 @@ Route::get('/dzikir', function () {
     return view('dzikir');
 });
 
-Route::get('/sharing', function () {
-    return view('sharing');
-});
+Route::get('/sharing', [App\Http\Controllers\User\SharedExperienceController::class, 'index'])->name('sharing.create');
+Route::get('/sharing/create', [App\Http\Controllers\User\SharingExperienceController::class, 'create'])->middleware(['auth', 'verified'])->name('sharing.create');
+Route::post('/sharing', [App\Http\Controllers\User\SharingExperienceController::class, 'store'])->middleware(['auth', 'verified'])->name('sharing.store');
 
 Route::get('/manfaat', function () {
     return view('manfaat');
@@ -100,7 +100,13 @@ Route::middleware('auth')->group(function () {
     Route::get('/admin/manfaat-dzikir/{manfaatDzikir}/edit', [ManfaatDzikirController::class, 'edit'])->name('admin.manfaat-dzikir.edit');
     Route::put('/admin/manfaat-dzikir/{manfaatDzikir}', [ManfaatDzikirController::class, 'update'])->name('admin.manfaat-dzikir.update');
     Route::delete('/admin/manfaat-dzikir/{manfaatDzikir}', [ManfaatDzikirController::class, 'destroy'])->name('admin.manfaat-dzikir.destroy');
-
+    Route::get('/admin/sharing-dzikir', [App\Http\Controllers\Admin\SharingDzikirController::class, 'index'])->name('admin.sharing-dzikir.index');
+    Route::get('/admin/sharing-dzikir/create', [App\Http\Controllers\Admin\SharingDzikirController::class, 'create'])->name('admin.sharing-dzikir.create');
+    Route::post('/admin/sharing-dzikir', [App\Http\Controllers\Admin\SharingDzikirController::class, 'store'])->name('admin.sharing-dzikir.store');
+    Route::get('/admin/sharing-dzikir/{sharing}', [App\Http\Controllers\Admin\SharingDzikirController::class, 'show'])->name('admin.sharing-dzikir.show');
+    Route::get('/admin/sharing-dzikir/{sharing}/edit', [App\Http\Controllers\Admin\SharingDzikirController::class, 'edit'])->name('admin.sharing-dzikir.edit');
+    Route::put('/admin/sharing-dzikir/{sharing}', [App\Http\Controllers\Admin\SharingDzikirController::class, 'update'])->name('admin.sharing-dzikir.update');
+    Route::delete('/admin/sharing-dzikir/{sharing}', [App\Http\Controllers\Admin\SharingDzikirController::class, 'destroy'])->name('admin.sharing-dzikir.destroy');
 });
 
 

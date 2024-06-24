@@ -17,156 +17,86 @@
     </div>
     <!-- Header End -->
 
-    <!-- Blog Start -->
-    <div class="container-fluid pt-5">
-        <div class="container">
+    <!-- Sharing Start -->
+    <div class="container-fluid py-5">
+        <div class="container p-0">
             <div class="text-center pb-2">
                 <p class="section-title px-5">
-                    <span class="px-2">Latest Blog</span>
+                    <span class="px-2">Sharing Pengalaman Doa</span>
                 </p>
-                <h1 class="mb-4">Latest Articles From Blog</h1>
+                <h1 class="mb-4">Bagaimana Pengalaman Mereka ?</h1>
             </div>
-            <div class="row pb-3">
-                <div class="col-lg-4 mb-4">
-                    <div class="card border-0 shadow-sm mb-2">
-                        <img class="card-img-top mb-2" src="{{ asset('assets/img/blog-1.jpg') }}" alt="" />
-                        <div class="card-body bg-light text-center p-4">
-                            <h4 class="">Diam amet eos at no eos</h4>
-                            <div class="d-flex justify-content-center mb-3">
-                                <small class="mr-3"><i class="fa fa-user text-primary"></i> Admin</small>
-                                <small class="mr-3"><i class="fa fa-folder text-primary"></i> Web Design</small>
-                                <small class="mr-3"><i class="fa fa-comments text-primary"></i> 15</small>
+            <div class="owl-carousel testimonial-carousel">
+                @foreach ($sharings as $sharing)
+                    <div class="testimonial-item px-3">
+                        <div class="bg-light shadow-sm rounded mb-4 p-4">
+                            <h3 class="fas fa-quote-left text-primary mr-3"></h3>
+                            {{ $sharing->content }}
+                        </div>
+                        <div class="d-flex align-items-center">
+                            @if (auth()->user()->profile_photo_path)
+                                <img class="rounded-circle" src="{{ asset(auth()->user()->profile_photo_path) }}"
+                                    style="width: 70px; height: 70px" alt="Image" />
+                            @endif
+                            <div class="pl-3">
+                                <h5>{{ $sharing->user->name }}</h5>
+                                <i>{{ $sharing->title }}</i>
                             </div>
-                            <p>
-                                Sed kasd sea sed at elitr sed ipsum justo, sit nonumy diam
-                                eirmod, duo et sed sit eirmod kasd clita tempor dolor stet
-                                lorem. Tempor ipsum justo amet stet...
-                            </p>
-                            <a href="" class="btn btn-primary px-4 mx-auto my-2">Read More</a>
+                        </div>
+                    </div>
+                @endforeach
+                <div class="testimonial-item px-3">
+                    <div class="bg-light shadow-sm rounded mb-4 p-4">
+                        <h3 class="fas fa-quote-left text-primary mr-3"></h3>
+                        Sed ea amet kasd elitr stet, stet rebum et ipsum est duo elitr
+                        eirmod clita lorem. Dolor tempor ipsum clita
+                    </div>
+                    <div class="d-flex align-items-center">
+                        <img class="rounded-circle" src="{{ asset('assets/img/testimonial-2.jpg') }}"
+                            style="width: 70px; height: 70px" alt="Image" />
+                        <div class="pl-3">
+                            <h5>Parent Name</h5>
+                            <i>Profession</i>
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-4 mb-4">
-                    <div class="card border-0 shadow-sm mb-2">
-                        <img class="card-img-top mb-2" src="{{ asset('assets/img/blog-2.jpg') }}" alt="" />
-                        <div class="card-body bg-light text-center p-4">
-                            <h4 class="">Diam amet eos at no eos</h4>
-                            <div class="d-flex justify-content-center mb-3">
-                                <small class="mr-3"><i class="fa fa-user text-primary"></i> Admin</small>
-                                <small class="mr-3"><i class="fa fa-folder text-primary"></i> Web Design</small>
-                                <small class="mr-3"><i class="fa fa-comments text-primary"></i> 15</small>
-                            </div>
-                            <p>
-                                Sed kasd sea sed at elitr sed ipsum justo, sit nonumy diam
-                                eirmod, duo et sed sit eirmod kasd clita tempor dolor stet
-                                lorem. Tempor ipsum justo amet stet...
-                            </p>
-                            <a href="" class="btn btn-primary px-4 mx-auto my-2">Read More</a>
+                <div class="testimonial-item px-3">
+                    <div class="bg-light shadow-sm rounded mb-4 p-4">
+                        <h3 class="fas fa-quote-left text-primary mr-3"></h3>
+                        Sed ea amet kasd elitr stet, stet rebum et ipsum est duo elitr
+                        eirmod clita lorem. Dolor tempor ipsum clita
+                    </div>
+                    <div class="d-flex align-items-center">
+                        <img class="rounded-circle" src="{{ asset('assets/img/testimonial-3.jpg') }}"
+                            style="width: 70px; height: 70px" alt="Image" />
+                        <div class="pl-3">
+                            <h5>Parent Name</h5>
+                            <i>Profession</i>
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-4 mb-4">
-                    <div class="card border-0 shadow-sm mb-2">
-                        <img class="card-img-top mb-2" src="{{ asset('assets/img/blog-3.jpg') }}" alt="" />
-                        <div class="card-body bg-light text-center p-4">
-                            <h4 class="">Diam amet eos at no eos</h4>
-                            <div class="d-flex justify-content-center mb-3">
-                                <small class="mr-3"><i class="fa fa-user text-primary"></i> Admin</small>
-                                <small class="mr-3"><i class="fa fa-folder text-primary"></i> Web Design</small>
-                                <small class="mr-3"><i class="fa fa-comments text-primary"></i> 15</small>
-                            </div>
-                            <p>
-                                Sed kasd sea sed at elitr sed ipsum justo, sit nonumy diam
-                                eirmod, duo et sed sit eirmod kasd clita tempor dolor stet
-                                lorem. Tempor ipsum justo amet stet...
-                            </p>
-                            <a href="" class="btn btn-primary px-4 mx-auto my-2">Read More</a>
+                <div class="testimonial-item px-3">
+                    <div class="bg-light shadow-sm rounded mb-4 p-4">
+                        <h3 class="fas fa-quote-left text-primary mr-3"></h3>
+                        Sed ea amet kasd elitr stet, stet rebum et ipsum est duo elitr
+                        eirmod clita lorem. Dolor tempor ipsum clita
+                    </div>
+                    <div class="d-flex align-items-center">
+                        <img class="rounded-circle" src="{{ asset('assets/img/testimonial-4.jpg') }}"
+                            style="width: 70px; height: 70px" alt="Image" />
+                        <div class="pl-3">
+                            <h5>Parent Name</h5>
+                            <i>Profession</i>
                         </div>
                     </div>
-                </div>
-                <div class="col-lg-4 mb-4">
-                    <div class="card border-0 shadow-sm mb-2">
-                        <img class="card-img-top mb-2" src="{{ asset('assets/img/blog-1.jpg') }}" alt="" />
-                        <div class="card-body bg-light text-center p-4">
-                            <h4 class="">Diam amet eos at no eos</h4>
-                            <div class="d-flex justify-content-center mb-3">
-                                <small class="mr-3"><i class="fa fa-user text-primary"></i> Admin</small>
-                                <small class="mr-3"><i class="fa fa-folder text-primary"></i> Web Design</small>
-                                <small class="mr-3"><i class="fa fa-comments text-primary"></i> 15</small>
-                            </div>
-                            <p>
-                                Sed kasd sea sed at elitr sed ipsum justo, sit nonumy diam
-                                eirmod, duo et sed sit eirmod kasd clita tempor dolor stet
-                                lorem. Tempor ipsum justo amet stet...
-                            </p>
-                            <a href="" class="btn btn-primary px-4 mx-auto my-2">Read More</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 mb-4">
-                    <div class="card border-0 shadow-sm mb-2">
-                        <img class="card-img-top mb-2" src="{{ asset('assets/img/blog-2.jpg') }}" alt="" />
-                        <div class="card-body bg-light text-center p-4">
-                            <h4 class="">Diam amet eos at no eos</h4>
-                            <div class="d-flex justify-content-center mb-3">
-                                <small class="mr-3"><i class="fa fa-user text-primary"></i> Admin</small>
-                                <small class="mr-3"><i class="fa fa-folder text-primary"></i> Web Design</small>
-                                <small class="mr-3"><i class="fa fa-comments text-primary"></i> 15</small>
-                            </div>
-                            <p>
-                                Sed kasd sea sed at elitr sed ipsum justo, sit nonumy diam
-                                eirmod, duo et sed sit eirmod kasd clita tempor dolor stet
-                                lorem. Tempor ipsum justo amet stet...
-                            </p>
-                            <a href="" class="btn btn-primary px-4 mx-auto my-2">Read More</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 mb-4">
-                    <div class="card border-0 shadow-sm mb-2">
-                        <img class="card-img-top mb-2" src="{{ asset('assets/img/blog-3.jpg') }}" alt="" />
-                        <div class="card-body bg-light text-center p-4">
-                            <h4 class="">Diam amet eos at no eos</h4>
-                            <div class="d-flex justify-content-center mb-3">
-                                <small class="mr-3"><i class="fa fa-user text-primary"></i> Admin</small>
-                                <small class="mr-3"><i class="fa fa-folder text-primary"></i> Web Design</small>
-                                <small class="mr-3"><i class="fa fa-comments text-primary"></i> 15</small>
-                            </div>
-                            <p>
-                                Sed kasd sea sed at elitr sed ipsum justo, sit nonumy diam
-                                eirmod, duo et sed sit eirmod kasd clita tempor dolor stet
-                                lorem. Tempor ipsum justo amet stet...
-                            </p>
-                            <a href="" class="btn btn-primary px-4 mx-auto my-2">Read More</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-12 mb-4">
-                    <nav aria-label="Page navigation">
-                        <ul class="pagination justify-content-center mb-0">
-                            <li class="page-item disabled">
-                                <a class="page-link" href="#" aria-label="Previous">
-                                    <span aria-hidden="true">&laquo;</span>
-                                    <span class="sr-only">Previous</span>
-                                </a>
-                            </li>
-                            <li class="page-item active">
-                                <a class="page-link" href="#">1</a>
-                            </li>
-                            <li class="page-item"><a class="page-link" href="#">2</a></li>
-                            <li class="page-item"><a class="page-link" href="#">3</a></li>
-                            <li class="page-item">
-                                <a class="page-link" href="#" aria-label="Next">
-                                    <span aria-hidden="true">&raquo;</span>
-                                    <span class="sr-only">Next</span>
-                                </a>
-                            </li>
-                        </ul>
-                    </nav>
                 </div>
             </div>
         </div>
     </div>
-    <!-- Blog End -->
+    <!-- Sharing End -->
+
+    <div class="create-sharing" style="display: flex; justify-content: center; align-items: center;">
+        <a href="{{ url('sharing/create') }}" class="btn btn-primary px-4 mx-auto mb-4">Share Pengalamanmu</a>
+    </div>
 
 @endsection
