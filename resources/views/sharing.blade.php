@@ -22,7 +22,7 @@
         <div class="container p-0">
             <div class="text-center pb-2">
                 <p class="section-title px-5">
-                    <span class="px-2">Sharing Pengalaman Doa</span>
+                    <span class="px-2">Sharing Pengalaman Doa atau Dzikir</span>
                 </p>
                 <h1 class="mb-4">Bagaimana Pengalaman Mereka ?</h1>
             </div>

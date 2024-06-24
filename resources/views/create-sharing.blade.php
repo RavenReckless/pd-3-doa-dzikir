@@ -25,7 +25,7 @@
                     <form method="POST" action="{{ route('sharing.store') }}">
                         @csrf
                         <div class="control-group" style="margin-bottom: 1rem;">
-                            <input type="text" class="form-control" id="title" placeholder="Nama doa : Contoh doa mau berpergian, doa mau makan, dll" name="title"
+                            <input type="text" class="form-control" id="title" placeholder="Contoh Doa mau makan, Dzikir, pagi, dll" name="title"
                                 required="required" data-validation-required-message="Title is required" />
                         </div>
                         <div class="control-group" style="margin-bottom: 1rem;">
