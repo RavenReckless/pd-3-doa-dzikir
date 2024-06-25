@@ -25,7 +25,6 @@ class SharingExperienceController extends Controller
 
         SharedExperience::create([
             'user_id' => $user->id,
-            'type' => 'doa',
             'title' => $request->title,
             'content' => $request->content,
         ]);

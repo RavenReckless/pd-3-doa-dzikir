@@ -30,7 +30,7 @@
         <div class="border-b border-stroke px-6.5 py-4 dark:border-strokedark">
           <h3 class="font-medium text-black dark:text-white">Form Ubah Materi Dzikir</h3>
         </div>
-        <form action="{{ route('admin.materi-dzikir.update') }}" method="POST" enctype="multipart/form-data">
+        <form action="{{ route('admin.materi-dzikir.update', $materiDzikir->id) }}" method="POST" enctype="multipart/form-data">
             @csrf
             @method('PUT')
             <div class="p-6.5">
@@ -43,7 +43,7 @@
                         class="w-full rounded border-[1.5px] border-stroke bg-transparent px-5 py-3 font-normal text-black outline-none transition focus:border-primary active:border-primary disabled:cursor-default disabled:bg-whiter dark:border-form-strokedark dark:bg-form-input dark:text-white dark:focus:border-primary" 
                         id="title" 
                         name="title"
-                        value="{{ $dzikir->title }}"
+                        value="{{ $materiDzikir->title }}"
                         required 
                     />
                 </div>
@@ -72,7 +72,7 @@
                         id="content" 
                         name="content" 
                         rows="4" 
-                        value="{{ $dzikir->content }}"
+                        value="{{ $materiDzikir->content }}"
                         required
                     ></textarea>
                 </div>

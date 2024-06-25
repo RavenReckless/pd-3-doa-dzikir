@@ -15,7 +15,7 @@
                 <nav>
                     <ol class="flex items-center gap-2">
                         <li>
-                            <a class="font-medium" href="index.html">Form /</a>
+                            <a class="font-medium" href="{{url('admin')}}">Form /</a>
                         </li>
                         <li class="font-medium text-primary">Edit Sharing Pengalaman</li>
                     </ol>

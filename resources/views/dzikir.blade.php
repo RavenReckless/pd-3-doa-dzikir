@@ -26,88 +26,45 @@
                 </p>
                 <h1 class="mb-4">Our Kids School Gallery</h1>
             </div>
-            <div class="row">
-                <div class="col-12 text-center mb-2">
-                    <ul class="list-inline mb-4" id="portfolio-flters">
-                        <li class="btn btn-outline-primary m-1 active" data-filter="*">
-                            All
-                        </li>
-                        <li class="btn btn-outline-primary m-1" data-filter=".first">
-                            Playing
-                        </li>
-                        <li class="btn btn-outline-primary m-1" data-filter=".second">
-                            Drawing
-                        </li>
-                        <li class="btn btn-outline-primary m-1" data-filter=".third">
-                            Reading
-                        </li>
-                    </ul>
-                </div>
-            </div>
             <div class="row portfolio-container">
-                <div class="col-lg-4 col-md-6 mb-4 portfolio-item first">
-                    <div class="position-relative overflow-hidden mb-2">
-                        <img class="img-fluid w-100" src="{{ asset('assets/img/portfolio-1.jpg') }}" alt="" />
-                        <div class="portfolio-btn bg-primary d-flex align-items-center justify-content-center">
-                            <a href="{{ asset('assets/img/portfolio-1.jpg') }}" data-lightbox="portfolio">
-                                <i class="fa fa-plus text-white" style="font-size: 60px"></i>
+                @foreach ($dzikirs as $dzikir)
+                    <div class="col-lg-4 col-md-6 mb-4 portfolio-item">
+                        <div class="position-relative overflow-hidden mb-2">
+                            <a href="{{ route('dzikir.show', ['slug' => $dzikir->id]) }}">
+                                <img class="img-fluid w-100" src="{{ asset('storage/' . $dzikir->image) }}" alt="" />
                             </a>
+                            {{-- Judul --}}
+                            <div class="portfolio-info bg-white p-3">
+                                <h4>{{ $dzikir->title }}</h4>
+                                <p>{{ $dzikir->language->name }}</p>
+                            </div>
                         </div>
                     </div>
-                </div>
-                <div class="col-lg-4 col-md-6 mb-4 portfolio-item second">
-                    <div class="position-relative overflow-hidden mb-2">
-                        <img class="img-fluid w-100" src="{{ asset('assets/img/portfolio-2.jpg') }}" alt="" />
-                        <div class="portfolio-btn bg-primary d-flex align-items-center justify-content-center">
-                            <a href="{{ asset('assets/img/portfolio-2.jpg') }}" data-lightbox="portfolio">
-                                <i class="fa fa-plus text-white" style="font-size: 60px"></i>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 mb-4 portfolio-item third">
-                    <div class="position-relative overflow-hidden mb-2">
-                        <img class="img-fluid w-100" src="{{ asset('assets/img/portfolio-3.jpg') }}" alt="" />
-                        <div class="portfolio-btn bg-primary d-flex align-items-center justify-content-center">
-                            <a href="{{ asset('assets/img/portfolio-3.jpg') }}" data-lightbox="portfolio">
-                                <i class="fa fa-plus text-white" style="font-size: 60px"></i>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 mb-4 portfolio-item first">
-                    <div class="position-relative overflow-hidden mb-2">
-                        <img class="img-fluid w-100" src="{{ asset('assets/img/portfolio-4.jpg') }}" alt="" />
-                        <div class="portfolio-btn bg-primary d-flex align-items-center justify-content-center">
-                            <a href="{{ asset('assets/img/portfolio-4.jpg') }}" data-lightbox="portfolio">
-                                <i class="fa fa-plus text-white" style="font-size: 60px"></i>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 mb-4 portfolio-item second">
-                    <div class="position-relative overflow-hidden mb-2">
-                        <img class="img-fluid w-100" src="{{ asset('assets/img/portfolio-5.jpg') }}" alt="" />
-                        <div class="portfolio-btn bg-primary d-flex align-items-center justify-content-center">
-                            <a href="{{ asset('assets/img/portfolio-5.jpg') }}" data-lightbox="portfolio">
-                                <i class="fa fa-plus text-white" style="font-size: 60px"></i>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 mb-4 portfolio-item third">
-                    <div class="position-relative overflow-hidden mb-2">
-                        <img class="img-fluid w-100" src="{{ asset('assets/img/portfolio-6.jpg') }}" alt="" />
-                        <div class="portfolio-btn bg-primary d-flex align-items-center justify-content-center">
-                            <a href="{{ asset('assets/img/portfolio-6.jpg') }}" data-lightbox="portfolio">
-                                <i class="fa fa-plus text-white" style="font-size: 60px"></i>
-                            </a>
-                        </div>
-                    </div>
-                </div>
+                @endforeach
+
             </div>
         </div>
     </div>
     <!-- Gallery End -->
 
 @endsection
+
+@push('scripts')
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            $('#portfolio-filters li').on('click', function() {
+                var filterValue = $(this).attr('data-filter');
+                $('#portfolio-filters li').removeClass('active');
+                $(this).addClass('active');
+
+                if (filterValue == '*') {
+                    $('.portfolio-item').show();
+                } else {
+                    $('.portfolio-item').not(filterValue).hide();
+                    $(filterValue).show();
+                }
+            });
+        });
+    </script>
+@endpush

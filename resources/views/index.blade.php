@@ -1,23 +1,23 @@
 @extends('admin.layouts.master')
-@section('title', 'Tabel Sharing Pengalaman')
-@section('menuSharing', 'active')
+@section('title', 'Tabel Materi Dzikir')
+@section('menuDzikirs', 'active')
 @section('content')
 
     <main>
         <div class="mx-auto max-w-screen-2xl p-4 md:p-6 2xl:p-10">
             <div class="mb-6 flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
                 <h2 class="text-title-md2 font-bold text-black dark:text-white">
-                    Tabel Sharing Pengalaman
+                    Tabel Materi Dzikir
                 </h2>
 
-                {{-- <nav>
+                <nav>
                     <ol class="flex items-center gap-2">
                         <li>
-                            <a href="{{ route('admin.sharing-dzikir.create') }}"
-                                class="flex bg-white p-3 border rounded-md text-cyan-500 text-lg dark:bg-boxdark">+ Tambah Sharing Pengalaman</a>
+                            <a href="{{ url('admin/materi-dzikir/create') }}"
+                                class="flex bg-white p-3 border rounded-md text-cyan-500 text-lg dark:bg-boxdark">+ Tambah Materi Dzikir</a>
                         </li>
                     </ol>
-                </nav> --}}
+                </nav>
             </div>
 
             <div class="flex flex-col gap-10">
@@ -27,30 +27,37 @@
                         <table class="w-full table-auto">
                             <thead>
                                 <tr class="bg-gray-2 text-left dark:bg-meta-4">
-                                    <th class="min-w-[220px] px-4 py-4 font-medium text-black dark:text-white xl:pl-11">Nama User</th>
                                     <th class="min-w-[150px] px-4 py-4 font-medium text-black dark:text-white">Judul</th>
-                                    <th class="px-4 py-4 font-medium text-black dark:text-white">Pengalaman</th>
+                                    <th class="min-w-[120px] px-4 py-4 font-medium text-black dark:text-white">Bahasa</th>
+                                    <th class="min-w-[120px] px-4 py-4 font-medium text-black dark:text-white">Konten</th>
+                                    <th class="min-w-[120px] px-4 py-4 font-medium text-black dark:text-white">Gambar</th>
                                     <th class="px-4 py-4 font-medium text-black dark:text-white">Aksi</th>
                                 </tr>
                             </thead>
                             <tbody>
-                                @foreach ($sharings as $sharing)
+                                @foreach ($materiDzikir as $dzikir)
                                         <tr>
                                             <td
                                                 class="border-b border-[#eee] px-4 py-5 pl-9 dark:border-strokedark xl:pl-11">
-                                                <h5 class="font-medium text-black dark:text-white">{{ $sharing->user->name }}</h5>
+                                                <h5 class="font-medium text-black dark:text-white">{{ $dzikir->title }}</h5>
                                             </td>
                                             <td class="border-b border-[#eee] px-4 py-5 dark:border-strokedark">
                                                 <p class="text-black dark:text-white">
-                                                    {{ $sharing->title }}</p>
+                                                    {{ $dzikir->language->name }}</p>
                                             </td>
                                             <td class="border-b border-[#eee] px-4 py-5 dark:border-strokedark">
                                                 <p class="text-black dark:text-white">
-                                                    {{ $sharing->content }}</p>
+                                                    {{ $dzikir->content }}
+                                                </p>
+                                            </td>
+                                            <td>
+                                                @if($dzikir->image)
+                                                    <img src="{{ asset('storage/' . $dzikir->image) }}" alt="Image" style="max-width: 100px; max-height: 100px;">
+                                                @endif
                                             </td>
                                             <td class="border-b border-[#eee] px-4 py-5 dark:border-strokedark">
                                                 <div class="flex items-center space-x-3.5">
-                                                    <a href="{{ route('admin.sharing-dzikir.edit', $sharing->id) }}"
+                                                    <a href="{{ route('admin.materi-dzikir.edit', $dzikir->id) }}"
                                                         class="hover:text-primary">
                                                         <svg class="fill-current" width="18" height="18"
                                                             viewBox="0 0 18 18" xmlns="http://www.w3.org/2000/svg">
@@ -62,7 +69,7 @@
                                                                 fill="currentColor" />
                                                         </svg>
                                                     </a>
-                                                    <form action="{{ route('admin.sharing-dzikir.destroy', $sharing->id) }}"
+                                                    <form action="{{ route('admin.materi-dzikir.destroy', $dzikir->id) }}"
                                                         method="POST" onsubmit="return confirm('Are you sure?')">
                                                         @csrf
                                                         @method('DELETE')

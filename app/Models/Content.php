@@ -2,19 +2,15 @@
 
 namespace App\Models;
 
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class SharedExperience extends Model
+class Content extends Model
 {
+    use HasFactory;
+
     protected $fillable = [
-        'user_id',
         'title',
         'content',
     ];
-
-    public function user()
-    {
-        return $this->belongsTo(User::class);
-    }
 }
-

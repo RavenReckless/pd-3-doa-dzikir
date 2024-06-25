@@ -9,17 +9,20 @@ use Illuminate\Http\Request;
 
 class SharingDzikirController extends Controller
 {
-    public function index () {
-        $sharings = SharedExperience::where('type', 'dzikir')->get();
+    public function index()
+    {
+        $sharings = SharedExperience::all();
         return view('admin.sharing-dzikir.index', compact('sharings'));
     }
 
-    public function create () {
+    public function create()
+    {
         $users = User::all();
         return view('admin.sharing-dzikir.create', compact('users'));
     }
 
-    public function store (Request $request) {
+    public function store(Request $request)
+    {
         $request->validate([
             'title' => 'required',
             'content' => 'required',
@@ -27,7 +30,6 @@ class SharingDzikirController extends Controller
 
         SharedExperience::create([
             'user_id' => auth()->id(),
-            'type' => 'dzikir',
             'title' => $request->title,
             'content' => $request->content,
         ]);
@@ -35,11 +37,13 @@ class SharingDzikirController extends Controller
         return redirect()->route('admin.sharing-dzikir.index');
     }
 
-    public function edit (SharedExperience $sharing) {
+    public function edit(SharedExperience $sharing)
+    {
         return view('admin.sharing-dzikir.edit', compact('sharing'));
     }
 
-    public function update (Request $request, SharedExperience $sharing) {
+    public function update(Request $request, SharedExperience $sharing)
+    {
         $request->validate([
             'title' => 'required',
             'content' => 'required',
@@ -53,11 +57,13 @@ class SharingDzikirController extends Controller
         return redirect()->route('admin.sharing-dzikir.index');
     }
 
-    public function show (SharedExperience $sharing) {
+    public function show(SharedExperience $sharing)
+    {
         return view('admin.sharing-dzikir.show', compact('sharing'));
     }
 
-    public function destroy (SharedExperience $sharing) {
+    public function destroy(SharedExperience $sharing)
+    {
         $sharing->delete();
         return redirect()->route('admin.sharing-dzikir.index');
     }

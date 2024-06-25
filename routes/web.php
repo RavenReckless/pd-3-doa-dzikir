@@ -36,9 +36,9 @@ Route::get('/teachers', function () {
     return view('teachers');
 });
 
-Route::get('/dzikir', function () {
-    return view('dzikir');
-});
+
+Route::get('/dzikir', [App\Http\Controllers\User\MateriDzikirController::class, 'index'])->name('dzikir.index');
+Route::get('/dzikir/{slug}', [App\Http\Controllers\User\ShowMateriDzikirController::class, 'show'])->name('dzikir.show');
 
 Route::get('/sharing', [App\Http\Controllers\User\SharedExperienceController::class, 'index'])->name('sharing.create');
 Route::get('/sharing/create', [App\Http\Controllers\User\SharingExperienceController::class, 'create'])->middleware(['auth', 'verified'])->name('sharing.create');
@@ -93,6 +93,13 @@ Route::middleware('auth')->group(function () {
     Route::get('/admin/materi-dzikir/{materiDzikir}/edit', [MateriDzikirController::class, 'edit'])->name('admin.materi-dzikir.edit');
     Route::put('/admin/materi-dzikir/{materiDzikir}', [MateriDzikirController::class, 'update'])->name('admin.materi-dzikir.update');
     Route::delete('/admin/materi-dzikir/{materiDzikir}', [MateriDzikirController::class, 'destroy'])->name('admin.materi-dzikir.destroy');
+    Route::get('/admin/content-dzikir', [App\Http\Controllers\Admin\ContentDzikirController::class, 'index'])->name('admin.content.index');
+    Route::get('/admin/content-dzikir/create', [App\Http\Controllers\Admin\ContentDzikirController::class, 'create'])->name('admin.content.create');
+    Route::post('/admin/content-dzikir', [App\Http\Controllers\Admin\ContentDzikirController::class, 'store'])->name('admin.content.store');
+    Route::get('/admin/content-dzikir/{contentDzikir}', [App\Http\Controllers\Admin\ContentDzikirController::class, 'show'])->name('admin.content.show');
+    Route::get('/admin/content-dzikir/{contentDzikir}/edit', [App\Http\Controllers\Admin\ContentDzikirController::class, 'edit'])->name('admin.content.edit');
+    Route::put('/admin/content-dzikir/{contentDzikir}', [App\Http\Controllers\Admin\ContentDzikirController::class, 'update'])->name('admin.content.update');
+    Route::delete('/admin/content-dzikir/{contentDzikir}', [App\Http\Controllers\Admin\ContentDzikirController::class, 'destroy'])->name('admin.content.destroy');
     Route::get('/admin/manfaat-dzikir', [ManfaatDzikirController::class, 'index'])->name('admin.manfaat-dzikir.index');
     Route::get('/admin/manfaat-dzikir/create', [ManfaatDzikirController::class, 'create'])->name('admin.manfaat-dzikir.create');
     Route::post('/admin/manfaat-dzikir', [ManfaatDzikirController::class, 'store'])->name('admin.manfaat-dzikir.store');

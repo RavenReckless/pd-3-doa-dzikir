@@ -4,11 +4,12 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateManfaatDzikirsTable extends Migration
+class CreateContentDzikirsTable extends Migration
 {
-    public function up()
+
+    public function up(): void
     {
-        Schema::create('manfaat_dzikirs', function (Blueprint $table) {
+        Schema::create('content_dzikirs', function (Blueprint $table) {
             $table->id();
             $table->string('title');
             $table->text('description')->nullable();
@@ -16,8 +17,11 @@ class CreateManfaatDzikirsTable extends Migration
         });
     }
 
-    public function down()
+    /**
+     * Reverse the migrations.
+     */
+    public function down(): void
     {
-        Schema::dropIfExists('manfaat_dzikirs');
+        Schema::dropIfExists('content_dzikirs');
     }
-}
+};

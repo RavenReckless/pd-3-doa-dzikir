@@ -11,7 +11,6 @@ class CreateSharedExperiencesTable extends Migration
         Schema::create('shared_experiences', function (Blueprint $table) {
             $table->id();
             $table->foreignId('user_id')->constrained()->onDelete('cascade');
-            $table->enum('type', ['dzikir', 'doa']);
             $table->string('title');
             $table->text('content');
             $table->timestamps();

@@ -252,11 +252,13 @@
                         <span class="block text-xs font-medium">Administrator</span>
                     </span>
 
-                    <span class="h-12 w-12 rounded-full pt-2">
-                        <img src="{{ asset('adminassets/images/admin_placeholder-removebg-preview.png') }}"
-                            alt="User" />
-                    </span>
-
+                    @if (auth()->user()->profile_photo_path)
+                    <span class="h-12 w-12">
+                            <img src="{{ asset(auth()->user()->profile_photo_path) }}"
+                                alt="User" class="rounded-full" />
+                            </span>
+                            @endif
+                            
                     <svg :class="dropdownOpen && 'rotate-180'" class="hidden fill-current sm:block" width="12"
                         height="8" viewBox="0 0 12 8" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path fill-rule="evenodd" clip-rule="evenodd"

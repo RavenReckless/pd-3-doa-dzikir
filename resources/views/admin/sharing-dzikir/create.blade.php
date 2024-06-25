@@ -51,7 +51,7 @@
                             <label class="mb-3 block text-sm font-medium text-black dark:text-white">Judul</label>
                             <input type="text"
                                 class="w-full rounded border-[1.5px] border-stroke bg-transparent px-5 py-3 font-normal text-black outline-none transition focus:border-primary active:border-primary disabled:cursor-default disabled:bg-whiter dark:border-form-strokedark dark:bg-form-input dark:text-white dark:focus:border-primary"
-                                id="image" name="image" placeholder="Masukkan judul" />
+                                id="title" name="title" placeholder="Masukkan judul" />
                         </div>
 
                         <!-- Content Field -->
