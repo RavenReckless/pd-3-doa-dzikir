@@ -7,18 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class DzikirRecord extends Model
 {
     protected $fillable = [
-        'user_id',
-        'dzikir_group_id',
+        'nama',
         'file_path',
     ];
-
-    public function user()
-    {
-        return $this->belongsTo(User::class);
-    }
-
-    public function dzikirGroup()
-    {
-        return $this->belongsTo(DzikirGroup::class);
-    }
 }

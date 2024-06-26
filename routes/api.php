@@ -2,6 +2,8 @@
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\Auth\AuthController;
+use App\Http\Controllers\Auth\JWTAuthController;
 
 /*
 |--------------------------------------------------------------------------
@@ -14,6 +16,10 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
-    return $request->user();
+Route::post('login', [JWTAuthController::class, 'login']);
+Route::post('logout', [JWTAuthController::class, 'logout']);
+Route::post('refresh', [JWTAuthController::class, 'refresh']);
+
+Route::middleware('auth:api')->group(function () {
+    Route::get('user', [JWTAuthController::class, 'me']);
 });

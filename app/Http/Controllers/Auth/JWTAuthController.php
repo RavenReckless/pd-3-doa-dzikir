@@ -6,11 +6,21 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Tymon\JWTAuth\Facades\JWTAuth;
+use Illuminate\Support\Facades\Validator;
 
-class AuthController extends Controller
+class JWTAuthController extends Controller
 {
     public function login(Request $request)
     {
+        $validator = Validator::make($request->all(), [
+            'email' => 'required|string|email',
+            'password' => 'required|string',
+        ]);
+
+        if ($validator->fails()) {
+            return response()->json($validator->errors(), 422);
+        }
+
         $credentials = $request->only('email', 'password');
 
         if (!$token = Auth::guard('api')->attempt($credentials)) {
@@ -43,5 +53,10 @@ class AuthController extends Controller
             'token_type' => 'bearer',
             'expires_in' => $expires_in,
         ]);
+    }
+
+    public function me()
+    {
+        return response()->json(Auth::guard('api')->user());
     }
 }

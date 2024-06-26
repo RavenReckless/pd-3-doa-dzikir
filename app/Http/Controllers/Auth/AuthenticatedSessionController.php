@@ -31,10 +31,12 @@ class AuthenticatedSessionController extends Controller
 
         // Update the is_online status for the authenticated user
         $user = Auth::user();
-        $user->is_online = true;
-        $user->save();
+        if ($user) {
+            $user->is_online = true;
+            $user->save();
+        }
 
-        if ($user->hasRole('admin')) {
+        if ($user && $user->hasRole('admin')) {
             return redirect()->to('admin');
         }
 
@@ -55,8 +57,10 @@ class AuthenticatedSessionController extends Controller
         $request->session()->regenerateToken();
 
         // Update the is_online status
-        $user->is_online = false;
-        $user->save();
+        if ($user) {
+            $user->is_online = false;
+            $user->save();
+        }
 
         return redirect('/');
     }
