@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use App\Models\DzikirRecord;
+use App\Models\MateriDzikir;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 
@@ -11,26 +12,29 @@ class DzikirRecordController extends Controller
 {
     public function index()
     {
-        $dzikirRecords = DzikirRecord::all();
+        $dzikirRecords = DzikirRecord::with('materiDzikir')->get();
         return view('admin.dzikir-records.index', compact('dzikirRecords'));
     }
 
     public function create()
     {
-        return view('admin.dzikir-records.create');
+        $materiDzikir = MateriDzikir::all();
+        return view('admin.dzikir-records.create', compact('materiDzikir'));
     }
 
     public function store(Request $request)
     {
         $request->validate([
-            'nama' => 'required',
+            'materi_dzikir_id' => 'required|exists:materi_dzikirs,id',
             'file_path' => 'required|mimes:mp3,wav,ogg|max:20480',
         ]);
 
         if ($request->hasFile('file_path')) {
             $filePath = $request->file('file_path')->store('audio', 'public');
+            $materiDzikir = MateriDzikir::findOrFail($request->input('materi_dzikir_id'));
             DzikirRecord::create([
-                'nama' => $request->input('nama'),
+                'materi_dzikir_id' => $request->input('materi_dzikir_id'),
+                'nama' => $materiDzikir->title,
                 'file_path' => $filePath,
             ]);
         }
@@ -46,24 +50,27 @@ class DzikirRecordController extends Controller
 
     public function edit(DzikirRecord $dzikirRecord)
     {
-        return view('admin.dzikir-records.edit', compact('dzikirRecord'));
+        $materiDzikir = MateriDzikir::all();
+        return view('admin.dzikir-records.edit', compact('dzikirRecord', 'materiDzikir'));
     }
 
     public function update(Request $request, DzikirRecord $dzikirRecord)
     {
         $request->validate([
-            'nama' => 'required',
+            'materi_dzikir_id' => 'required|exists:materi_dzikir,id',
             'file_path' => 'nullable|mimes:mp3,wav,ogg|max:20480',
         ]);
 
-        $dzikirRecord->nama = $request->input('nama');
+        $materiDzikir = MateriDzikir::findOrFail($request->input('materi_dzikir_id'));
+        $dzikirRecord->materi_dzikir_id = $request->input('materi_dzikir_id');
+        $dzikirRecord->nama = $materiDzikir->title;
 
         if ($request->hasFile('file_path')) {
-            // Hapus file lama
+            // Delete old file
             if ($dzikirRecord->file_path) {
                 Storage::disk('public')->delete($dzikirRecord->file_path);
             }
-            // Simpan file baru
+            // Save new file
             $filePath = $request->file('file_path')->store('audio', 'public');
             $dzikirRecord->file_path = $filePath;
         }

@@ -41,7 +41,7 @@
                                         <tr>
                                             <td
                                                 class="border-b border-[#eee] px-4 py-5 pl-9 dark:border-strokedark xl:pl-11">
-                                                <h5 class="font-medium text-black dark:text-white">{{ $record->nama }}</h5>
+                                                <h5 class="font-medium text-black dark:text-white">{{ $record->materiDzikir->title }}</h5>
                                             </td>
                                             <td>
                                                 <audio controls>

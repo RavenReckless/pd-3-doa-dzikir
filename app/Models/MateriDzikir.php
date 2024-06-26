@@ -20,4 +20,8 @@ class MateriDzikir extends Model
     {
         return $this->belongsTo(Language::class);
     }
+    public function recordings()
+    {
+        return $this->hasMany(DzikirRecord::class);
+    }
 }

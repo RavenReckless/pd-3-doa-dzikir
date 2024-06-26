@@ -6,8 +6,10 @@ use Illuminate\Database\Eloquent\Model;
 
 class DzikirRecord extends Model
 {
-    protected $fillable = [
-        'nama',
-        'file_path',
-    ];
+    protected $fillable = ['materi_dzikir_id', 'title', 'file_path'];
+
+    public function materiDzikir()
+    {
+        return $this->belongsTo(MateriDzikir::class);
+    }
 }

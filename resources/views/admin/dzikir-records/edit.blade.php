@@ -36,16 +36,17 @@
             <div class="p-6.5">
                 <!-- Title Field -->
                 <div class="mb-4.5">
-                    <label class="mb-3 block text-sm font-medium text-black dark:text-white">Nama Dzikir</label>
-                    <input 
-                        type="text" 
-                        placeholder="Masukkan judul materi dzikir" 
-                        class="w-full rounded border-[1.5px] border-stroke bg-transparent px-5 py-3 font-normal text-black outline-none transition focus:border-primary active:border-primary disabled:cursor-default disabled:bg-whiter dark:border-form-strokedark dark:bg-form-input dark:text-white dark:focus:border-primary" 
-                        id="nama" 
-                        name="nama"
-                        value="{{ $dzikirRecord->nama }}"
-                        required 
-                    />
+                    <label class="mb-3 block text-sm font-medium text-black dark:text-white">Bahasa</label>
+                    <select 
+                        class="form-control w-full rounded border-[1.5px] border-stroke bg-transparent px-5 py-3 font-normal text-black outline-none transition focus:border-primary active:border-primary disabled:cursor-default disabled:bg-whiter dark:border-form-strokedark dark:bg-form-input dark:text-white dark:focus:border-primary" 
+                        id="materi_dzikir_id" 
+                        name="materi_dzikir_id" 
+                        required
+                    >
+                        @foreach($materiDzikir as $dzikir)
+                            <option value="{{ $dzikir->id }}">{{ $dzikir->title }}</option>
+                        @endforeach
+                    </select>
                 </div>
         
         
