@@ -116,6 +116,14 @@ Route::middleware('auth')->group(function () {
     Route::get('/admin/sharing-dzikir/{sharing}/edit', [App\Http\Controllers\Admin\SharingDzikirController::class, 'edit'])->name('admin.sharing-dzikir.edit');
     Route::put('/admin/sharing-dzikir/{sharing}', [App\Http\Controllers\Admin\SharingDzikirController::class, 'update'])->name('admin.sharing-dzikir.update');
     Route::delete('/admin/sharing-dzikir/{sharing}', [App\Http\Controllers\Admin\SharingDzikirController::class, 'destroy'])->name('admin.sharing-dzikir.destroy');
+    Route::get('/admin/dzikir-record', [App\Http\Controllers\Admin\DzikirRecordController::class, 'index'])->name('admin.dzikir-records.index');
+    Route::get('/admin/dzikir-record/create', [App\Http\Controllers\Admin\DzikirRecordController::class, 'create'])->name('admin.dzikir-records.create');
+    Route::post('/admin/dzikir-record', [App\Http\Controllers\Admin\DzikirRecordController::class, 'store'])->name('admin.dzikir-records.store');
+    Route::get('/admin/dzikir-record/{dzikirRecord}', [App\Http\Controllers\Admin\DzikirRecordController::class, 'show'])->name('admin.dzikir-records.show');
+    Route::get('/admin/dzikir-record/{dzikirRecord}/edit', [App\Http\Controllers\Admin\DzikirRecordController::class, 'edit'])->name('admin.dzikir-records.edit');
+    Route::put('/admin/dzikir-record/{dzikirRecord}', [App\Http\Controllers\Admin\DzikirRecordController::class, 'update'])->name('admin.dzikir-records.update');
+    Route::delete('/admin/dzikir-record/{dzikirRecord}', [App\Http\Controllers\Admin\DzikirRecordController::class, 'destroy'])->name('admin.dzikir-records.destroy');
+
 });
 
 
