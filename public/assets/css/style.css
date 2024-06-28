@@ -372,6 +372,22 @@ h1, .h1 {
   font-size: 2.5rem;
 }
 
+.header-img {
+  width: 100%;
+  height: 100%;
+  padding-top: 5rem;
+  padding-bottom: 5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center; 
+}
+
+.header-img img {
+  border: 5px solid var(--secondary);
+  border-radius: 50%;
+  object-fit: cover; 
+}
+
 @media (max-width: 1200px) {
   h1, .h1 {
     font-size: calc(1.375rem + 1.5vw) ;
