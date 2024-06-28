@@ -34,51 +34,6 @@
                     </p>
                 </div>
 
-                <!-- Related Post -->
-                <div class="mb-5 mx-n3">
-                    <h2 class="mb-4 ml-3">Related Post</h2>
-                    <div class="owl-carousel post-carousel position-relative">
-                        <div class="d-flex align-items-center bg-light shadow-sm rounded overflow-hidden mx-3">
-                            <img class="img-fluid" src="{{ asset('assets/img/post-1.jpg') }}"
-                                style="width: 80px; height: 80px" />
-                            <div class="pl-3">
-                                <h5 class="">Diam amet eos at no eos</h5>
-                                <div class="d-flex">
-                                    <small class="mr-3"><i class="fa fa-user text-primary"></i> Admin</small>
-                                    <small class="mr-3"><i class="fa fa-folder text-primary"></i> Web
-                                        Design</small>
-                                    <small class="mr-3"><i class="fa fa-comments text-primary"></i> 15</small>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="d-flex align-items-center bg-light shadow-sm rounded overflow-hidden mx-3">
-                            <img class="img-fluid" src="{{ asset('assets/img/post-2.jpg') }}"
-                                style="width: 80px; height: 80px" />
-                            <div class="pl-3">
-                                <h5 class="">Diam amet eos at no eos</h5>
-                                <div class="d-flex">
-                                    <small class="mr-3"><i class="fa fa-user text-primary"></i> Admin</small>
-                                    <small class="mr-3"><i class="fa fa-folder text-primary"></i> Web
-                                        Design</small>
-                                    <small class="mr-3"><i class="fa fa-comments text-primary"></i> 15</small>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="d-flex align-items-center bg-light shadow-sm rounded overflow-hidden mx-3">
-                            <img class="img-fluid" src="{{ asset('assets/img/post-3.jpg') }}"
-                                style="width: 80px; height: 80px" />
-                            <div class="pl-3">
-                                <h5 class="">Diam amet eos at no eos</h5>
-                                <div class="d-flex">
-                                    <small class="mr-3"><i class="fa fa-user text-primary"></i> Admin</small>
-                                    <small class="mr-3"><i class="fa fa-folder text-primary"></i> Web
-                                        Design</small>
-                                    <small class="mr-3"><i class="fa fa-comments text-primary"></i> 15</small>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
 
                 <!-- Comment List -->
 
@@ -107,7 +62,6 @@
                                 <h5>{{ $record->nama }}</h5>
                                 <audio controls>
                                     <source src="{{ asset('storage/' . $record->file_path) }}" type="audio/mpeg">
-                                    Your browser does not support the audio element.
                                 </audio>
                             </div>
                         @endforeach

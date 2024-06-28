@@ -40,13 +40,11 @@ Route::get('/teachers', function () {
 Route::get('/dzikir', [App\Http\Controllers\User\MateriDzikirController::class, 'index'])->name('dzikir.index');
 Route::get('/dzikir/{slug}', [App\Http\Controllers\User\ShowMateriDzikirController::class, 'show'])->name('dzikir.show');
 
-Route::get('/sharing', [App\Http\Controllers\User\SharedExperienceController::class, 'index'])->name('sharing.create');
+Route::get('/sharing', [App\Http\Controllers\User\SharedExperienceController::class, 'index'])->middleware(['auth', 'verified'])->name('sharing.create');
 Route::get('/sharing/create', [App\Http\Controllers\User\SharingExperienceController::class, 'create'])->middleware(['auth', 'verified'])->name('sharing.create');
 Route::post('/sharing', [App\Http\Controllers\User\SharingExperienceController::class, 'store'])->middleware(['auth', 'verified'])->name('sharing.store');
 
-Route::get('/manfaat', function () {
-    return view('manfaat');
-});
+Route::get('/manfaat', [App\Http\Controllers\User\ManfaatDzikirController::class, 'index'])->name('manfaat.index');
 
 Route::get('/contact', function () {
     return view('contact');

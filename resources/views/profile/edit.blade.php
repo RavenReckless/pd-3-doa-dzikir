@@ -9,9 +9,15 @@
             <div class="row align-items-center">
                 <div class="col-lg-6 mb-5 mb-lg-0">
                     <h1 class="mb-4">Ubah Profil</h1>
-                    @if(auth()->user()->profile_photo_path)
+                    @if (auth()->user()->profile_photo_path)
                         <div class="mb-3">
-                            <img src="{{ asset(auth()->user()->profile_photo_path) }}" alt="Profile Photo" class="img-thumbnail" width="150">
+                            <img src="{{ asset(auth()->user()->profile_photo_path) }}" alt="Profile Photo"
+                                class="img-thumbnail" width="150">
+                        </div>
+                    @else
+                        <div class="mb-3"
+                            style="width: 150px; height: 150px; display: flex; justify-content: center; align-items: center; border: 1px solid #ddd; border-radius: .25rem;">
+                            <span>Belum memiliki foto profil</span>
                         </div>
                     @endif
                     <form method="POST" action="{{ route('profile.update') }}" enctype="multipart/form-data">
@@ -42,8 +48,9 @@
 
                         <div class="mb-3">
                             <label for="update_password_current_password" class="form-label">Password Saat Ini</label>
-                            <input id="update_password_current_password" name="current_password" type="password" class="form-control" autocomplete="current-password">
-                            @if($errors->updatePassword->has('current_password'))
+                            <input id="update_password_current_password" name="current_password" type="password"
+                                class="form-control" autocomplete="current-password">
+                            @if ($errors->updatePassword->has('current_password'))
                                 <div class="text-danger mt-2">
                                     {{ $errors->updatePassword->first('current_password') }}
                                 </div>
@@ -52,8 +59,9 @@
 
                         <div class="mb-3">
                             <label for="update_password_password" class="form-label">Password Baru</label>
-                            <input id="update_password_password" name="password" type="password" class="form-control" autocomplete="new-password">
-                            @if($errors->updatePassword->has('password'))
+                            <input id="update_password_password" name="password" type="password" class="form-control"
+                                autocomplete="new-password">
+                            @if ($errors->updatePassword->has('password'))
                                 <div class="text-danger mt-2">
                                     {{ $errors->updatePassword->first('password') }}
                                 </div>
@@ -61,9 +69,11 @@
                         </div>
 
                         <div class="mb-3">
-                            <label for="update_password_password_confirmation" class="form-label">Konfirmasi Password Baru</label>
-                            <input id="update_password_password_confirmation" name="password_confirmation" type="password" class="form-control" autocomplete="new-password">
-                            @if($errors->updatePassword->has('password_confirmation'))
+                            <label for="update_password_password_confirmation" class="form-label">Konfirmasi Password
+                                Baru</label>
+                            <input id="update_password_password_confirmation" name="password_confirmation" type="password"
+                                class="form-control" autocomplete="new-password">
+                            @if ($errors->updatePassword->has('password_confirmation'))
                                 <div class="text-danger mt-2">
                                     {{ $errors->updatePassword->first('password_confirmation') }}
                                 </div>
@@ -106,7 +116,7 @@
 
 @push('styles')
     <style>
-        .custom-file-input ~ .custom-file-label::after {
+        .custom-file-input~.custom-file-label::after {
             content: "Browse";
         }
     </style>

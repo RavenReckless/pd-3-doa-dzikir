@@ -52,7 +52,7 @@
                     <div class="nav-item dropdown">
                         <a href="#" class="nav-link dropdown-toggle @yield('menuSharing') @yield('menuManfaat')" data-toggle="dropdown">Pengalaman</a>
                         <div class="dropdown-menu rounded-0 m-0">
-                            <a href="{{ url('sharing') }}" class="dropdown-item @yield('menuSharing')">Sharing Pengalaman Doa</a>
+                            <a href="{{ url('sharing') }}" class="dropdown-item @yield('menuSharing')">Sharing Pengalaman Doa & Dzikir</a>
                             <a href="{{ url('manfaat') }}" class="dropdown-item @yield('menuManfaat')">Manfaat</a>
                         </div>
                     </div>

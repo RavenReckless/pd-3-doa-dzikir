@@ -34,8 +34,8 @@
                             {{ $sharing->content }}
                         </div>
                         <div class="d-flex align-items-center">
-                            @if (auth()->user()->profile_photo_path)
-                                <img class="rounded-circle" src="{{ asset(auth()->user()->profile_photo_path) }}"
+                            @if ($sharing->user->profile_photo_path)
+                                <img class="rounded-circle" src="{{ asset($sharing->user->profile_photo_path) }}"
                                     style="width: 70px; height: 70px" alt="Image" />
                             @endif
                             <div class="pl-3">
@@ -45,6 +45,7 @@
                         </div>
                     </div>
                 @endforeach
+
             </div>
         </div>
     </div>
