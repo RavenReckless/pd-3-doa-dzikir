@@ -146,7 +146,7 @@
                 &copy;
                 <a class="text-primary font-weight-bold" href="#">PD 3 Doa & Dzikir</a>. Dibuat untuk memenuhi penelitian Harits Ar Rosyid, S.T., M.T., Ph.D.
                 <br />
-                Developed By: <a href="https://themewagon.com" target="_blank">Ammar</a>
+                Developed By: <a href="https://ahmadammar.vercel.app" target="_blank">Ammar</a>
             </p>
         </div>
     </div>
