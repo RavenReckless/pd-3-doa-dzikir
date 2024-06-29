@@ -9,12 +9,14 @@
             <div class="col-lg-6 text-center text-lg-left">
                 <h4 class="text-white mb-4 mt-5 mt-lg-0">Doa dan Dzikir</h4>
                 <h1 class="display-3 font-weight-bold text-white">
-                    Website Doa dan Dzikir 
+                    Website Doa dan Dzikir
                 </h1>
                 <p class="text-white mb-4">
-                    Sarana untuk mencari doa dan dzikir yang sesuai dengan kebutuhan Anda. Platform ini dirancang untuk membantu Anda menemukan doa dan dzikir yang tepat untuk berbagai situasi dan kebutuhan, baik itu untuk ketenangan hati, perlindungan, kesehatan, atau kelancaran rezeki.
+                    Sarana untuk mencari doa dan dzikir yang sesuai dengan kebutuhan Anda. Platform ini dirancang untuk
+                    membantu Anda menemukan doa dan dzikir yang tepat untuk berbagai situasi dan kebutuhan, baik itu untuk
+                    ketenangan hati, perlindungan, kesehatan, atau kelancaran rezeki.
                 </p>
-                <a href="{{url('/dzikir')}}" class="btn btn-secondary mt-1 py-3 px-5">Cari Doa & Dzikir</a>
+                <a href="{{ url('/dzikir') }}" class="btn btn-secondary mt-1 py-3 px-5">Cari Doa & Dzikir</a>
             </div>
             <div class="col-lg-6 text-center text-lg-right header-img">
                 <img class="img-fluid mt-5" src="{{ asset('assets/img/dzikir.webp') }}" alt="" />
@@ -28,73 +30,79 @@
         <div class="container pb-3">
             <div class="row">
                 <div class="col-lg-4 col-md-6 pb-1">
-                    <div class="d-flex bg-light shadow-sm border-top rounded mb-4" style="padding: 30px">
-                        <i class="flaticon-050-fence h1 font-weight-normal text-primary mb-3"></i>
+                    <div class="d-flex flex-column align-items-center justify-content-center bg-light shadow-sm border-top rounded mb-4 hover-effect"
+                        style="padding: 30px; text-align: center;">
+                        <i class="flaticon-009-praying h1 font-weight-normal text-primary mb-3"></i>
                         <div class="pl-4">
-                            <h4>Play Ground</h4>
+                            <h4>Rekaman Dzikir</h4>
                             <p class="m-0">
-                                Kasd labore kasd et dolor est rebum dolor ut, clita dolor vero
-                                lorem amet elitr vero...
+                                Dengarkan rekaman dzikir harian untuk membantu Anda beribadah
+                                dengan lebih khusyuk.
                             </p>
                         </div>
                     </div>
                 </div>
                 <div class="col-lg-4 col-md-6 pb-1">
-                    <div class="d-flex bg-light shadow-sm border-top rounded mb-4" style="padding: 30px">
-                        <i class="flaticon-022-drum h1 font-weight-normal text-primary mb-3"></i>
-                        <div class="pl-4">5
-                            <h4>Music and Dance</h4>
+                    <div class="d-flex flex-column align-items-center justify-content-center bg-light shadow-sm border-top rounded mb-4 hover-effect"
+                        style="padding: 30px; text-align: center;">
+                        <i class="flaticon-010-tasbih h1 font-weight-normal text-primary mb-3"></i>
+                        <div class="pl-4">
+                            <h4>Rekomendasi Dzikir</h4>
                             <p class="m-0">
-                                Kasd labore kasd et dolor est rebum dolor ut, clita dolor vero
-                                lorem amet elitr vero...
+                                Temukan rekomendasi dzikir sesuai dengan kebutuhan dan kondisi
+                                Anda sehari-hari.
                             </p>
                         </div>
                     </div>
                 </div>
                 <div class="col-lg-4 col-md-6 pb-1">
-                    <div class="d-flex bg-light shadow-sm border-top rounded mb-4" style="padding: 30px">
-                        <i class="flaticon-030-crayons h1 font-weight-normal text-primary mb-3"></i>
+                    <div class="d-flex flex-column align-items-center justify-content-center bg-light shadow-sm border-top rounded mb-4 hover-effect"
+                        style="padding: 30px; text-align: center;">
+                        <i class="flaticon-011-lecture h1 font-weight-normal text-primary mb-3"></i>
                         <div class="pl-4">
-                            <h4>Arts and Crafts</h4>
+                            <h4>Materi Dzikir</h4>
                             <p class="m-0">
-                                Kasd labore kasd et dolor est rebum dolor ut, clita dolor vero
-                                lorem amet elitr vero...
+                                Pelajari materi dzikir dari berbagai sumber terpercaya untuk
+                                memperdalam pengetahuan Anda.
                             </p>
                         </div>
                     </div>
                 </div>
                 <div class="col-lg-4 col-md-6 pb-1">
-                    <div class="d-flex bg-light shadow-sm border-top rounded mb-4" style="padding: 30px">
-                        <i class="flaticon-017-toy-car h1 font-weight-normal text-primary mb-3"></i>
+                    <div class="d-flex flex-column align-items-center justify-content-center bg-light shadow-sm border-top rounded mb-4 hover-effect"
+                        style="padding: 30px; text-align: center;">
+                        <i class="flaticon-012-mosque h1 font-weight-normal text-primary mb-3"></i>
                         <div class="pl-4">
-                            <h4>Safe Transportation</h4>
+                            <h4>Manfaat Dzikir</h4>
                             <p class="m-0">
-                                Kasd labore kasd et dolor est rebum dolor ut, clita dolor vero
-                                lorem amet elitr vero...
+                                Ketahui berbagai manfaat dzikir untuk kesehatan fisik dan
+                                spiritual Anda.
                             </p>
                         </div>
                     </div>
                 </div>
                 <div class="col-lg-4 col-md-6 pb-1">
-                    <div class="d-flex bg-light shadow-sm border-top rounded mb-4" style="padding: 30px">
-                        <i class="flaticon-025-sandwich h1 font-weight-normal text-primary mb-3"></i>
+                    <div class="d-flex flex-column align-items-center justify-content-center bg-light shadow-sm border-top rounded mb-4 hover-effect"
+                        style="padding: 30px; text-align: center;">
+                        <i class="flaticon-013-sharing h1 font-weight-normal text-primary mb-3"></i>
                         <div class="pl-4">
-                            <h4>Healthy food</h4>
+                            <h4>Sharing Pengalaman</h4>
                             <p class="m-0">
-                                Kasd labore kasd et dolor est rebum dolor ut, clita dolor vero
-                                lorem amet elitr vero...
+                                Bagikan pengalaman Anda dalam mempraktikkan doa dan dzikir dalam
+                                kehidupan sehari-hari.
                             </p>
                         </div>
                     </div>
                 </div>
                 <div class="col-lg-4 col-md-6 pb-1">
-                    <div class="d-flex bg-light shadow-sm border-top rounded mb-4" style="padding: 30px">
-                        <i class="flaticon-047-backpack h1 font-weight-normal text-primary mb-3"></i>
+                    <div class="d-flex flex-column align-items-center justify-content-center bg-light shadow-sm border-top rounded mb-4 hover-effect"
+                        style="padding: 30px; text-align: center;">
+                        <i class="flaticon-013-sharing h1 font-weight-normal text-primary mb-3"></i>
                         <div class="pl-4">
-                            <h4>Educational Tour</h4>
+                            <h4>Komunitas Doa dan Dzikir</h4>
                             <p class="m-0">
-                                Kasd labore kasd et dolor est rebum dolor ut, clita dolor vero
-                                lorem amet elitr vero...
+                                Bergabunglah dengan komunitas kami untuk mendapatkan
+                                informasi dan relasi.
                             </p>
                         </div>
                     </div>
@@ -102,270 +110,70 @@
             </div>
         </div>
     </div>
-    <!-- Facilities Start -->
+    <!-- Facilities End -->
+
 
     <!-- About Start -->
     <div class="container-fluid py-5">
         <div class="container">
             <div class="row align-items-center">
                 <div class="col-lg-5">
-                    <img class="img-fluid rounded mb-5 mb-lg-0" src="{{ asset('assets/img/about-1.jpg') }}"
+                    <img class="img-fluid rounded mb-5 mb-lg-0" src="{{ asset('assets/img/nega-YdyhHbWZ1V0-unsplash.jpg') }}"
                         alt="" />
                 </div>
                 <div class="col-lg-7">
                     <p class="section-title pr-5">
-                        <span class="pr-2">Learn About Us</span>
+                        <span class="pr-2">Pelajari Tentang Kami</span>
                     </p>
-                    <h1 class="mb-4">Best School For Your Kids</h1>
+                    <h1 class="mb-4">Platform untuk Mendukung Kegiatan Doa dan Dzikir Anda</h1>
                     <p>
-                        Invidunt lorem justo sanctus clita. Erat lorem labore ea, justo
-                        dolor lorem ipsum ut sed eos, ipsum et dolor kasd sit ea justo.
-                        Erat justo sed sed diam. Ea et erat ut sed diam sea ipsum est
-                        dolor
+                        Website kami merupakan website yang menyediakan berbagai macam doa dan dzikir yang dapat Anda.
+                        Mulai dari doa harian, dzikir pagi dan petang, dan doa-doa lainnya yang dapat Anda pelajari.
+                        Website kami memiliki berbagai fitur untuk membantu Anda dalam berdzikir dan berdoa.
                     </p>
                     <div class="row pt-2 pb-4">
                         <div class="col-6 col-md-4">
-                            <img class="img-fluid rounded" src="{{ asset('assets/img/about-2.jpg') }}" alt="" />
+                            <img class="img-fluid rounded" src="{{ asset('assets/img/masjid-pogung-dalangan-TmEAmLgVzMc-unsplash.jpg') }}" alt="" />
                         </div>
                         <div class="col-6 col-md-8">
                             <ul class="list-inline m-0">
                                 <li class="py-2 border-top border-bottom">
-                                    <i class="fa fa-check text-primary mr-3"></i>Labore eos amet
-                                    dolor amet diam
+                                    <i class="fa fa-check text-primary mr-3"></i>
+                                    Materi doa dan dzikir dalam berbagai bahasa
                                 </li>
                                 <li class="py-2 border-bottom">
-                                    <i class="fa fa-check text-primary mr-3"></i>Etsea et sit
-                                    dolor amet ipsum
+                                    <i class="fa fa-check text-primary mr-3"></i>
+                                    Rekaman dzikir untuk membantu Anda berdzikir
                                 </li>
                                 <li class="py-2 border-bottom">
-                                    <i class="fa fa-check text-primary mr-3"></i>Diam dolor diam
-                                    elitripsum vero.
+                                    <i class="fa fa-check text-primary mr-3"></i>
+                                    Fitur sharing pengalaman doa dan dzikir
                                 </li>
                             </ul>
                         </div>
-                    </div>
-                    <a href="" class="btn btn-primary mt-2 py-2 px-4">Learn More</a>
+                    </div>                    
                 </div>
             </div>
         </div>
     </div>
     <!-- About End -->
 
-    <!-- Class Start -->
-    <div class="container-fluid pt-5">
-        <div class="container">
-            <div class="text-center pb-2">
-                <p class="section-title px-5">
-                    <span class="px-2">Popular Classes</span>
-                </p>
-                <h1 class="mb-4">Classes for Your Kids</h1>
-            </div>
-            <div class="row">
-                <div class="col-lg-4 mb-5">
-                    <div class="card border-0 bg-light shadow-sm pb-2">
-                        <img class="card-img-top mb-2" src="{{ asset('assets/img/class-1.jpg') }}" alt="" />
-                        <div class="card-body text-center">
-                            <h4 class="card-title">Drawing Class</h4>
-                            <p class="card-text">
-                                Justo ea diam stet diam ipsum no sit, ipsum vero et et diam
-                                ipsum duo et no et, ipsum ipsum erat duo amet clita duo
-                            </p>
-                        </div>
-                        <div class="card-footer bg-transparent py-4 px-5">
-                            <div class="row border-bottom">
-                                <div class="col-6 py-1 text-right border-right">
-                                    <strong>Age of Kids</strong>
-                                </div>
-                                <div class="col-6 py-1">3 - 6 Years</div>
-                            </div>
-                            <div class="row border-bottom">
-                                <div class="col-6 py-1 text-right border-right">
-                                    <strong>Total Seats</strong>
-                                </div>
-                                <div class="col-6 py-1">40 Seats</div>
-                            </div>
-                            <div class="row border-bottom">
-                                <div class="col-6 py-1 text-right border-right">
-                                    <strong>Class Time</strong>
-                                </div>
-                                <div class="col-6 py-1">08:00 - 10:00</div>
-                            </div>
-                            <div class="row">
-                                <div class="col-6 py-1 text-right border-right">
-                                    <strong>Tution Fee</strong>
-                                </div>
-                                <div class="col-6 py-1">$290 / Month</div>
-                            </div>
-                        </div>
-                        <a href="" class="btn btn-primary px-4 mx-auto mb-4">Join Now</a>
-                    </div>
-                </div>
-                <div class="col-lg-4 mb-5">
-                    <div class="card border-0 bg-light shadow-sm pb-2">
-                        <img class="card-img-top mb-2" src="{{ asset('assets/img/class-2.jpg') }}" alt="" />
-                        <div class="card-body text-center">
-                            <h4 class="card-title">Language Learning</h4>
-                            <p class="card-text">
-                                Justo ea diam stet diam ipsum no sit, ipsum vero et et diam
-                                ipsum duo et no et, ipsum ipsum erat duo amet clita duo
-                            </p>
-                        </div>
-                        <div class="card-footer bg-transparent py-4 px-5">
-                            <div class="row border-bottom">
-                                <div class="col-6 py-1 text-right border-right">
-                                    <strong>Age of Kids</strong>
-                                </div>
-                                <div class="col-6 py-1">3 - 6 Years</div>
-                            </div>
-                            <div class="row border-bottom">
-                                <div class="col-6 py-1 text-right border-right">
-                                    <strong>Total Seats</strong>
-                                </div>
-                                <div class="col-6 py-1">40 Seats</div>
-                            </div>
-                            <div class="row border-bottom">
-                                <div class="col-6 py-1 text-right border-right">
-                                    <strong>Class Time</strong>
-                                </div>
-                                <div class="col-6 py-1">08:00 - 10:00</div>
-                            </div>
-                            <div class="row">
-                                <div class="col-6 py-1 text-right border-right">
-                                    <strong>Tution Fee</strong>
-                                </div>
-                                <div class="col-6 py-1">$290 / Month</div>
-                            </div>
-                        </div>
-                        <a href="" class="btn btn-primary px-4 mx-auto mb-4">Join Now</a>
-                    </div>
-                </div>
-                <div class="col-lg-4 mb-5">
-                    <div class="card border-0 bg-light shadow-sm pb-2">
-                        <img class="card-img-top mb-2" src="{{ asset('assets/img/class-3.jpg') }}" alt="" />
-                        <div class="card-body text-center">
-                            <h4 class="card-title">Basic Science</h4>
-                            <p class="card-text">
-                                Justo ea diam stet diam ipsum no sit, ipsum vero et et diam
-                                ipsum duo et no et, ipsum ipsum erat duo amet clita duo
-                            </p>
-                        </div>
-                        <div class="card-footer bg-transparent py-4 px-5">
-                            <div class="row border-bottom">
-                                <div class="col-6 py-1 text-right border-right">
-                                    <strong>Age of Kids</strong>
-                                </div>
-                                <div class="col-6 py-1">3 - 6 Years</div>
-                            </div>
-                            <div class="row border-bottom">
-                                <div class="col-6 py-1 text-right border-right">
-                                    <strong>Total Seats</strong>
-                                </div>
-                                <div class="col-6 py-1">40 Seats</div>
-                            </div>
-                            <div class="row border-bottom">
-                                <div class="col-6 py-1 text-right border-right">
-                                    <strong>Class Time</strong>
-                                </div>
-                                <div class="col-6 py-1">08:00 - 10:00</div>
-                            </div>
-                            <div class="row">
-                                <div class="col-6 py-1 text-right border-right">
-                                    <strong>Tution Fee</strong>
-                                </div>
-                                <div class="col-6 py-1">$290 / Month</div>
-                            </div>
-                        </div>
-                        <a href="" class="btn btn-primary px-4 mx-auto mb-4">Join Now</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- Class End -->
-
-    <!-- Registration Start -->
-    <div class="container-fluid py-5">
-        <div class="container">
-            <div class="row align-items-center">
-                <div class="col-lg-7 mb-5 mb-lg-0">
-                    <p class="section-title pr-5">
-                        <span class="pr-2">Book A Seat</span>
-                    </p>
-                    <h1 class="mb-4">Book A Seat For Your Kid</h1>
-                    <p>
-                        Invidunt lorem justo sanctus clita. Erat lorem labore ea, justo
-                        dolor lorem ipsum ut sed eos, ipsum et dolor kasd sit ea justo.
-                        Erat justo sed sed diam. Ea et erat ut sed diam sea ipsum est
-                        dolor
-                    </p>
-                    <ul class="list-inline m-0">
-                        <li class="py-2">
-                            <i class="fa fa-check text-success mr-3"></i>Labore eos amet
-                            dolor amet diam
-                        </li>
-                        <li class="py-2">
-                            <i class="fa fa-check text-success mr-3"></i>Etsea et sit dolor
-                            amet ipsum
-                        </li>
-                        <li class="py-2">
-                            <i class="fa fa-check text-success mr-3"></i>Diam dolor diam
-                            elitripsum vero.
-                        </li>
-                    </ul>
-                    <a href="" class="btn btn-primary mt-4 py-2 px-4">Book Now</a>
-                </div>
-                <div class="col-lg-5">
-                    <div class="card border-0">
-                        <div class="card-header bg-secondary text-center p-4">
-                            <h1 class="text-white m-0">Book A Seat</h1>
-                        </div>
-                        <div class="card-body rounded-bottom bg-primary p-5">
-                            <form>
-                                <div class="form-group">
-                                    <input type="text" class="form-control border-0 p-4" placeholder="Your Name"
-                                        required="required" />
-                                </div>
-                                <div class="form-group">
-                                    <input type="email" class="form-control border-0 p-4" placeholder="Your Email"
-                                        required="required" />
-                                </div>
-                                <div class="form-group">
-                                    <select class="custom-select border-0 px-4" style="height: 47px">
-                                        <option selected>Select A Class</option>
-                                        <option value="1">Class 1</option>
-                                        <option value="2">Class 1</option>
-                                        <option value="3">Class 1</option>
-                                    </select>
-                                </div>
-                                <div>
-                                    <button class="btn btn-secondary btn-block border-0 py-3" type="submit">
-                                        Book Now
-                                    </button>
-                                </div>
-                            </form>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- Registration End -->
-
     {{-- Dzikir Start --}}
     <div class="container-fluid pt-5 pb-3" style="padding-bottom: 4rem;">
         <div class="container">
             <div class="text-center pb-2">
                 <p class="section-title px-5">
-                    <span class="px-2">Materi Dzikir</span>
+                    <span class="px-2">Materi Doa dan Dzikir</span>
                 </p>
-                <h1 class="mb-4">Macam-macam Dzikir</h1>
+                <h1 class="mb-4">Macam-macam Doa dan Dzikir</h1>
             </div>
             <div class="row portfolio-container">
                 @foreach ($dzikirs as $dzikir)
                     <div class="col-lg-4 col-md-6 mb-4 portfolio-item">
                         <div class="position-relative overflow-hidden mb-2">
                             <a href="{{ route('dzikir.show', ['slug' => $dzikir->id]) }}">
-                                <img class="img-fluid w-100" src="{{ asset('storage/' . $dzikir->image) }}" alt="" />
+                                <img class="img-fluid w-100" src="{{ asset('storage/' . $dzikir->image) }}"
+                                    alt="" />
                             </a>
                             {{-- Judul --}}
                             <div class="portfolio-info bg-white p-3">
@@ -375,99 +183,22 @@
                         </div>
                     </div>
                 @endforeach
-
+            </div>
+            <div class="dzikir-link" style="display: flex; align-items:center; justify-content:center">
+                <a href="{{url('/dzikir')}}" class="btn btn-primary mt-2 py-2 px-4">Jelajahi Doa dan Dzikir</a>
             </div>
         </div>
     </div>
     {{-- Dzikir End --}}
-
-    <!-- Team Start -->
-    <div class="container-fluid pt-5">
-        <div class="container">
-            <div class="text-center pb-2">
-                <p class="section-title px-5">
-                    <span class="px-2">Our Teachers</span>
-                </p>
-                <h1 class="mb-4">Meet Our Teachers</h1>
-            </div>
-            <div class="row">
-                <div class="col-md-6 col-lg-3 text-center team mb-5">
-                    <div class="position-relative overflow-hidden mb-4" style="border-radius: 100%">
-                        <img class="img-fluid w-100" src="{{ asset('assets/img/team-1.jpg') }}" alt="" />
-                        <div
-                            class="team-social d-flex align-items-center justify-content-center w-100 h-100 position-absolute">
-                            <a class="btn btn-outline-light text-center mr-2 px-0" style="width: 38px; height: 38px"
-                                href="#"><i class="fab fa-twitter"></i></a>
-                            <a class="btn btn-outline-light text-center mr-2 px-0" style="width: 38px; height: 38px"
-                                href="#"><i class="fab fa-facebook-f"></i></a>
-                            <a class="btn btn-outline-light text-center px-0" style="width: 38px; height: 38px"
-                                href="#"><i class="fab fa-linkedin-in"></i></a>
-                        </div>
-                    </div>
-                    <h4>Julia Smith</h4>
-                    <i>Music Teacher</i>
-                </div>
-                <div class="col-md-6 col-lg-3 text-center team mb-5">
-                    <div class="position-relative overflow-hidden mb-4" style="border-radius: 100%">
-                        <img class="img-fluid w-100" src="{{ asset('assets/img/team-2.jpg') }}" alt="" />
-                        <div
-                            class="team-social d-flex align-items-center justify-content-center w-100 h-100 position-absolute">
-                            <a class="btn btn-outline-light text-center mr-2 px-0" style="width: 38px; height: 38px"
-                                href="#"><i class="fab fa-twitter"></i></a>
-                            <a class="btn btn-outline-light text-center mr-2 px-0" style="width: 38px; height: 38px"
-                                href="#"><i class="fab fa-facebook-f"></i></a>
-                            <a class="btn btn-outline-light text-center px-0" style="width: 38px; height: 38px"
-                                href="#"><i class="fab fa-linkedin-in"></i></a>
-                        </div>
-                    </div>
-                    <h4>Jhon Doe</h4>
-                    <i>Language Teacher</i>
-                </div>
-                <div class="col-md-6 col-lg-3 text-center team mb-5">
-                    <div class="position-relative overflow-hidden mb-4" style="border-radius: 100%">
-                        <img class="img-fluid w-100" src="{{ asset('assets/img/team-3.jpg') }}" alt="" />
-                        <div
-                            class="team-social d-flex align-items-center justify-content-center w-100 h-100 position-absolute">
-                            <a class="btn btn-outline-light text-center mr-2 px-0" style="width: 38px; height: 38px"
-                                href="#"><i class="fab fa-twitter"></i></a>
-                            <a class="btn btn-outline-light text-center mr-2 px-0" style="width: 38px; height: 38px"
-                                href="#"><i class="fab fa-facebook-f"></i></a>
-                            <a class="btn btn-outline-light text-center px-0" style="width: 38px; height: 38px"
-                                href="#"><i class="fab fa-linkedin-in"></i></a>
-                        </div>
-                    </div>
-                    <h4>Mollie Ross</h4>
-                    <i>Dance Teacher</i>
-                </div>
-                <div class="col-md-6 col-lg-3 text-center team mb-5">
-                    <div class="position-relative overflow-hidden mb-4" style="border-radius: 100%">
-                        <img class="img-fluid w-100" src="{{ asset('assets/img/team-4.jpg') }}" alt="" />
-                        <div
-                            class="team-social d-flex align-items-center justify-content-center w-100 h-100 position-absolute">
-                            <a class="btn btn-outline-light text-center mr-2 px-0" style="width: 38px; height: 38px"
-                                href="#"><i class="fab fa-twitter"></i></a>
-                            <a class="btn btn-outline-light text-center mr-2 px-0" style="width: 38px; height: 38px"
-                                href="#"><i class="fab fa-facebook-f"></i></a>
-                            <a class="btn btn-outline-light text-center px-0" style="width: 38px; height: 38px"
-                                href="#"><i class="fab fa-linkedin-in"></i></a>
-                        </div>
-                    </div>
-                    <h4>Donald John</h4>
-                    <i>Art Teacher</i>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- Team End -->
 
     <!-- Sharing Start -->
     <div class="container-fluid py-5">
         <div class="container p-0">
             <div class="text-center pb-2">
                 <p class="section-title px-5">
-                    <span class="px-2">Sharing Pengalaman Doa atau Dzikir</span>
+                    <span class="px-2">Sharing Pengalaman</span>
                 </p>
-                <h1 class="mb-4">Bagaimana Pengalaman Mereka ?</h1>
+                <h1 class="mb-4">Bagaimana Pengalaman Doa dan Dzikir Mereka ?</h1>
             </div>
             <div class="owl-carousel testimonial-carousel">
                 @foreach ($sharings as $sharing)
