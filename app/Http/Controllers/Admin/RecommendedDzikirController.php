@@ -14,20 +14,19 @@ class RecommendedDzikirController extends Controller
     }
 
     public function create() {
-        return view('admin.recommended-dzikir.create');
+        $recommendedDzikirs = RecommendedDzikir::all();
+        return view('admin.recommended-dzikir.create', compact('recommendedDzikirs'));
     }
 
     public function store(Request $request) {
         $request->validate([
             'title' => 'required',
             'description' => 'required',
-            'count' => 'required|numeric',
         ]);
 
         RecommendedDzikir::create([
             'title' => $request->title,
             'description' => $request->description,
-            'count' => $request->count,
         ]);
 
         return redirect()->route('admin.recommended-dzikir.index');
@@ -41,13 +40,11 @@ class RecommendedDzikirController extends Controller
         $request->validate([
             'title' => 'required',
             'description' => 'required',
-            'count' => 'required|numeric',
         ]);
 
         $recommendedDzikir->update([
             'title' => $request->title,
             'description' => $request->description,
-            'count' => $request->count,
         ]);
 
         return redirect()->route('admin.recommended-dzikir.index');

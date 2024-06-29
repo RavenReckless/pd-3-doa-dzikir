@@ -7,17 +7,14 @@
     <div class="container-fluid bg-primary px-0 px-md-5 mb-5">
         <div class="row align-items-center px-3">
             <div class="col-lg-6 text-center text-lg-left">
-                <h4 class="text-white mb-4 mt-5 mt-lg-0">Kids Learning Center</h4>
+                <h4 class="text-white mb-4 mt-5 mt-lg-0">Doa dan Dzikir</h4>
                 <h1 class="display-3 font-weight-bold text-white">
-                    New Approach to Kids Education
+                    Website Doa dan Dzikir 
                 </h1>
                 <p class="text-white mb-4">
-                    Sea ipsum kasd eirmod kasd magna, est sea et diam ipsum est amet sed
-                    sit. Ipsum dolor no justo dolor et, lorem ut dolor erat dolore sed
-                    ipsum at ipsum nonumy amet. Clita lorem dolore sed stet et est justo
-                    dolore.
+                    Sarana untuk mencari doa dan dzikir yang sesuai dengan kebutuhan Anda. Platform ini dirancang untuk membantu Anda menemukan doa dan dzikir yang tepat untuk berbagai situasi dan kebutuhan, baik itu untuk ketenangan hati, perlindungan, kesehatan, atau kelancaran rezeki.
                 </p>
-                <a href="{{url('/about')}}" class="btn btn-secondary mt-1 py-3 px-5">Learn More</a>
+                <a href="{{url('/dzikir')}}" class="btn btn-secondary mt-1 py-3 px-5">Cari Doa & Dzikir</a>
             </div>
             <div class="col-lg-6 text-center text-lg-right header-img">
                 <img class="img-fluid mt-5" src="{{ asset('assets/img/dzikir.webp') }}" alt="" />
@@ -354,6 +351,36 @@
     </div>
     <!-- Registration End -->
 
+    {{-- Dzikir Start --}}
+    <div class="container-fluid pt-5 pb-3" style="padding-bottom: 4rem;">
+        <div class="container">
+            <div class="text-center pb-2">
+                <p class="section-title px-5">
+                    <span class="px-2">Materi Dzikir</span>
+                </p>
+                <h1 class="mb-4">Macam-macam Dzikir</h1>
+            </div>
+            <div class="row portfolio-container">
+                @foreach ($dzikirs as $dzikir)
+                    <div class="col-lg-4 col-md-6 mb-4 portfolio-item">
+                        <div class="position-relative overflow-hidden mb-2">
+                            <a href="{{ route('dzikir.show', ['slug' => $dzikir->id]) }}">
+                                <img class="img-fluid w-100" src="{{ asset('storage/' . $dzikir->image) }}" alt="" />
+                            </a>
+                            {{-- Judul --}}
+                            <div class="portfolio-info bg-white p-3">
+                                <h4>{{ $dzikir->title }}</h4>
+                                <p>{{ $dzikir->language->name }}</p>
+                            </div>
+                        </div>
+                    </div>
+                @endforeach
+
+            </div>
+        </div>
+    </div>
+    {{-- Dzikir End --}}
+
     <!-- Team Start -->
     <div class="container-fluid pt-5">
         <div class="container">
@@ -432,36 +459,6 @@
         </div>
     </div>
     <!-- Team End -->
-
-    {{-- Dzikir Start --}}
-    <div class="container-fluid pt-5 pb-3" style="padding-bottom: 4rem;">
-        <div class="container">
-            <div class="text-center pb-2">
-                <p class="section-title px-5">
-                    <span class="px-2">Materi Dzikir</span>
-                </p>
-                <h1 class="mb-4">Macam-macam Dzikir</h1>
-            </div>
-            <div class="row portfolio-container">
-                @foreach ($dzikirs as $dzikir)
-                    <div class="col-lg-4 col-md-6 mb-4 portfolio-item">
-                        <div class="position-relative overflow-hidden mb-2">
-                            <a href="{{ route('dzikir.show', ['slug' => $dzikir->id]) }}">
-                                <img class="img-fluid w-100" src="{{ asset('storage/' . $dzikir->image) }}" alt="" />
-                            </a>
-                            {{-- Judul --}}
-                            <div class="portfolio-info bg-white p-3">
-                                <h4>{{ $dzikir->title }}</h4>
-                                <p>{{ $dzikir->language->name }}</p>
-                            </div>
-                        </div>
-                    </div>
-                @endforeach
-
-            </div>
-        </div>
-    </div>
-    {{-- Dzikir End --}}
 
     <!-- Sharing Start -->
     <div class="container-fluid py-5">

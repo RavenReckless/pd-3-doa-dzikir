@@ -116,39 +116,22 @@
                     <h4 class="fa fa-map-marker-alt text-primary"></h4>
                     <div class="pl-3">
                         <h5 class="text-white">Address</h5>
-                        <p>123 Street, New York, USA</p>
+                        <p>Jl. Ambarawa No.5, Sumbersari, Kec. Lowokwaru, Kota Malang, Jawa Timur 65145</p>
                     </div>
                 </div>
                 <div class="d-flex">
                     <h4 class="fa fa-envelope text-primary"></h4>
                     <div class="pl-3">
                         <h5 class="text-white">Email</h5>
-                        <p>info@example.com</p>
+                        <p>rektor@um.ac.id; info@um.ac.id ; humas@um.ac.id</p>
                     </div>
                 </div>
                 <div class="d-flex">
                     <h4 class="fa fa-phone-alt text-primary"></h4>
                     <div class="pl-3">
                         <h5 class="text-white">Phone</h5>
-                        <p>+012 345 67890</p>
+                        <p>+62 341 551312</p>
                     </div>
-                </div>
-            </div>
-            <div class="col-lg-3 col-md-6 mb-5">
-                <h3 class="text-primary mb-4">Quick Links</h3>
-                <div class="d-flex flex-column justify-content-start">
-                    <a class="text-white mb-2" href="{{ url('/') }}"><i
-                            class="fa fa-angle-right mr-2"></i>Home</a>
-                    <a class="text-white mb-2" href="{{ url('about') }}"><i
-                            class="fa fa-angle-right mr-2"></i>About Us</a>
-                    <a class="text-white mb-2" href="{{ url('class') }}"><i class="fa fa-angle-right mr-2"></i>Our
-                        Classes</a>
-                    <a class="text-white mb-2" href="{{ url('team') }}"><i class="fa fa-angle-right mr-2"></i>Our
-                        Teachers</a>
-                    <a class="text-white mb-2" href="{{ url('blog') }}"><i class="fa fa-angle-right mr-2"></i>Our
-                        Blog</a>
-                    <a class="text-white" href="{{ url('contact') }}"><i class="fa fa-angle-right mr-2"></i>Contact
-                        Us</a>
                 </div>
             </div>
             <div class="col-lg-3 col-md-6 mb-5">
@@ -171,11 +154,9 @@
         <div class="container border-top border-dark pt-5">
             <p class="m-0 text-center text-white">
                 &copy;
-                <a class="text-primary font-weight-bold" href="#">Your Site Name</a>. All Rights Reserved.
-                Designed by
-                <a class="text-primary font-weight-bold" href="https://htmlcodex.com">HTML Codex</a>
+                <a class="text-primary font-weight-bold" href="#">PD 3 Doa & Dzikir</a>. Dibuat untuk memenuhi penelitian Harits Ar Rosyid, S.T., M.T., Ph.D.
                 <br />
-                Distributed By: <a href="https://themewagon.com" target="_blank">ThemeWagon</a>
+                Developed By: <a href="https://themewagon.com" target="_blank">Ammar</a>
             </p>
         </div>
     </div>

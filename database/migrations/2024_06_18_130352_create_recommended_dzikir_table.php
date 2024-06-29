@@ -10,7 +10,7 @@ class CreateRecommendedDzikirTable extends Migration
     {
         Schema::create('recommended_dzikir', function (Blueprint $table) {
             $table->id();
-            $table->string('title');
+            $table->foreignId('materi_dzikir_id')->constrained()->onDelete('cascade');
             $table->text('description')->nullable();
             $table->timestamps();
         });

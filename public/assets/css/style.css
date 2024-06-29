@@ -9923,3 +9923,18 @@ a.text-dark:hover, a.text-dark:focus {
   padding: 0;
   list-style-type: none;
 }
+
+.link-dzikir {
+  padding: 10px 15px;
+  background-color: #17a2b8;
+  color: #ffffff;
+  width: 50%;
+  border-radius: 5px;
+}
+
+.link-dzikir:hover {
+  background-color: #00394f;
+  color: #ffffff;
+  text-decoration: none;
+  transition: all 0.3s ease-in-out;
+}

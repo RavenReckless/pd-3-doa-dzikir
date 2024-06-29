@@ -10,8 +10,8 @@ class RecommendedDzikir extends Model
     use HasFactory;
 
     protected $fillable = [
-        
-        'materi_dzikir_id'
+        'title',
+        'description',
     ];
 
     public function materDzikir() {

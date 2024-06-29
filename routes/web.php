@@ -3,6 +3,7 @@
 use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\Admin\LanguageController;
 use App\Http\Controllers\Admin\ManfaatDzikirController;
+use App\Http\Controllers\Admin\RecommendedDzikirController;
 use App\Http\Controllers\AdminProfileController;
 use App\Http\Controllers\Auth\AuthenticatedSessionController;
 use App\Http\Controllers\Admin\MateriDzikirController;
@@ -119,7 +120,13 @@ Route::middleware('auth')->group(function () {
     Route::get('/admin/dzikir-record/{dzikirRecord}/edit', [App\Http\Controllers\Admin\DzikirRecordController::class, 'edit'])->name('admin.dzikir-records.edit');
     Route::put('/admin/dzikir-record/{dzikirRecord}', [App\Http\Controllers\Admin\DzikirRecordController::class, 'update'])->name('admin.dzikir-records.update');
     Route::delete('/admin/dzikir-record/{dzikirRecord}', [App\Http\Controllers\Admin\DzikirRecordController::class, 'destroy'])->name('admin.dzikir-records.destroy');
-
+    Route::get('/admin/recommended-dzikir', [App\Http\Controllers\Admin\RecommendedDzikirController::class, 'index'])->name('admin.recommended-dzikir.index');
+    Route::get('/admin/recommended-dzikir/create', [App\Http\Controllers\Admin\RecommendedDzikirController::class, 'create'])->name('admin.recommended-dzikir.create');
+    Route::post('/admin/recommended-dzikir', [App\Http\Controllers\Admin\RecommendedDzikirController::class, 'store'])->name('admin.recommended-dzikir.store');
+    Route::get('/admin/recommended-dzikir/{recommendedDzikir}', [App\Http\Controllers\Admin\RecommendedDzikirController::class, 'show'])->name('admin.recommended-dzikir.show');
+    Route::get('/admin/recommended-dzikir/{recommendedDzikir}/edit', [App\Http\Controllers\Admin\RecommendedDzikirController::class, 'edit'])->name('admin.recommended-dzikir.edit');
+    Route::put('/admin/recommended-dzikir/{recommendedDzikir}', [App\Http\Controllers\Admin\RecommendedDzikirController::class, 'update'])->name('admin.recommended-dzikir.update');
+    Route::delete('/admin/recommended-dzikir/{recommendedDzikir}', [App\Http\Controllers\Admin\RecommendedDzikirController::class, 'destroy'])->name('admin.recommended-dzikir.destroy');
 });
 
 

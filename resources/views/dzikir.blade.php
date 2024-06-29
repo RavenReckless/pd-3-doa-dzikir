@@ -30,19 +30,60 @@
                 @foreach ($dzikirs as $dzikir)
                     <div class="col-lg-4 col-md-6 mb-4 portfolio-item">
                         <div class="position-relative overflow-hidden mb-2">
-                            <a href="{{ route('dzikir.show', ['slug' => $dzikir->id]) }}">
-                                <img class="img-fluid w-100" src="{{ asset('storage/' . $dzikir->image) }}" alt="" />
-                            </a>
+                            <img class="img-fluid w-100" src="{{ asset('storage/' . $dzikir->image) }}" alt="" />
                             {{-- Judul --}}
                             <div class="portfolio-info bg-white p-3">
                                 <h4>{{ $dzikir->title }}</h4>
                                 <p>{{ $dzikir->language->name }}</p>
+                                <a class="link-dzikir" href="{{ route('dzikir.show', ['slug' => $dzikir->id]) }}">
+                                    Selengkapnya
+                                </a>
                             </div>
                         </div>
                     </div>
                 @endforeach
-
             </div>
+            
+            <!-- Dzikir Recommendations -->
+            <div class="row">
+                <div class="col-12 mb-5">
+                    <h2 class="mb-4">Rekomendasi Dzikir Saat ini</h2>
+                    @if ($morningDzikir->isNotEmpty())
+                        @foreach ($morningDzikir as $dzikir)
+                            <div class="col-lg-4 col-md-6 mb-4 portfolio-item recommended-dzikir-card">
+                                <div class="position-relative overflow-hidden mb-2">
+                                        <img class="img-fluid w-100" src="{{ asset('storage/' . $dzikir->image) }}" alt="" />
+                                    {{-- Judul --}}
+                                    <div class="portfolio-info bg-white p-3">
+                                        <h4 style="margin-bottom: 1rem;">{{ $dzikir->title }}</h4>
+                                        <a class="link-dzikir" href="{{ route('dzikir.show', ['slug' => $dzikir->id]) }}">
+                                            Selengkapnya
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        @endforeach
+                    @elseif($eveningDzikir->isNotEmpty())
+                        @foreach ($eveningDzikir as $dzikir)
+                            <div class="col-lg-4 col-md-6 mb-4 portfolio-item recommended-dzikir-card">
+                                <div class="position-relative overflow-hidden mb-2">
+                                    <a href="{{ route('dzikir.show', ['slug' => $dzikir->id]) }}">
+                                        <img class="img-fluid w-100" src="{{ asset('storage/' . $dzikir->image) }}" alt="" />
+                                    </a>
+                                    {{-- Judul --}}
+                                    <div class="portfolio-info bg-white p-3">
+                                        <h4>{{ $dzikir->title }}</h4>
+                                    </div>
+                                </div>
+                            </div>
+                        @endforeach
+                    @else
+                        <p>Tidak ada rekomendasi tersedia.</p>
+                    @endif
+                </div>
+            </div>
+            
+            
         </div>
     </div>
     <!-- Gallery End -->
