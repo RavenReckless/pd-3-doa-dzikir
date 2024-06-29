@@ -14,7 +14,7 @@ class CommunityController extends Controller
     public function index()
     {
         $user = Auth::user();
-        $communities = $user->communities;
+        $communities = Community::all();
         return view('komunitas', compact('communities'));
     }
 
