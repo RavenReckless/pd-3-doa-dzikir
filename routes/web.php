@@ -7,7 +7,9 @@ use App\Http\Controllers\Admin\RecommendedDzikirController;
 use App\Http\Controllers\AdminProfileController;
 use App\Http\Controllers\Auth\AuthenticatedSessionController;
 use App\Http\Controllers\Admin\MateriDzikirController;
+use App\Http\Controllers\Admin\CommunitiesController;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\User\CommunityController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -27,8 +29,10 @@ Route::get('/pengingat', function () {
     return view('pengingat');
 });
 
-Route::get('/komunitas', function () {
-    return view('komunitas');
+Route::group(['middleware' => ['auth']], function () {
+    Route::resource('communities', CommunityController::class);
+    Route::post('communities/{id}/invite', [CommunityController::class, 'invite'])->name('communities.invite');
+    Route::get('notifications', [CommunityController::class, 'notifications'])->name('notifications.index');
 });
 
 Route::get('/teachers', function () {
@@ -127,6 +131,13 @@ Route::middleware('auth')->group(function () {
     Route::get('/admin/recommended-dzikir/{recommendedDzikir}/edit', [App\Http\Controllers\Admin\RecommendedDzikirController::class, 'edit'])->name('admin.recommended-dzikir.edit');
     Route::put('/admin/recommended-dzikir/{recommendedDzikir}', [App\Http\Controllers\Admin\RecommendedDzikirController::class, 'update'])->name('admin.recommended-dzikir.update');
     Route::delete('/admin/recommended-dzikir/{recommendedDzikir}', [App\Http\Controllers\Admin\RecommendedDzikirController::class, 'destroy'])->name('admin.recommended-dzikir.destroy');
+    Route::get('/admin/community', [App\Http\Controllers\Admin\CommunitiesController::class, 'index'])->name('admin.community.index');
+    Route::get('/admin/community/create', [App\Http\Controllers\Admin\CommunitiesController::class, 'create'])->name('admin.community.create');
+    Route::post('/admin/community', [App\Http\Controllers\Admin\CommunitiesController::class, 'store'])->name('admin.community.store');
+    Route::get('/admin/community/{community}', [App\Http\Controllers\Admin\CommunitiesController::class, 'show'])->name('admin.community.show');
+    Route::get('/admin/community/{community}/edit', [App\Http\Controllers\Admin\CommunitiesController::class, 'edit'])->name('admin.community.edit');
+    Route::put('/admin/community/{community}', [App\Http\Controllers\Admin\CommunitiesController::class, 'update'])->name('admin.community.update');
+    Route::delete('/admin/community/{community}', [App\Http\Controllers\Admin\CommunitiesController::class, 'destroy'])->name('admin.community.destroy');
 });
 
 

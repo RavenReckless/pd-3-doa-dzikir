@@ -27,7 +27,7 @@
 
     <!-- Customized Bootstrap Stylesheet -->
     <link href="{{ asset('assets/css/style.css') }}" rel="stylesheet" />
-    
+
     <!-- SweetAlert2 -->
     <link href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css" rel="stylesheet">
 </head>
@@ -47,12 +47,14 @@
                 <div class="navbar-nav font-weight-bold mx-auto py-0">
                     <a href="{{ url('') }}" class="nav-item nav-link @yield('menuHome')">Beranda</a>
                     <a href="{{ url('dzikir') }}" class="nav-item nav-link @yield('menuDzikir')">Dzikir</a>
-                    <a href="{{ url('komunitas') }}" class="nav-item nav-link @yield('menuKomunitas')">Komunitas</a>
+                    <a href="{{ route('communities.index') }}" class="nav-item nav-link @yield('menuKomunitas')">Komunitas</a>
                     <a href="{{ url('pengingat') }}" class="nav-item nav-link @yield('menuPengingat')">Pengingat</a>
                     <div class="nav-item dropdown">
-                        <a href="#" class="nav-link dropdown-toggle @yield('menuSharing') @yield('menuManfaat')" data-toggle="dropdown">Pengalaman</a>
+                        <a href="#" class="nav-link dropdown-toggle @yield('menuSharing') @yield('menuManfaat')"
+                            data-toggle="dropdown">Pengalaman</a>
                         <div class="dropdown-menu rounded-0 m-0">
-                            <a href="{{ url('sharing') }}" class="dropdown-item @yield('menuSharing')">Sharing Pengalaman Doa & Dzikir</a>
+                            <a href="{{ url('sharing') }}" class="dropdown-item @yield('menuSharing')">Sharing Pengalaman
+                                Doa & Dzikir</a>
                             <a href="{{ url('manfaat') }}" class="dropdown-item @yield('menuManfaat')">Manfaat</a>
                         </div>
                     </div>
@@ -67,6 +69,13 @@
                             <a href="{{ url('/profile') }}" class="dropdown-item">
                                 <i class="fas fa-user-edit"></i> Ubah Profil
                             </a>
+                            <a href="{{ route('notifications.index') }}" class="dropdown-item">
+                                <i class="fas fa-bell"></i> Notifikasi
+                                @if (auth()->user()->unreadNotifications->count() > 0)
+                                    <span
+                                        class="badge badge-danger">{{ auth()->user()->unreadNotifications->count() }}</span>
+                                @endif
+                            </a>
                             <form method="POST" action="{{ route('logout') }}">
                                 @csrf
                                 <button type="submit" class="dropdown-item">
@@ -78,6 +87,7 @@
                 @else
                     <a href="{{ url('/auth') }}" class="btn btn-primary px-4">Login</a>
                 @endauth
+
             </div>
         </nav>
     </div>
@@ -96,7 +106,8 @@
                 </a>
                 <p>
                     Sarana untuk mencari doa dan dzikir yang sesuai dengan kebutuhan Anda. Platform ini dirancang untuk
-                    membantu Anda menemukan doa dan dzikir yang tepat untuk berbagai situasi dan kebutuhan, baik itu untuk
+                    membantu Anda menemukan doa dan dzikir yang tepat untuk berbagai situasi dan kebutuhan, baik itu
+                    untuk
                     ketenangan hati, perlindungan, kesehatan, atau kelancaran rezeki.
                 </p>
             </div>
@@ -128,10 +139,12 @@
                 <h3 class="text-primary mb-4">Hubungi kami</h3>
                 <form action="">
                     <div class="form-group">
-                        <input type="text" class="form-control border-0 py-4" placeholder="Nama" required="required" />
+                        <input type="text" class="form-control border-0 py-4" placeholder="Nama"
+                            required="required" />
                     </div>
                     <div class="form-group">
-                        <input type="email" class="form-control border-0 py-4" placeholder="Email" required="required" />
+                        <input type="email" class="form-control border-0 py-4" placeholder="Email"
+                            required="required" />
                     </div>
                     <div>
                         <button class="btn btn-primary btn-block border-0 py-3" type="submit">
@@ -144,7 +157,8 @@
         <div class="container border-top border-dark pt-5">
             <p class="m-0 text-center text-white">
                 &copy;
-                <a class="text-primary font-weight-bold" href="#">PD 3 Doa & Dzikir</a>. Dibuat untuk memenuhi penelitian Harits Ar Rosyid, S.T., M.T., Ph.D.
+                <a class="text-primary font-weight-bold" href="#">PD 3 Doa & Dzikir</a>. Dibuat untuk memenuhi
+                penelitian Harits Ar Rosyid, S.T., M.T., Ph.D.
                 <br />
                 Developed By: <a href="https://ahmadammar.vercel.app" target="_blank">Ammar</a>
             </p>
@@ -172,7 +186,8 @@
 
     <!-- SweetAlert2 -->
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-    
+
     @stack('scripts')
 </body>
+
 </html>

@@ -11,7 +11,7 @@ use Tymon\JWTAuth\Contracts\JWTSubject;
 
 class User extends Authenticatable implements JWTSubject
 {
-    use HasApiTokens, HasFactory, Notifiable, HasRoles;
+    use HasApiTokens, HasFactory, Notifiable, HasRoles, Notifiable;
 
     protected $fillable = [
         'name',
@@ -47,7 +47,7 @@ class User extends Authenticatable implements JWTSubject
 
     public function communities()
     {
-        return $this->belongsToMany(Community::class);
+        return $this->belongsToMany(Community::class, 'communities_user')->withTimestamps();;
     }
 
     public function sharedExperiences()
