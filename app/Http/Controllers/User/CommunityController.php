@@ -41,7 +41,7 @@ class CommunityController extends Controller
     {
         $community = Community::findOrFail($id);
         $users = User::all();
-        return view('user.communities.show', compact('community', 'users'));
+        return view('show-communities', compact('community', 'users'));
     }
 
     public function invite(Request $request, $id)

@@ -15,5 +15,9 @@ class Community extends Model
     {
         return $this->belongsToMany(User::class, 'communities_user')->withTimestamps();
     }
-}
 
+    public function messages()
+    {
+        return $this->hasMany(Message::class);
+    }
+}

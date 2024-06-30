@@ -10,6 +10,7 @@ use App\Http\Controllers\Admin\MateriDzikirController;
 use App\Http\Controllers\Admin\CommunitiesController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\User\CommunityController;
+use App\Http\Controllers\User\MessageController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -33,6 +34,10 @@ Route::group(['middleware' => ['auth']], function () {
     Route::resource('communities', CommunityController::class);
     Route::post('communities/{id}/invite', [CommunityController::class, 'invite'])->name('communities.invite');
     Route::get('notifications', [CommunityController::class, 'notifications'])->name('notifications.index');
+    Route::get('/communities/{community}', [MessageController::class, 'index'])->name('communities.show');
+    Route::post('/communities/{community}/messages', [MessageController::class, 'store'])->name('communities.messages.store');
+    Route::post('/messages', [MessageController::class, 'store'])->name('messages.store');
+
 });
 
 Route::get('/teachers', function () {

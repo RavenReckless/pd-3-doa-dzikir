@@ -27,7 +27,7 @@
                 <h1 class="mb-4">Komunitas yang Tersedia</h1>
             </div>
             <div class="row" style="padding-top: 4rem;">
-                @foreach ($communities as $community)
+                @foreach($communities as $community)
                 <div class="col-lg-4 mb-5">
                     <div class="card border-0 bg-light shadow-sm pb-2">
                         <div class="card-body text-center">
