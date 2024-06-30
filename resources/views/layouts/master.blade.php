@@ -11,6 +11,9 @@
     <!-- Favicon -->
     <link href="img/favicon.ico" rel="icon" />
 
+    {{-- Bootstrap Alert --}}
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/5.1.0/css/bootstrap.min.css" rel="stylesheet">
+
     <!-- Google Web Fonts -->
     <link rel="preconnect" href="https://fonts.gstatic.com" />
     <link href="https://fonts.googleapis.com/css2?family=Handlee&family=Nunito&display=swap" rel="stylesheet" />
@@ -92,6 +95,7 @@
         </nav>
     </div>
     <!-- Navbar End -->
+    @include('alerts')
 
     @yield('content')
 
@@ -186,6 +190,9 @@
 
     <!-- SweetAlert2 -->
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+    {{-- Bootstrap Alert --}}
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/5.1.0/js/bootstrap.bundle.min.js"></script>
 
     @stack('scripts')
 </body>

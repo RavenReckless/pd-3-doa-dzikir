@@ -168,7 +168,7 @@
                 <h1 class="mb-4">Macam-macam Doa dan Dzikir</h1>
             </div>
             <div class="row portfolio-container">
-                @foreach ($dzikirs as $dzikir)
+                @foreach ($dzikirs->take(3) as $dzikir)
                     <div class="col-lg-4 col-md-6 mb-4 portfolio-item">
                         <div class="position-relative overflow-hidden mb-2">
                             <a href="{{ route('dzikir.show', ['slug' => $dzikir->id]) }}">

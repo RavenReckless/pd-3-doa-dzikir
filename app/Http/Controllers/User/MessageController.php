@@ -33,13 +33,26 @@ class MessageController extends Controller
     }
 
     public function showCommunity($id)
-{
-    $community = Community::with('users')->findOrFail($id);
-    $messages = Message::where('community_id', $id)
-                        ->with('user')
-                        ->latest()
-                        ->get();
+    {
+        $community = Community::with('users')->findOrFail($id);
+        $messages = Message::where('community_id', $id)
+            ->with('user')
+            ->latest()
+            ->get();
 
-    return view('show-communities', compact('community', 'messages'));
-}
+        return view('show-communities', compact('community', 'messages'));
+    }
+
+    public function destroy($id)
+    {
+        $message = Message::findOrFail($id);
+
+        if ($message->user_id != auth()->id()) {
+            return redirect()->back()->with('error', 'Anda tidak memiliki izin untuk menghapus pesan ini.');
+        }
+
+        $message->delete();
+
+        return redirect()->back()->with('success', 'Pesan berhasil dihapus.');
+    }
 }

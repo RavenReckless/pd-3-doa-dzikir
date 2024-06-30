@@ -37,7 +37,7 @@ Route::group(['middleware' => ['auth']], function () {
     Route::get('/communities/{community}', [MessageController::class, 'index'])->name('communities.show');
     Route::post('/communities/{community}/messages', [MessageController::class, 'store'])->name('communities.messages.store');
     Route::post('/messages', [MessageController::class, 'store'])->name('messages.store');
-
+    Route::delete('/messages/{id}', [MessageController::class, 'destroy'])->name('messages.destroy');
 });
 
 Route::get('/teachers', function () {

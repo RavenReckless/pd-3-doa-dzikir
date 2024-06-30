@@ -10,6 +10,6 @@ class RecommendedDzikirController extends Controller
 {
     public function index () {
         $recommendedDzikirs = RecommendedDzikir::all();
-        return view('user.recommended-dzikir.index', compact('recommendedDzikirs'));
+        return view('dzikir', compact('recommendedDzikirs'));
     }
 }
