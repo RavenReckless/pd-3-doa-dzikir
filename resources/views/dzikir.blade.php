@@ -45,11 +45,27 @@
             </div>
             
             <!-- Dzikir Recommendations -->
-            <div class="row">
+            {{-- <div class="row">
                 <div class="col-12 mb-5">
                     <h2 class="mb-4">Rekomendasi Dzikir Saat ini</h2>
                 </div>
             </div>
+
+            <div class="row portfolio-container">
+                @foreach ($recommendedDzikirs as $dzikir)
+                    <div class="col-lg-4 col-md-6 mb-4 portfolio-item">
+                        <div class="position-relative overflow-hidden mb-2">
+                            <img class="img-fluid w-100" src="{{ asset('storage/' . $dzikir->image) }}" alt="" />
+                            <div class="portfolio-info bg-white p-3">
+                                <h4>{{ $dzikir->title }}</h4>
+                                <a class="link-dzikir" href="{{ route('dzikir.show', ['slug' => $dzikir->id]) }}">
+                                    Selengkapnya
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                @endforeach
+            </div> --}}
             
             
         </div>

@@ -44,7 +44,7 @@ Route::get('/teachers', function () {
     return view('teachers');
 });
 
-
+Route::get('/dzikir', [App\Http\Controllers\User\RecommendedDzikirController::class, 'index'])->name('recommended-dzikir.index');
 Route::get('/dzikir', [App\Http\Controllers\User\MateriDzikirController::class, 'index'])->name('dzikir.index');
 Route::get('/dzikir/{slug}', [App\Http\Controllers\User\ShowMateriDzikirController::class, 'show'])->name('dzikir.show');
 
