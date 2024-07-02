@@ -1,23 +1,23 @@
 @extends('layouts.master')
-@section('menuPengingat', 'active')
-@section('title', 'Pengingat')
+@section('menuMentoring', 'active')
+@section('title', 'Mentoring')
 @section('content')
 
     <!-- Header Start -->
     <div class="container-fluid bg-primary mb-5">
         <div class="d-flex flex-column align-items-center justify-content-center" style="min-height: 400px">
-            <h3 class="display-3 font-weight-bold text-white">Pengingat</h3>
+            <h3 class="display-3 font-weight-bold text-white">Mentoring</h3>
             <div class="d-inline-flex text-white">
                 <p class="m-0"><a class="text-white" href="{{url('/')}}">Doa & Dzikir</a></p>
                 <p class="m-0 px-2">/</p>
-                <p class="m-0">Pengingat</p>
+                <p class="m-0">Mentoring</p>
             </div>
         </div>
     </div>
     <!-- Header End -->
 
     <!-- About Start -->
-    <div class="container-fluid py-5">
+    {{-- <div class="container-fluid py-5">
         <div class="container">
             <div class="row align-items-center">
                 <div class="col-lg-5">
@@ -60,11 +60,11 @@
                 </div>
             </div>
         </div>
-    </div>
+    </div> --}}
     <!-- About End -->
 
     <!-- Facilities Start -->
-    <div class="container-fluid pt-5">
+    {{-- <div class="container-fluid pt-5">
         <div class="container pb-3">
             <div class="row">
                 <div class="col-lg-4 col-md-6 pb-1">
@@ -141,11 +141,11 @@
                 </div>
             </div>
         </div>
-    </div>
+    </div> --}}
     <!-- Facilities Start -->
 
     <!-- Team Start -->
-    <div class="container-fluid pt-5">
+    {{-- <div class="container-fluid pt-5">
         <div class="container">
             <div class="text-center pb-2">
                 <p class="section-title px-5">
@@ -220,6 +220,6 @@
                 </div>
             </div>
         </div>
-    </div>
+    </div> --}}
     <!-- Team End -->
 @endsection

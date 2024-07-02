@@ -51,7 +51,7 @@
                     <a href="{{ url('') }}" class="nav-item nav-link @yield('menuHome')">Beranda</a>
                     <a href="{{ url('dzikir') }}" class="nav-item nav-link @yield('menuDzikir')">Dzikir</a>
                     <a href="{{ route('communities.index') }}" class="nav-item nav-link @yield('menuKomunitas')">Komunitas</a>
-                    <a href="{{ url('pengingat') }}" class="nav-item nav-link @yield('menuPengingat')">Pengingat</a>
+                    <a href="{{ url('mentoring') }}" class="nav-item nav-link @yield('menuMentoring')">Mentoring</a>
                     <div class="nav-item dropdown">
                         <a href="#" class="nav-link dropdown-toggle @yield('menuSharing') @yield('menuManfaat')"
                             data-toggle="dropdown">Pengalaman</a>
@@ -61,7 +61,7 @@
                             <a href="{{ url('manfaat') }}" class="dropdown-item @yield('menuManfaat')">Manfaat</a>
                         </div>
                     </div>
-                    <a href="{{ url('contact') }}" class="nav-item nav-link @yield('menuContact')">Kontak</a>
+                    {{-- <a href="{{ url('contact') }}" class="nav-item nav-link @yield('menuContact')">Kontak</a> --}}
                 </div>
                 @auth
                     <div class="nav-item dropdown">
@@ -161,10 +161,7 @@
         <div class="container border-top border-dark pt-5">
             <p class="m-0 text-center text-white">
                 &copy;
-                <a class="text-primary font-weight-bold" href="#">PD 3 Doa & Dzikir</a>. Dibuat untuk memenuhi
-                penelitian Harits Ar Rosyid, S.T., M.T., Ph.D.
-                <br />
-                Developed By: <a href="https://ahmadammar.vercel.app" target="_blank">Ammar</a>
+                <a class="text-primary font-weight-bold" href="#">PD 3 Doa & Dzikir</a>. 
             </p>
         </div>
     </div>

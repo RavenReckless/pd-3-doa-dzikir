@@ -29,6 +29,6 @@ class SharingExperienceController extends Controller
             'content' => $request->content,
         ]);
 
-        return redirect()->back()->with('success', 'Experience shared successfully.');
+        return redirect()->back()->with('success', 'Pengalaman Berhasil Ditambahkan.');
     }
 }

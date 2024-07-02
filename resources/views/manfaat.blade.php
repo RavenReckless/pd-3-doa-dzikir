@@ -44,7 +44,7 @@
             <div class="col-lg-4 mt-5 mt-lg-0">
                 <!-- Category List -->
                 <div class="mb-5">
-                    <h2 class="mb-4">Pilihan Dzikir</h2>
+                    <h2 class="mb-4">Pilihan Doa atau Dzikir</h2>
                     @foreach ($dzikirs as $dzikir)
                     <ul class="list-group list-group-flush">
                         <li class="list-group-item d-flex justify-content-between align-items-center px-0">

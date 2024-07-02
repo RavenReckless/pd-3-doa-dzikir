@@ -16,11 +16,6 @@
         <div class="row">
             <div class="col-lg-7 mb-5">
                 <div class="contact-form">
-                    @if(session('success'))
-                        <div class="alert alert-success">
-                            {{ session('success') }}
-                        </div>
-                    @endif
                     <div id="success"></div>
                     <form method="POST" action="{{ route('sharing.store') }}">
                         @csrf
