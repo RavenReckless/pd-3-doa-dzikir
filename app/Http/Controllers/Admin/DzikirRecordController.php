@@ -12,7 +12,7 @@ class DzikirRecordController extends Controller
 {
     public function index()
     {
-        $dzikirRecords = DzikirRecord::with('materiDzikir')->get();
+        $dzikirRecords = DzikirRecord::with('materiDzikir')->paginate(5);
         return view('admin.dzikir-records.index', compact('dzikirRecords'));
     }
 

@@ -1,6 +1,6 @@
 @extends('layouts.master')
 @section('menuDzikir', 'active')
-@section('title', 'Dzikir')
+@section('title', 'Bacaan Doa & Dzikir')
 
 @section('content')
 

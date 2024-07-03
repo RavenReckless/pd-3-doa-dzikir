@@ -93,6 +93,9 @@
                                 @endforeach
                             </tbody>
                         </table>
+                        <div class="mt-4 text-slate-950">
+                            {{ $dzikirRecords->links('admin.dzikir-records.pagination') }}
+                        </div>
                     </div>
                 </div>
             </div>

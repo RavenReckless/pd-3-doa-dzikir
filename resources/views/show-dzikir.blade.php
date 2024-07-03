@@ -1,16 +1,16 @@
 @extends('layouts.master')
-@section('title', 'Dzikir')
+@section('title', 'Bacaan Doa & Dzikir')
 @section('menuDzikir', 'active')
 @section('content')
 
     <!-- Header Start -->
     <div class="container-fluid bg-primary mb-5">
         <div class="d-flex flex-column align-items-center justify-content-center" style="min-height: 400px">
-            <h3 class="display-3 font-weight-bold text-white">Materi Dzikir</h3>
+            <h3 class="display-3 font-weight-bold text-white">Bacaan Doa & Dzikir</h3>
             <div class="d-inline-flex text-white">
                 <p class="m-0"><a class="text-white" href="{{url('/')}}">Doa & Dzikir</a></p>
                 <p class="m-0 px-2">/</p>
-                <p class="m-0">Materi</p>
+                <p class="m-0">Bacaan Doa & Dzikir</p>
             </div>
         </div>
     </div>
@@ -44,11 +44,11 @@
                 <!-- Category List -->
                 <div class="mb-5">
                     <h2 class="mb-4">Pilihan Doa & Dzikir</h2>
-                    @foreach ($materiDzikir as $dzikir)
+                    @foreach ($materiDzikir as $materi)
                     <ul class="list-group list-group-flush">
                         <li class="list-group-item d-flex justify-content-between align-items-center px-0">
-                            <a href="{{ route('dzikir.show', ['slug' => $dzikir->id]) }}">{{ $dzikir->title }}</a>
-                            <span class="badge badge-primary badge-pill">{{ $dzikir->language->name }}</span>
+                            <a href="{{ route('dzikir.show', ['slug' => $materi->id]) }}">{{ $materi->title }}</a>
+                            <span class="badge badge-primary badge-pill">{{ $materi->language->name }}</span>
                     </ul>
                     @endforeach
                 </div>

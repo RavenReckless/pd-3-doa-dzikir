@@ -52,7 +52,6 @@
                     <a href="{{ url('dzikir') }}" class="nav-item nav-link @yield('menuDzikir')">Doa & Dzikir</a>
                     <a href="{{ route('communities.index') }}" class="nav-item nav-link @yield('menuKomunitas')">Komunitas</a>
                     <a href="{{ url('shalawat') }}" class="nav-item nav-link @yield('menuShalawat')">Shalawat</a>
-                    <a href="{{ url('sharing') }}" class="nav-item nav-link @yield('menuSharing')">Pengalaman</a>
                     <div class="nav-item dropdown">
                         <a href="#" class="nav-link dropdown-toggle @yield('menuPagiSore') @yield('menuQiyamul')"
                             data-toggle="dropdown">Rekomendasi</a>
