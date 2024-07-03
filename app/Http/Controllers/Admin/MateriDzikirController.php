@@ -12,7 +12,7 @@ class MateriDzikirController extends Controller
 {
     public function index()
     {
-        $materiDzikir = MateriDzikir::with('language')->get();
+        $materiDzikir = MateriDzikir::with('language')->paginate(5);;
         return view('admin.materi-dzikir.index', compact('materiDzikir'));
     }
 

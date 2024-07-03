@@ -49,19 +49,18 @@
             <div class="collapse navbar-collapse justify-content-between" id="navbarCollapse">
                 <div class="navbar-nav font-weight-bold mx-auto py-0">
                     <a href="{{ url('') }}" class="nav-item nav-link @yield('menuHome')">Beranda</a>
-                    <a href="{{ url('dzikir') }}" class="nav-item nav-link @yield('menuDzikir')">Dzikir</a>
+                    <a href="{{ url('dzikir') }}" class="nav-item nav-link @yield('menuDzikir')">Doa & Dzikir</a>
                     <a href="{{ route('communities.index') }}" class="nav-item nav-link @yield('menuKomunitas')">Komunitas</a>
-                    <a href="{{ url('mentoring') }}" class="nav-item nav-link @yield('menuMentoring')">Mentoring</a>
+                    <a href="{{ url('shalawat') }}" class="nav-item nav-link @yield('menuShalawat')">Shalawat</a>
+                    <a href="{{ url('sharing') }}" class="nav-item nav-link @yield('menuSharing')">Pengalaman</a>
                     <div class="nav-item dropdown">
-                        <a href="#" class="nav-link dropdown-toggle @yield('menuSharing') @yield('menuManfaat')"
-                            data-toggle="dropdown">Pengalaman</a>
+                        <a href="#" class="nav-link dropdown-toggle @yield('menuPagiSore') @yield('menuQiyamul')"
+                            data-toggle="dropdown">Rekomendasi</a>
                         <div class="dropdown-menu rounded-0 m-0">
-                            <a href="{{ url('sharing') }}" class="dropdown-item @yield('menuSharing')">Sharing Pengalaman
-                                Doa & Dzikir</a>
-                            <a href="{{ url('manfaat') }}" class="dropdown-item @yield('menuManfaat')">Manfaat</a>
+                            <a href="{{ url('doa-pagi-sore') }}" class="dropdown-item @yield('menuPagiSore')">Doa Pagi dan Sore</a>
+                            <a href="{{ url('qiyamul-lail') }}" class="dropdown-item @yield('menuQiyamul')">Qiyamul Lail</a>
                         </div>
                     </div>
-                    {{-- <a href="{{ url('contact') }}" class="nav-item nav-link @yield('menuContact')">Kontak</a> --}}
                 </div>
                 @auth
                     <div class="nav-item dropdown">
@@ -72,12 +71,8 @@
                             <a href="{{ url('/profile') }}" class="dropdown-item">
                                 <i class="fas fa-user-edit"></i> Ubah Profil
                             </a>
-                            <a href="{{ route('notifications.index') }}" class="dropdown-item">
-                                <i class="fas fa-bell"></i> Notifikasi
-                                @if (auth()->user()->unreadNotifications->count() > 0)
-                                    <span
-                                        class="badge badge-danger">{{ auth()->user()->unreadNotifications->count() }}</span>
-                                @endif
+                            <a href="{{ url('/monitoring') }}" class="dropdown-item">
+                                <i class="fas fa-desktop"></i> Monitoring
                             </a>
                             <form method="POST" action="{{ route('logout') }}">
                                 @csrf

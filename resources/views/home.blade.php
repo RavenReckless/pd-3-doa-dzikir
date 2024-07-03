@@ -9,14 +9,14 @@
             <div class="col-lg-6 text-center text-lg-left">
                 <h4 class="text-white mb-4 mt-5 mt-lg-0">Doa dan Dzikir</h4>
                 <h1 class="display-3 font-weight-bold text-white">
-                    Website Doa dan Dzikir
+                    Website Doa Harian
                 </h1>
                 <p class="text-white mb-4">
                     Sarana untuk mencari doa dan dzikir yang sesuai dengan kebutuhan Anda. Platform ini dirancang untuk
                     membantu Anda menemukan doa dan dzikir yang tepat untuk berbagai situasi dan kebutuhan, baik itu untuk
                     ketenangan hati, perlindungan, kesehatan, atau kelancaran rezeki.
                 </p>
-                <a href="{{ url('/dzikir') }}" class="btn btn-secondary mt-1 py-3 px-5">Cari Doa & Dzikir</a>
+                <a href="{{ url('/dzikir') }}" class="btn btn-secondary mt-1 py-3 px-5">Cari Doa Harian</a>
             </div>
             <div class="col-lg-6 text-center text-lg-right header-img">
                 <img class="img-fluid mt-5" src="{{ asset('assets/img/dzikir.webp') }}" alt="" />
@@ -28,7 +28,7 @@
     <!-- Facilities Start -->
     <div class="container-fluid pt-5">
         <div class="container pb-3">
-            <div class="row">
+            <div class="row" style="display: flex; align-items: center; justify-content: center;">
                 <div class="col-lg-4 col-md-6 pb-1">
                     <div class="d-flex flex-column align-items-center justify-content-center bg-light shadow-sm border-top rounded mb-4 hover-effect"
                         style="padding: 30px; text-align: center;">
@@ -64,19 +64,6 @@
                             <p class="m-0">
                                 Pelajari materi dzikir dari berbagai sumber terpercaya untuk
                                 memperdalam pengetahuan Anda.
-                            </p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 pb-1">
-                    <div class="d-flex flex-column align-items-center justify-content-center bg-light shadow-sm border-top rounded mb-4 hover-effect"
-                        style="padding: 30px; text-align: center;">
-                        <i class="flaticon-012-mosque h1 font-weight-normal text-primary mb-3"></i>
-                        <div class="pl-4">
-                            <h4>Manfaat Dzikir</h4>
-                            <p class="m-0">
-                                Ketahui berbagai manfaat dzikir untuk kesehatan fisik dan
-                                spiritual Anda.
                             </p>
                         </div>
                     </div>
@@ -139,15 +126,19 @@
                             <ul class="list-inline m-0">
                                 <li class="py-2 border-top border-bottom">
                                     <i class="fa fa-check text-primary mr-3"></i>
-                                    Materi doa dan dzikir dalam berbagai bahasa
+                                    Materi doa dan dzikir harian
                                 </li>
                                 <li class="py-2 border-bottom">
                                     <i class="fa fa-check text-primary mr-3"></i>
-                                    Rekaman dzikir untuk membantu Anda berdzikir
+                                    Rekaman doa dan dzikir
                                 </li>
                                 <li class="py-2 border-bottom">
                                     <i class="fa fa-check text-primary mr-3"></i>
                                     Fitur sharing pengalaman doa dan dzikir
+                                </li>
+                                <li class="py-2 border-bottom">
+                                    <i class="fa fa-check text-primary mr-3"></i>
+                                    Rekomendasi doa dan dzikir harian
                                 </li>
                             </ul>
                         </div>

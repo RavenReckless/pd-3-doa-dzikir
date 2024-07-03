@@ -23,7 +23,7 @@
             <div class="col-lg-8">
                 <div class="d-flex flex-column text-left mb-3">
                     <p class="section-title pr-5">
-                        <span class="pr-2">Materi</span>
+                        <span class="pr-2">Bacaan Doa dan Dzikir</span>
                     </p>
                     <h1 class="mb-3"> {{ $dzikir->title }} </h1>
                 </div>

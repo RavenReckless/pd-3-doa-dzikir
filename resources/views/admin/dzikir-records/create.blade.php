@@ -35,7 +35,7 @@
             <div class="p-6.5">
                 <!-- Title Field -->
                 <div class="mb-4.5">
-                    <label class="mb-3 block text-sm font-medium text-black dark:text-white">Bahasa</label>
+                    <label class="mb-3 block text-sm font-medium text-black dark:text-white">Nama doa atau dzikir</label>
                     <select 
                         class="form-control w-full rounded border-[1.5px] border-stroke bg-transparent px-5 py-3 font-normal text-black outline-none transition focus:border-primary active:border-primary disabled:cursor-default disabled:bg-whiter dark:border-form-strokedark dark:bg-form-input dark:text-white dark:focus:border-primary" 
                         id="materi_dzikir_id" 

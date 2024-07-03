@@ -65,17 +65,16 @@
         
                 <!-- Content Field -->
                 <div class="mb-4.5">
-                    <label class="mb-3 block text-sm font-medium text-black dark:text-white">Konten</label>
-                    <textarea 
-                        placeholder="Masukkan konten dari materi dzikir" 
-                        class="w-full rounded border-[1.5px] border-stroke bg-transparent px-5 py-3 font-normal text-black outline-none transition focus:border-primary active:border-primary disabled:cursor-default disabled:bg-whiter dark:border-form-strokedark dark:bg-form-input dark:text-white dark:focus:border-primary" 
-                        id="content" 
-                        name="content" 
-                        rows="4" 
-                        value="{{ $materiDzikir->content }}"
-                        required
-                    ></textarea>
-                </div>
+                  <label class="mb-3 block text-sm font-medium text-black dark:text-white">Konten</label>
+                  <textarea 
+                      placeholder="Masukkan konten dari materi dzikir" 
+                      class="w-full rounded border-[1.5px] border-stroke bg-transparent px-5 py-3 font-normal text-black outline-none transition focus:border-primary active:border-primary disabled:cursor-default disabled:bg-whiter dark:border-form-strokedark dark:bg-form-input dark:text-white dark:focus:border-primary" 
+                      id="content" 
+                      name="content" 
+                      rows="4" 
+                      required
+                  >{{ $materiDzikir->content }}</textarea>
+              </div>
         
                 <!-- Image Field -->
                 <div class="mb-4.5">

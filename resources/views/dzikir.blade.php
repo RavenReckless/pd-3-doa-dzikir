@@ -7,11 +7,11 @@
     <!-- Header Start -->
     <div class="container-fluid bg-primary mb-5">
         <div class="d-flex flex-column align-items-center justify-content-center" style="min-height: 400px">
-            <h3 class="display-3 font-weight-bold text-white">Dzikir</h3>
+            <h3 class="display-3 font-weight-bold text-white">Doa dan Dzikir Harian</h3>
             <div class="d-inline-flex text-white">
                 <p class="m-0"><a class="text-white" href="{{url('/')}}">Doa & Dzikir</a></p>
                 <p class="m-0 px-2">/</p>
-                <p class="m-0">Dzikir</p>
+                <p class="m-0">Doa dan Dzikir Harian</p>
             </div>
         </div>
     </div>
@@ -22,7 +22,7 @@
         <div class="container">
             <div class="text-center pb-2">
                 <p class="section-title px-5">
-                    <span class="px-2">Materi Doa dan Dzikir</span>
+                    <span class="px-2">Bacaan Doa dan Dzikir</span>
                 </p>
                 <h1 class="mb-4">Macam-macam Doa atau Dzikir</h1>
             </div>

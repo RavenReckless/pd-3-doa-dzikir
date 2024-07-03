@@ -26,8 +26,20 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', [App\Http\Controllers\User\HomeController::class, 'index'])->name('home');
 
-Route::get('/mentoring', function () {
-    return view('mentoring');
+Route::get('/monitoring', function () {
+    return view('monitoring');
+});
+
+Route::get('/shalawat', function () {
+    return view('shalawat');
+});
+
+Route::get('/doa-pagi-sore', function () {
+    return view('doa-pagi-sore');
+});
+
+Route::get('/qiyamul-lail', function () {
+    return view('qiyamul-lail');
 });
 
 Route::group(['middleware' => ['auth']], function () {
