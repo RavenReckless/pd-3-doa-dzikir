@@ -16,4 +16,32 @@
 </div>
 <!-- Header End -->
 
+    <!-- Gallery Start -->
+    <div class="container-fluid pt-5 pb-3">
+        <div class="container">
+            <div class="text-center pb-2">
+                <p class="section-title px-5">
+                    <span class="px-2">Bacaan Shalawat</span>
+                </p>
+                <h1 class="mb-4">Macam-macam Shalawat</h1>
+            </div>
+            <div class="row portfolio-container">
+                @foreach ($shalawats as $shalawat)
+                    <div class="col-lg-4 col-md-6 mb-4 portfolio-item">
+                        <div class="position-relative overflow-hidden mb-2">
+                            <img class="img-fluid w-100" src="{{ asset('storage/' . $shalawat->image) }}" alt=""/>
+                            <div class="portfolio-info bg-white p-3">
+                                <h4>{{ $shalawat->title }}</h4>
+                                <a class="link-dzikir" href="{{ route('shalawat.show', ['slug' => $shalawat->id]) }}">
+                                    Selengkapnya
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                @endforeach
+            </div>      
+        </div>
+    </div>
+    <!-- Gallery End -->
+
 @endsection

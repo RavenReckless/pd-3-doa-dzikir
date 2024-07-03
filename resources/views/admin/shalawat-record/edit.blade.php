@@ -1,6 +1,6 @@
 @extends('admin.layouts.master')
-@section('title', 'Ubah Rekaman Dzikir')
-@section('menuRekaman', 'active')
+@section('title', 'Ubah Rekaman Shalawat')
+@section('menuRekamanShalawat', 'active')
 @section('content')
 
 <!-- ===== Main Content Start ===== -->
@@ -11,7 +11,7 @@
         class="mb-6 flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between"
       >
         <h2 class="text-title-md2 font-bold text-black dark:text-white">
-          Ubah Rekaman Dzikir
+          Ubah Rekaman Shalawat
         </h2>
 
         <nav>
@@ -19,7 +19,7 @@
             <li>
               <a class="font-medium" href="index.html">Form /</a>
             </li>
-            <li class="font-medium text-primary">Ubah Rekaman Dzikir</li>
+            <li class="font-medium text-primary">Ubah Rekaman Shalawat</li>
           </ol>
         </nav>
       </div>
@@ -28,23 +28,23 @@
       <!-- ====== Form Layout Section Start -->
       <div class="rounded-sm border border-stroke bg-white shadow-default dark:border-strokedark dark:bg-boxdark w-full">
         <div class="border-b border-stroke px-6.5 py-4 dark:border-strokedark">
-          <h3 class="font-medium text-black dark:text-white">Form Ubah Materi Dzikir</h3>
+          <h3 class="font-medium text-black dark:text-white">Form Ubah Rekaman Shalawat</h3>
         </div>
-        <form action="{{ route('admin.dzikir-records.update', $dzikirRecord->id) }}" method="POST" enctype="multipart/form-data">
+        <form action="{{ route('admin.shalawat-records.update', $shalawatRecord->id) }}" method="POST" enctype="multipart/form-data">
             @csrf
             @method('PUT')
             <div class="p-6.5">
                 <!-- Title Field -->
                 <div class="mb-4.5">
-                    <label class="mb-3 block text-sm font-medium text-black dark:text-white">Nama Doa atau Dzikir</label>
+                    <label class="mb-3 block text-sm font-medium text-black dark:text-white">Nama Shalawat</label>
                     <select 
                         class="form-control w-full rounded border-[1.5px] border-stroke bg-transparent px-5 py-3 font-normal text-black outline-none transition focus:border-primary active:border-primary disabled:cursor-default disabled:bg-whiter dark:border-form-strokedark dark:bg-form-input dark:text-white dark:focus:border-primary" 
-                        id="materi_dzikir_id" 
-                        name="materi_dzikir_id" 
+                        id="shalawat_id" 
+                        name="shalawat_id" 
                         required
                     >
-                        @foreach($materiDzikir as $dzikir)
-                            <option value="{{ $dzikir->id }}">{{ $dzikir->title }}</option>
+                        @foreach($shalawats as $shalawat)
+                            <option value="{{ $shalawat->id }}">{{ $shalawat->title }}</option>
                         @endforeach
                     </select>
                 </div>
@@ -54,7 +54,7 @@
         
                 <!-- Audio Field -->
                 <div class="mb-4.5">
-                    <label class="mb-3 block text-sm font-medium text-black dark:text-white">Rekaman Doa atau Dzikir</label>
+                    <label class="mb-3 block text-sm font-medium text-black dark:text-white">Rekaman Shalawat</label>
                     <input 
                         type="file" 
                         class="w-full rounded border-[1.5px] border-stroke bg-transparent px-5 py-3 font-normal text-black outline-none transition focus:border-primary active:border-primary disabled:cursor-default disabled:bg-whiter dark:border-form-strokedark dark:bg-form-input dark:text-white dark:focus:border-primary" 

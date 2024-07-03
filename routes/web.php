@@ -10,6 +10,7 @@ use App\Http\Controllers\Admin\CommunitiesController;
 use App\Http\Controllers\Admin\ContentDzikirController;
 use App\Http\Controllers\Admin\DzikirRecordController;
 use App\Http\Controllers\Admin\ShalawatController;
+use App\Http\Controllers\Admin\ShalawatRecordController;
 use App\Http\Controllers\Admin\SharingDzikirController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\User\CommunityController;
@@ -37,9 +38,8 @@ Route::get('/monitoring', function () {
     return view('monitoring');
 });
 
-Route::get('/shalawat', function () {
-    return view('shalawat');
-});
+Route::get('/shalawat', [App\Http\Controllers\User\ShalawatController::class, 'index'])->name('shalawat.index');
+Route::get('/shalawat/{slug}', [App\Http\Controllers\User\ShowShalawatController::class, 'show'])->name('shalawat.show');
 
 Route::get('/doa-pagi-sore', [App\Http\Controllers\User\DoaPagiSoreController::class, 'index'])->name('dzikir.index');
 
@@ -61,7 +61,6 @@ Route::get('/teachers', function () {
     return view('teachers');
 });
 
-Route::get('/dzikir', [RecommendedDzikirController::class, 'index'])->name('recommended-dzikir.index');
 Route::get('/dzikir', [App\Http\Controllers\User\MateriDzikirController::class, 'index'])->name('dzikir.index');
 Route::get('/dzikir/{slug}', [ShowMateriDzikirController::class, 'show'])->name('dzikir.show');
 
@@ -167,6 +166,13 @@ Route::middleware('auth')->group(function () {
     Route::get('/admin/shalawat/{shalawat}/edit', [ShalawatController::class, 'edit'])->name('admin.shalawat.edit');
     Route::put('/admin/shalawat/{shalawat}', [ShalawatController::class, 'update'])->name('admin.shalawat.update');
     Route::delete('/admin/shalawat/{shalawat}', [ShalawatController::class, 'destroy'])->name('admin.shalawat.destroy');
+    Route::get('/admin/shalawat-record', [ShalawatRecordController::class, 'index'])->name('admin.shalawat-records.index');
+    Route::get('/admin/shalawat-record/create', [ShalawatRecordController::class, 'create'])->name('admin.shalawat-records.create');
+    Route::post('/admin/shalawat-record', [ShalawatRecordController::class, 'store'])->name('admin.shalawat-records.store');
+    Route::get('/admin/shalawat-record/{shalawatRecord}', [ShalawatRecordController::class, 'show'])->name('admin.shalawat-records.show');
+    Route::get('/admin/shalawat-record/{shalawatRecord}/edit', [ShalawatRecordController::class, 'edit'])->name('admin.shalawat-records.edit');
+    Route::put('/admin/shalawat-record/{shalawatRecord}', [ShalawatRecordController::class, 'update'])->name('admin.shalawat-records.update');
+    Route::delete('/admin/shalawat-record/{shalawatRecord}', [ShalawatRecordController::class, 'destroy'])->name('admin.shalawat-records.destroy');
 });
 
 
