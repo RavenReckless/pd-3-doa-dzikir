@@ -9,7 +9,7 @@
         <div class="d-flex flex-column align-items-center justify-content-center" style="min-height: 400px">
             <h3 class="display-3 font-weight-bold text-white">Doa dan Dzikir Harian</h3>
             <div class="d-inline-flex text-white">
-                <p class="m-0"><a class="text-white" href="{{url('/')}}">Doa & Dzikir</a></p>
+                <p class="m-0"><a class="text-white" href="{{ url('/') }}">Doa & Dzikir</a></p>
                 <p class="m-0 px-2">/</p>
                 <p class="m-0">Doa dan Dzikir Harian</p>
             </div>
@@ -30,8 +30,7 @@
                 @foreach ($dzikirs as $dzikir)
                     <div class="col-lg-4 col-md-6 mb-4 portfolio-item">
                         <div class="position-relative overflow-hidden mb-2">
-                            <img class="img-fluid w-100" src="{{ asset('storage/' . $dzikir->image) }}" alt="" />
-                            {{-- Judul --}}
+                            <img class="img-fluid w-100" src="{{ asset('storage/' . $dzikir->image) }}" alt=""/>
                             <div class="portfolio-info bg-white p-3">
                                 <h4>{{ $dzikir->title }}</h4>
                                 <p>{{ $dzikir->language->name }}</p>
@@ -44,30 +43,10 @@
                 @endforeach
             </div>
             
-            <!-- Dzikir Recommendations -->
-            {{-- <div class="row">
-                <div class="col-12 mb-5">
-                    <h2 class="mb-4">Rekomendasi Dzikir Saat ini</h2>
-                </div>
-            </div>
-
-            <div class="row portfolio-container">
-                @foreach ($recommendedDzikirs as $dzikir)
-                    <div class="col-lg-4 col-md-6 mb-4 portfolio-item">
-                        <div class="position-relative overflow-hidden mb-2">
-                            <img class="img-fluid w-100" src="{{ asset('storage/' . $dzikir->image) }}" alt="" />
-                            <div class="portfolio-info bg-white p-3">
-                                <h4>{{ $dzikir->title }}</h4>
-                                <a class="link-dzikir" href="{{ route('dzikir.show', ['slug' => $dzikir->id]) }}">
-                                    Selengkapnya
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                @endforeach
-            </div> --}}
-            
-            
+            <!-- Pagination Links -->
+            <div class="d-flex justify-content-center">
+                {{ $dzikirs->links('vendor.pagination.bootstrap-4') }}
+            </div>        
         </div>
     </div>
     <!-- Gallery End -->
@@ -75,7 +54,7 @@
 @endsection
 
 @push('scripts')
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    {{-- <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script>
         $(document).ready(function() {
             $('#portfolio-filters li').on('click', function() {
@@ -91,5 +70,5 @@
                 }
             });
         });
-    </script>
+    </script> --}}
 @endpush

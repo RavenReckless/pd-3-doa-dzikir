@@ -9,7 +9,7 @@
             <div class="col-lg-6 text-center text-lg-left">
                 <h4 class="text-white mb-4 mt-5 mt-lg-0">Doa dan Dzikir</h4>
                 <h1 class="display-3 font-weight-bold text-white">
-                    Website Doa Harian
+                    Website Doa & Dzikir Harian
                 </h1>
                 <p class="text-white mb-4">
                     Sarana untuk mencari doa dan dzikir yang sesuai dengan kebutuhan Anda. Platform ini dirancang untuk
@@ -68,7 +68,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-4 col-md-6 pb-1">
+                {{-- <div class="col-lg-4 col-md-6 pb-1">
                     <div class="d-flex flex-column align-items-center justify-content-center bg-light shadow-sm border-top rounded mb-4 hover-effect"
                         style="padding: 30px; text-align: center;">
                         <i class="flaticon-013-sharing h1 font-weight-normal text-primary mb-3"></i>
@@ -80,7 +80,7 @@
                             </p>
                         </div>
                     </div>
-                </div>
+                </div> --}}
                 <div class="col-lg-4 col-md-6 pb-1">
                     <div class="d-flex flex-column align-items-center justify-content-center bg-light shadow-sm border-top rounded mb-4 hover-effect"
                         style="padding: 30px; text-align: center;">
@@ -183,7 +183,7 @@
     {{-- Dzikir End --}}
 
     <!-- Sharing Start -->
-    <div class="container-fluid py-5">
+    {{-- <div class="container-fluid py-5">
         <div class="container p-0">
             <div class="text-center pb-2">
                 <p class="section-title px-5">
@@ -212,7 +212,7 @@
                 @endforeach
             </div>
         </div>
-    </div>
+    </div> --}}
     <!-- Sharing End -->
 
 

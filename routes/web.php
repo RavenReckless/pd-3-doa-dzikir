@@ -1,16 +1,23 @@
 <?php
 
-use App\Http\Controllers\Admin\DashboardController;
+use App\Http\Controllers\Admin\AdminUsersController;
 use App\Http\Controllers\Admin\LanguageController;
 use App\Http\Controllers\Admin\ManfaatDzikirController;
 use App\Http\Controllers\Admin\RecommendedDzikirController;
-use App\Http\Controllers\AdminProfileController;
 use App\Http\Controllers\Auth\AuthenticatedSessionController;
 use App\Http\Controllers\Admin\MateriDzikirController;
 use App\Http\Controllers\Admin\CommunitiesController;
+use App\Http\Controllers\Admin\ContentDzikirController;
+use App\Http\Controllers\Admin\DzikirRecordController;
+use App\Http\Controllers\Admin\ShalawatController;
+use App\Http\Controllers\Admin\SharingDzikirController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\User\CommunityController;
+use App\Http\Controllers\User\HomeController;
 use App\Http\Controllers\User\MessageController;
+use App\Http\Controllers\User\SharedExperienceController;
+use App\Http\Controllers\User\SharingExperienceController;
+use App\Http\Controllers\User\ShowMateriDzikirController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -24,7 +31,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', [App\Http\Controllers\User\HomeController::class, 'index'])->name('home');
+Route::get('/', [HomeController::class, 'index'])->name('home');
 
 Route::get('/monitoring', function () {
     return view('monitoring');
@@ -34,9 +41,7 @@ Route::get('/shalawat', function () {
     return view('shalawat');
 });
 
-Route::get('/doa-pagi-sore', function () {
-    return view('doa-pagi-sore');
-});
+Route::get('/doa-pagi-sore', [App\Http\Controllers\User\DoaPagiSoreController::class, 'index'])->name('dzikir.index');
 
 Route::get('/qiyamul-lail', function () {
     return view('qiyamul-lail');
@@ -56,15 +61,15 @@ Route::get('/teachers', function () {
     return view('teachers');
 });
 
-Route::get('/dzikir', [App\Http\Controllers\User\RecommendedDzikirController::class, 'index'])->name('recommended-dzikir.index');
+Route::get('/dzikir', [RecommendedDzikirController::class, 'index'])->name('recommended-dzikir.index');
 Route::get('/dzikir', [App\Http\Controllers\User\MateriDzikirController::class, 'index'])->name('dzikir.index');
-Route::get('/dzikir/{slug}', [App\Http\Controllers\User\ShowMateriDzikirController::class, 'show'])->name('dzikir.show');
+Route::get('/dzikir/{slug}', [ShowMateriDzikirController::class, 'show'])->name('dzikir.show');
 
-Route::get('/sharing', [App\Http\Controllers\User\SharedExperienceController::class, 'index'])->middleware(['auth', 'verified'])->name('sharing.create');
-Route::get('/sharing/create', [App\Http\Controllers\User\SharingExperienceController::class, 'create'])->middleware(['auth', 'verified'])->name('sharing.create');
-Route::post('/sharing', [App\Http\Controllers\User\SharingExperienceController::class, 'store'])->middleware(['auth', 'verified'])->name('sharing.store');
+Route::get('/sharing', [SharedExperienceController::class, 'index'])->middleware(['auth', 'verified'])->name('sharing.create');
+Route::get('/sharing/create', [SharingExperienceController::class, 'create'])->middleware(['auth', 'verified'])->name('sharing.create');
+Route::post('/sharing', [SharingExperienceController::class, 'store'])->middleware(['auth', 'verified'])->name('sharing.store');
 
-Route::get('/manfaat', [App\Http\Controllers\User\ManfaatDzikirController::class, 'index'])->name('manfaat.index');
+Route::get('/manfaat', [ManfaatDzikirController::class, 'index'])->name('manfaat.index');
 
 Route::get('/contact', function () {
     return view('contact');
@@ -92,13 +97,13 @@ Route::middleware('auth')->group(function () {
     Route::get('/admin', function () {
         return view('admin.dashboard');
     })->middleware(['auth', 'verified', 'role:admin'])->name('admin');
-    Route::get('/admin/users', [App\Http\Controllers\Admin\AdminUsersController::class, 'index'])->name('admin.users.index');
-    Route::get('/admin/users/create', [App\Http\Controllers\Admin\AdminUsersController::class, 'create'])->name('admin.users.create');
-    Route::post('/admin/users', [App\Http\Controllers\Admin\AdminUsersController::class, 'store'])->name('admin.users.store');
-    Route::get('/admin/users/{user}', [App\Http\Controllers\Admin\AdminUsersController::class, 'show'])->name('admin.users.show');
-    Route::get('/admin/users/{user}/edit', [App\Http\Controllers\Admin\AdminUsersController::class, 'edit'])->name('admin.users.edit');
-    Route::put('/admin/users/{user}', [App\Http\Controllers\Admin\AdminUsersController::class, 'update'])->name('admin.users.update');
-    Route::delete('/admin/users/{user}', [App\Http\Controllers\Admin\AdminUsersController::class, 'destroy'])->name('admin.users.destroy');
+    Route::get('/admin/users', [AdminUsersController::class, 'index'])->name('admin.users.index');
+    Route::get('/admin/users/create', [AdminUsersController::class, 'create'])->name('admin.users.create');
+    Route::post('/admin/users', [AdminUsersController::class, 'store'])->name('admin.users.store');
+    Route::get('/admin/users/{user}', [AdminUsersController::class, 'show'])->name('admin.users.show');
+    Route::get('/admin/users/{user}/edit', [AdminUsersController::class, 'edit'])->name('admin.users.edit');
+    Route::put('/admin/users/{user}', [AdminUsersController::class, 'update'])->name('admin.users.update');
+    Route::delete('/admin/users/{user}', [AdminUsersController::class, 'destroy'])->name('admin.users.destroy');
     Route::get('/admin/languages', [LanguageController::class, 'index'])->name('admin.languages.index');
     Route::get('/admin/languages/create', [LanguageController::class, 'create'])->name('admin.languages.create');
     Route::post('/admin/languages', [LanguageController::class, 'store'])->name('admin.languages.store');
@@ -113,13 +118,13 @@ Route::middleware('auth')->group(function () {
     Route::get('/admin/materi-dzikir/{materiDzikir}/edit', [MateriDzikirController::class, 'edit'])->name('admin.materi-dzikir.edit');
     Route::put('/admin/materi-dzikir/{materiDzikir}', [MateriDzikirController::class, 'update'])->name('admin.materi-dzikir.update');
     Route::delete('/admin/materi-dzikir/{materiDzikir}', [MateriDzikirController::class, 'destroy'])->name('admin.materi-dzikir.destroy');
-    Route::get('/admin/content-dzikir', [App\Http\Controllers\Admin\ContentDzikirController::class, 'index'])->name('admin.content.index');
-    Route::get('/admin/content-dzikir/create', [App\Http\Controllers\Admin\ContentDzikirController::class, 'create'])->name('admin.content.create');
-    Route::post('/admin/content-dzikir', [App\Http\Controllers\Admin\ContentDzikirController::class, 'store'])->name('admin.content.store');
-    Route::get('/admin/content-dzikir/{contentDzikir}', [App\Http\Controllers\Admin\ContentDzikirController::class, 'show'])->name('admin.content.show');
-    Route::get('/admin/content-dzikir/{contentDzikir}/edit', [App\Http\Controllers\Admin\ContentDzikirController::class, 'edit'])->name('admin.content.edit');
-    Route::put('/admin/content-dzikir/{contentDzikir}', [App\Http\Controllers\Admin\ContentDzikirController::class, 'update'])->name('admin.content.update');
-    Route::delete('/admin/content-dzikir/{contentDzikir}', [App\Http\Controllers\Admin\ContentDzikirController::class, 'destroy'])->name('admin.content.destroy');
+    Route::get('/admin/content-dzikir', [ContentDzikirController::class, 'index'])->name('admin.content.index');
+    Route::get('/admin/content-dzikir/create', [ContentDzikirController::class, 'create'])->name('admin.content.create');
+    Route::post('/admin/content-dzikir', [ContentDzikirController::class, 'store'])->name('admin.content.store');
+    Route::get('/admin/content-dzikir/{contentDzikir}', [ContentDzikirController::class, 'show'])->name('admin.content.show');
+    Route::get('/admin/content-dzikir/{contentDzikir}/edit', [ContentDzikirController::class, 'edit'])->name('admin.content.edit');
+    Route::put('/admin/content-dzikir/{contentDzikir}', [ContentDzikirController::class, 'update'])->name('admin.content.update');
+    Route::delete('/admin/content-dzikir/{contentDzikir}', [ContentDzikirController::class, 'destroy'])->name('admin.content.destroy');
     Route::get('/admin/manfaat-dzikir', [ManfaatDzikirController::class, 'index'])->name('admin.manfaat-dzikir.index');
     Route::get('/admin/manfaat-dzikir/create', [ManfaatDzikirController::class, 'create'])->name('admin.manfaat-dzikir.create');
     Route::post('/admin/manfaat-dzikir', [ManfaatDzikirController::class, 'store'])->name('admin.manfaat-dzikir.store');
@@ -127,34 +132,41 @@ Route::middleware('auth')->group(function () {
     Route::get('/admin/manfaat-dzikir/{manfaatDzikir}/edit', [ManfaatDzikirController::class, 'edit'])->name('admin.manfaat-dzikir.edit');
     Route::put('/admin/manfaat-dzikir/{manfaatDzikir}', [ManfaatDzikirController::class, 'update'])->name('admin.manfaat-dzikir.update');
     Route::delete('/admin/manfaat-dzikir/{manfaatDzikir}', [ManfaatDzikirController::class, 'destroy'])->name('admin.manfaat-dzikir.destroy');
-    Route::get('/admin/sharing-dzikir', [App\Http\Controllers\Admin\SharingDzikirController::class, 'index'])->name('admin.sharing-dzikir.index');
-    Route::get('/admin/sharing-dzikir/create', [App\Http\Controllers\Admin\SharingDzikirController::class, 'create'])->name('admin.sharing-dzikir.create');
-    Route::post('/admin/sharing-dzikir', [App\Http\Controllers\Admin\SharingDzikirController::class, 'store'])->name('admin.sharing-dzikir.store');
-    Route::get('/admin/sharing-dzikir/{sharing}', [App\Http\Controllers\Admin\SharingDzikirController::class, 'show'])->name('admin.sharing-dzikir.show');
-    Route::get('/admin/sharing-dzikir/{sharing}/edit', [App\Http\Controllers\Admin\SharingDzikirController::class, 'edit'])->name('admin.sharing-dzikir.edit');
-    Route::put('/admin/sharing-dzikir/{sharing}', [App\Http\Controllers\Admin\SharingDzikirController::class, 'update'])->name('admin.sharing-dzikir.update');
-    Route::delete('/admin/sharing-dzikir/{sharing}', [App\Http\Controllers\Admin\SharingDzikirController::class, 'destroy'])->name('admin.sharing-dzikir.destroy');
-    Route::get('/admin/dzikir-record', [App\Http\Controllers\Admin\DzikirRecordController::class, 'index'])->name('admin.dzikir-records.index');
-    Route::get('/admin/dzikir-record/create', [App\Http\Controllers\Admin\DzikirRecordController::class, 'create'])->name('admin.dzikir-records.create');
-    Route::post('/admin/dzikir-record', [App\Http\Controllers\Admin\DzikirRecordController::class, 'store'])->name('admin.dzikir-records.store');
-    Route::get('/admin/dzikir-record/{dzikirRecord}', [App\Http\Controllers\Admin\DzikirRecordController::class, 'show'])->name('admin.dzikir-records.show');
-    Route::get('/admin/dzikir-record/{dzikirRecord}/edit', [App\Http\Controllers\Admin\DzikirRecordController::class, 'edit'])->name('admin.dzikir-records.edit');
-    Route::put('/admin/dzikir-record/{dzikirRecord}', [App\Http\Controllers\Admin\DzikirRecordController::class, 'update'])->name('admin.dzikir-records.update');
-    Route::delete('/admin/dzikir-record/{dzikirRecord}', [App\Http\Controllers\Admin\DzikirRecordController::class, 'destroy'])->name('admin.dzikir-records.destroy');
-    Route::get('/admin/recommended-dzikir', [App\Http\Controllers\Admin\RecommendedDzikirController::class, 'index'])->name('admin.recommended-dzikir.index');
-    Route::get('/admin/recommended-dzikir/create', [App\Http\Controllers\Admin\RecommendedDzikirController::class, 'create'])->name('admin.recommended-dzikir.create');
-    Route::post('/admin/recommended-dzikir', [App\Http\Controllers\Admin\RecommendedDzikirController::class, 'store'])->name('admin.recommended-dzikir.store');
-    Route::get('/admin/recommended-dzikir/{recommendedDzikir}', [App\Http\Controllers\Admin\RecommendedDzikirController::class, 'show'])->name('admin.recommended-dzikir.show');
-    Route::get('/admin/recommended-dzikir/{recommendedDzikir}/edit', [App\Http\Controllers\Admin\RecommendedDzikirController::class, 'edit'])->name('admin.recommended-dzikir.edit');
-    Route::put('/admin/recommended-dzikir/{recommendedDzikir}', [App\Http\Controllers\Admin\RecommendedDzikirController::class, 'update'])->name('admin.recommended-dzikir.update');
-    Route::delete('/admin/recommended-dzikir/{recommendedDzikir}', [App\Http\Controllers\Admin\RecommendedDzikirController::class, 'destroy'])->name('admin.recommended-dzikir.destroy');
-    Route::get('/admin/community', [App\Http\Controllers\Admin\CommunitiesController::class, 'index'])->name('admin.community.index');
-    Route::get('/admin/community/create', [App\Http\Controllers\Admin\CommunitiesController::class, 'create'])->name('admin.community.create');
-    Route::post('/admin/community', [App\Http\Controllers\Admin\CommunitiesController::class, 'store'])->name('admin.community.store');
-    Route::get('/admin/community/{community}', [App\Http\Controllers\Admin\CommunitiesController::class, 'show'])->name('admin.community.show');
-    Route::get('/admin/community/{community}/edit', [App\Http\Controllers\Admin\CommunitiesController::class, 'edit'])->name('admin.community.edit');
-    Route::put('/admin/community/{community}', [App\Http\Controllers\Admin\CommunitiesController::class, 'update'])->name('admin.community.update');
-    Route::delete('/admin/community/{community}', [App\Http\Controllers\Admin\CommunitiesController::class, 'destroy'])->name('admin.community.destroy');
+    Route::get('/admin/sharing-dzikir', [SharingDzikirController::class, 'index'])->name('admin.sharing-dzikir.index');
+    Route::get('/admin/sharing-dzikir/create', [SharingDzikirController::class, 'create'])->name('admin.sharing-dzikir.create');
+    Route::post('/admin/sharing-dzikir', [SharingDzikirController::class, 'store'])->name('admin.sharing-dzikir.store');
+    Route::get('/admin/sharing-dzikir/{sharing}', [SharingDzikirController::class, 'show'])->name('admin.sharing-dzikir.show');
+    Route::get('/admin/sharing-dzikir/{sharing}/edit', [SharingDzikirController::class, 'edit'])->name('admin.sharing-dzikir.edit');
+    Route::put('/admin/sharing-dzikir/{sharing}', [SharingDzikirController::class, 'update'])->name('admin.sharing-dzikir.update');
+    Route::delete('/admin/sharing-dzikir/{sharing}', [SharingDzikirController::class, 'destroy'])->name('admin.sharing-dzikir.destroy');
+    Route::get('/admin/dzikir-record', [DzikirRecordController::class, 'index'])->name('admin.dzikir-records.index');
+    Route::get('/admin/dzikir-record/create', [DzikirRecordController::class, 'create'])->name('admin.dzikir-records.create');
+    Route::post('/admin/dzikir-record', [DzikirRecordController::class, 'store'])->name('admin.dzikir-records.store');
+    Route::get('/admin/dzikir-record/{dzikirRecord}', [DzikirRecordController::class, 'show'])->name('admin.dzikir-records.show');
+    Route::get('/admin/dzikir-record/{dzikirRecord}/edit', [DzikirRecordController::class, 'edit'])->name('admin.dzikir-records.edit');
+    Route::put('/admin/dzikir-record/{dzikirRecord}', [DzikirRecordController::class, 'update'])->name('admin.dzikir-records.update');
+    Route::delete('/admin/dzikir-record/{dzikirRecord}', [DzikirRecordController::class, 'destroy'])->name('admin.dzikir-records.destroy');
+    Route::get('/admin/recommended-dzikir', [RecommendedDzikirController::class, 'index'])->name('admin.recommended-dzikir.index');
+    Route::get('/admin/recommended-dzikir/create', [RecommendedDzikirController::class, 'create'])->name('admin.recommended-dzikir.create');
+    Route::post('/admin/recommended-dzikir', [RecommendedDzikirController::class, 'store'])->name('admin.recommended-dzikir.store');
+    Route::get('/admin/recommended-dzikir/{recommendedDzikir}', [RecommendedDzikirController::class, 'show'])->name('admin.recommended-dzikir.show');
+    Route::get('/admin/recommended-dzikir/{recommendedDzikir}/edit', [RecommendedDzikirController::class, 'edit'])->name('admin.recommended-dzikir.edit');
+    Route::put('/admin/recommended-dzikir/{recommendedDzikir}', [RecommendedDzikirController::class, 'update'])->name('admin.recommended-dzikir.update');
+    Route::delete('/admin/recommended-dzikir/{recommendedDzikir}', [RecommendedDzikirController::class, 'destroy'])->name('admin.recommended-dzikir.destroy');
+    Route::get('/admin/community', [CommunitiesController::class, 'index'])->name('admin.community.index');
+    Route::get('/admin/community/create', [CommunitiesController::class, 'create'])->name('admin.community.create');
+    Route::post('/admin/community', [CommunitiesController::class, 'store'])->name('admin.community.store');
+    Route::get('/admin/community/{community}', [CommunitiesController::class, 'show'])->name('admin.community.show');
+    Route::get('/admin/community/{community}/edit', [CommunitiesController::class, 'edit'])->name('admin.community.edit');
+    Route::put('/admin/community/{community}', [CommunitiesController::class, 'update'])->name('admin.community.update');
+    Route::delete('/admin/community/{community}', [CommunitiesController::class, 'destroy'])->name('admin.community.destroy');
+    Route::get('/admin/shalawat', [ShalawatController::class, 'index'])->name('admin.shalawat.index');
+    Route::get('/admin/shalawat/create', [ShalawatController::class, 'create'])->name('admin.shalawat.create');
+    Route::post('/admin/shalawat', [ShalawatController::class, 'store'])->name('admin.shalawat.store');
+    Route::get('/admin/shalawat/{shalawat}', [ShalawatController::class, 'show'])->name('admin.shalawat.show');
+    Route::get('/admin/shalawat/{shalawat}/edit', [ShalawatController::class, 'edit'])->name('admin.shalawat.edit');
+    Route::put('/admin/shalawat/{shalawat}', [ShalawatController::class, 'update'])->name('admin.shalawat.update');
+    Route::delete('/admin/shalawat/{shalawat}', [ShalawatController::class, 'destroy'])->name('admin.shalawat.destroy');
 });
 
 

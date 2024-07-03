@@ -57,7 +57,7 @@
                             data-toggle="dropdown">Rekomendasi</a>
                         <div class="dropdown-menu rounded-0 m-0">
                             <a href="{{ url('doa-pagi-sore') }}" class="dropdown-item @yield('menuPagiSore')">Doa Pagi dan Sore</a>
-                            <a href="{{ url('qiyamul-lail') }}" class="dropdown-item @yield('menuQiyamul')">Qiyamul Lail</a>
+                            <a href="{{ route('dzikir.show', ['slug' => 22]) }}" class="dropdown-item @yield('menuQiyamul')">Doa Qiyamul Lail</a>
                         </div>
                     </div>
                 </div>
