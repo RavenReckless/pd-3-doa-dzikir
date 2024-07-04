@@ -31,7 +31,7 @@
                 <div class="mb-5">
                     <img class="img-fluid rounded w-100 mb-4" src="{{ asset('storage/' . $shalawat->image) }}" alt="Image" />
                     <p>
-                        {{ $shalawat->content }}
+                        {{ $shalawat->bacaan }}
                     </p>
                 </div>
 
@@ -44,7 +44,7 @@
             <div class="col-lg-4 mt-5 mt-lg-0">
                 <!-- Category List -->
                 <div class="mb-5">
-                    <h2 class="mb-4">Pilihan Doa & Dzikir</h2>
+                    <h2 class="mb-4">Pilihan Shalawat</h2>
                     @foreach ($shalawats as $linkshalawat)
                     <ul class="list-group list-group-flush">
                         <li class="list-group-item d-flex justify-content-between align-items-center px-0">
@@ -59,11 +59,12 @@
                     @if($shalawatRecords->isNotEmpty())
                         @foreach($shalawatRecords as $record)
                             <div class="mb-3">
-                                <h5>{{ $record->name }}</h5>
+                                <h5>{{ $record->title }}</h5>
                                 <audio controls>
-                                    <source src="{{ asset('storage/' . $record->file_path) }}" type="audio/mpeg">
+                                    <source src="{{ Storage::url($record->file_path) }}" type="audio/mpeg">
                                 </audio>
                                 <a href="{{ Storage::url($record->file_path) }}" download class="btn btn-primary" style="margin-top: 1rem;">Download Rekaman</a>
+                                
                             </div>
                         @endforeach
                     @else

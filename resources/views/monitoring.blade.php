@@ -28,8 +28,7 @@
                         <form action="{{ route('monitoring.store') }}" method="POST">
                             @csrf
                             <div class="form-group">
-                                <label>Dzikir dan doa apa saja yang sudah Anda baca hari ini? (Isikan di bawah)</label>
-                                <textarea name="dzikir_list" class="form-control" rows="3" placeholder="Tulis dzikir dan doa yang sudah Anda baca hari ini..." required></textarea>
+                                <textarea name="dzikir_list" class="form-control" rows="5" placeholder="Tulis dzikir dan doa yang sudah Anda baca hari ini..." required></textarea>
                             </div>
                             <button type="submit" class="btn btn-primary">Kirim</button>
                         </form>

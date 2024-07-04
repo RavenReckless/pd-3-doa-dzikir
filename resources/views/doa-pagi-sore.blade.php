@@ -21,9 +21,9 @@
         <div class="container">
             <div class="text-center pb-2">
                 <p class="section-title px-5">
-                    <span class="px-2">Bacaan Doa dan Dzikir</span>
+                    <span class="px-2">Rekomendasi</span>
                 </p>
-                <h1 class="mb-4">Macam-macam Doa atau Dzikir</h1>
+                <h1 class="mb-4">Rekomendasi Doa dan Dzikir Pagi dan Sore</h1>
             </div>
             <div class="row portfolio-container">
                 @foreach ($dzikirs as $dzikir)

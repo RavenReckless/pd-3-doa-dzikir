@@ -9,7 +9,7 @@ use Illuminate\Http\Request;
 class DoaPagiSoreController extends Controller
 {
     public function index() {
-        $dzikirs = MateriDzikir::whereIn('id', [1, 3])->get();
+        $dzikirs = MateriDzikir::whereIn('id', [1, 3, 8, 13, 14, 19])->get();
         return view('doa-pagi-sore', compact('dzikirs'));
     }
 

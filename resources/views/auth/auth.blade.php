@@ -52,7 +52,7 @@
                     <span class="error-message" id="password-confirmation-error"></span>
                     <div class="input-field">
                         <i class="fas fa-lock"></i>
-                        <input type="password" placeholder="Confirm Password" name="password_confirmation"
+                        <input type="password" placeholder="Konfirmasi Password" name="password_confirmation"
                             autocomplete="new-password" id="password_confirmation" />
                     </div>
                     <button class="btn" type="submit">Register</button>
@@ -64,9 +64,9 @@
         <div class="panels-container">
             <div class="panel left-panel">
                 <div class="content">
-                    <h3>Don't have an account yet?</h3>
+                    <h3>Belum memiliki akun?</h3>
                     <p>
-                        Create your account here!
+                        Daftar disini!
                     </p>
                     <button class="btn transparent" id="sign-up-btn">
                         Register
@@ -76,9 +76,9 @@
             </div>
             <div class="panel right-panel">
                 <div class="content">
-                    <h3>Already have an account?</h3>
+                    <h3>Sudah memiliki akun?</h3>
                     <p>
-                        Log in here!
+                        Log in disini!
                     </p>
                     <button class="btn transparent" id="sign-in-btn">
                         Log in

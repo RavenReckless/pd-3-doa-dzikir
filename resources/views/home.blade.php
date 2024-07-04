@@ -182,6 +182,38 @@
     </div>
     {{-- Dzikir End --}}
 
+    {{-- Dzikir Start --}}
+    <div class="container-fluid pt-5 pb-3" style="padding-bottom: 4rem;">
+        <div class="container">
+            <div class="text-center pb-2">
+                <p class="section-title px-5">
+                    <span class="px-2">Shalawat</span>
+                </p>
+                <h1 class="mb-4">Macam-macam Shalawat</h1>
+            </div>
+            <div class="row portfolio-container">
+                @foreach ($shalawats->take(3) as $shalawat)
+                    <div class="col-lg-4 col-md-6 mb-4 portfolio-item">
+                        <div class="position-relative overflow-hidden mb-2">
+                            <a href="{{ route('shalawat.show', ['slug' => $shalawat->id]) }}">
+                                <img class="img-fluid w-100" src="{{ asset('storage/' . $shalawat->image) }}"
+                                    alt="" />
+                            </a>
+                            {{-- Judul --}}
+                            <div class="portfolio-info bg-white p-3">
+                                <h4>{{ $shalawat->title }}</h4>
+                            </div>
+                        </div>
+                    </div>
+                @endforeach
+            </div>
+            <div class="dzikir-link" style="display: flex; align-items:center; justify-content:center">
+                <a href="{{url('/shalawat')}}" class="btn btn-primary mt-2 py-2 px-4">Jelajahi Shalawat Lainnya</a>
+            </div>
+        </div>
+    </div>
+    {{-- Dzikir End --}}
+
     <!-- Sharing Start -->
     {{-- <div class="container-fluid py-5">
         <div class="container p-0">

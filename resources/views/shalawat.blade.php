@@ -29,9 +29,9 @@
                 @foreach ($shalawats as $shalawat)
                     <div class="col-lg-4 col-md-6 mb-4 portfolio-item">
                         <div class="position-relative overflow-hidden mb-2">
-                            <img class="img-fluid w-100" src="{{ asset('storage/' . $shalawat->image) }}" alt=""/>
+                            <img class="img-fluid" src="{{ asset('storage/' . $shalawat->image) }}" alt=""/>
                             <div class="portfolio-info bg-white p-3">
-                                <h4>{{ $shalawat->title }}</h4>
+                                <h4 style="margin-bottom: 2rem;">{{ $shalawat->title }}</h4>
                                 <a class="link-dzikir" href="{{ route('shalawat.show', ['slug' => $shalawat->id]) }}">
                                     Selengkapnya
                                 </a>
