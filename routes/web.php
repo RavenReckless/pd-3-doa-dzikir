@@ -9,6 +9,7 @@ use App\Http\Controllers\Admin\MateriDzikirController;
 use App\Http\Controllers\Admin\CommunitiesController;
 use App\Http\Controllers\Admin\ContentDzikirController;
 use App\Http\Controllers\Admin\DzikirRecordController;
+use App\Http\Controllers\Admin\MonitoringController;
 use App\Http\Controllers\Admin\ShalawatController;
 use App\Http\Controllers\Admin\ShalawatRecordController;
 use App\Http\Controllers\Admin\SharingDzikirController;
@@ -34,9 +35,7 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', [HomeController::class, 'index'])->name('home');
 
-Route::get('/monitoring', function () {
-    return view('monitoring');
-});
+
 
 Route::get('/shalawat', [App\Http\Controllers\User\ShalawatController::class, 'index'])->name('shalawat.index');
 Route::get('/shalawat/{slug}', [App\Http\Controllers\User\ShowShalawatController::class, 'show'])->name('shalawat.show');
@@ -67,6 +66,9 @@ Route::get('/dzikir/{slug}', [ShowMateriDzikirController::class, 'show'])->name(
 Route::get('/sharing', [SharedExperienceController::class, 'index'])->middleware(['auth', 'verified'])->name('sharing.create');
 Route::get('/sharing/create', [SharingExperienceController::class, 'create'])->middleware(['auth', 'verified'])->name('sharing.create');
 Route::post('/sharing', [SharingExperienceController::class, 'store'])->middleware(['auth', 'verified'])->name('sharing.store');
+
+Route::get('/monitoring', [App\Http\Controllers\User\MonitoringController::class, 'index'])->middleware('auth', 'verified')->name('monitoring.index');
+Route::post('/monitoring', [App\Http\Controllers\User\MonitoringController::class, 'store'])->middleware('auth', 'verified')->name('monitoring.store');
 
 Route::get('/manfaat', [ManfaatDzikirController::class, 'index'])->name('manfaat.index');
 
@@ -173,6 +175,13 @@ Route::middleware('auth')->group(function () {
     Route::get('/admin/shalawat-record/{shalawatRecord}/edit', [ShalawatRecordController::class, 'edit'])->name('admin.shalawat-records.edit');
     Route::put('/admin/shalawat-record/{shalawatRecord}', [ShalawatRecordController::class, 'update'])->name('admin.shalawat-records.update');
     Route::delete('/admin/shalawat-record/{shalawatRecord}', [ShalawatRecordController::class, 'destroy'])->name('admin.shalawat-records.destroy');
+    Route::get('/admin/monitoring', [MonitoringController::class, 'index'])->name('admin.monitoring.index');
+    Route::get('/admin/monitoring/create', [MonitoringController::class, 'create'])->name('admin.monitoring.create');
+    Route::post('/admin/monitoring', [MonitoringController::class, 'store'])->name('admin.monitoring.store');
+    Route::get('/admin/monitoring/{monitoring}', [MonitoringController::class, 'show'])->name('admin.monitoring.show');
+    Route::get('/admin/monitoring/{monitoring}/edit', [MonitoringController::class, 'edit'])->name('admin.monitoring.edit');
+    Route::put('/admin/monitoring/{monitoring}', [MonitoringController::class, 'update'])->name('admin.monitoring.update');
+    Route::delete('/admin/monitoring/{monitoring}', [MonitoringController::class, 'destroy'])->name('admin.monitoring.destroy');
 });
 
 
