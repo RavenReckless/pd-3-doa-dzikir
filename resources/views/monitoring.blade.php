@@ -28,13 +28,6 @@
                         <form action="{{ route('monitoring.store') }}" method="POST">
                             @csrf
                             <div class="form-group">
-                                <label>Apakah Anda sudah membaca dzikir hari ini?</label>
-                                <select name="dzikir_today" class="form-control" required>
-                                    <option value="">Pilih</option>
-                                    <option value="Ya">Ya</option>
-                                </select>
-                            </div>
-                            <div class="form-group">
                                 <label>Dzikir dan doa apa saja yang sudah Anda baca hari ini? (Isikan di bawah)</label>
                                 <textarea name="dzikir_list" class="form-control" rows="3" placeholder="Tulis dzikir dan doa yang sudah Anda baca hari ini..." required></textarea>
                             </div>

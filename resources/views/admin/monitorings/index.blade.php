@@ -20,6 +20,7 @@
                             <tr class="bg-gray-2 text-left dark:bg-meta-4">
                                 <th class="min-w-[150px] px-4 py-4 font-medium text-black dark:text-white">Nama User</th>
                                 <th class="min-w-[120px] px-4 py-4 font-medium text-black dark:text-white">Monitoring di Tanggal</th>
+                                <th class="min-w-[120px] px-4 py-4 font-medium text-black dark:text-white">Doa / Dzikir yang Dibaca</th>
                                 <th class="px-4 py-4 font-medium text-black dark:text-white">Aksi</th>
                             </tr>
                         </thead>
@@ -32,7 +33,13 @@
                                         </td>
                                         <td class="border-b border-[#eee] px-4 py-5 dark:border-strokedark">
                                             <p class="text-black dark:text-white">
-                                                {{ \Carbon\Carbon::parse($monitoring->created_at)->format('l, d F Y') }}</p>
+                                                {{ \Carbon\Carbon::parse($monitoring->created_at)->format('l, d F Y') }}
+                                            </p>
+                                        </td>
+                                        <td class="border-b border-[#eee] px-4 py-5 dark:border-strokedark">
+                                            <p class="text-black dark:text-white">
+                                                {{ $monitoring->dzikir_list }}
+                                            </p>
                                         </td>
                                         <td class="border-b border-[#eee] px-4 py-5 dark:border-strokedark">
                                             <div class="flex items-center space-x-3.5">

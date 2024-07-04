@@ -25,7 +25,6 @@ class MonitoringController extends Controller
     {
         $request->validate([
             'user_id' => 'required|exists:users,id',
-            'dzikir_today' => 'required|in:Ya,Belum',
             'dzikir_list' => 'required|string'
         ]);
 
@@ -44,7 +43,6 @@ class MonitoringController extends Controller
     {
         $request->validate([
             'user_id' => 'required|exists:users,id',
-            'dzikir_today' => 'required|in:Ya,Belum',
             'dzikir_list' => 'required|string'
         ]);
 

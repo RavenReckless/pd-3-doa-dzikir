@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class MonitoringAnswer extends Model
 {
-    protected $fillable = ['dzikir_today', 'dzikir_list'];
+    protected $fillable = ['dzikir_list'];
 
     public function monitoring()
     {

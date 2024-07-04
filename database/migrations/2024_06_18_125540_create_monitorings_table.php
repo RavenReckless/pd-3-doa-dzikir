@@ -11,7 +11,6 @@ class CreateMonitoringTable extends Migration
         Schema::create('monitorings', function (Blueprint $table) {
             $table->id();
             $table->foreignId('user_id')->constrained()->onDelete('cascade');
-            $table->string('dzikir_today');
             $table->string('dzikir_list');
             $table->timestamps();
         });

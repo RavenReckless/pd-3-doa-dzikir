@@ -19,13 +19,11 @@ class MonitoringController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'dzikir_today' => 'required|in:Ya,Belum',
             'dzikir_list' => 'required|string'
         ]);
 
         Monitoring::create([
             'user_id' => Auth::id(),
-            'dzikir_today' => $request->dzikir_today,
             'dzikir_list' => $request->dzikir_list,
         ]);
 

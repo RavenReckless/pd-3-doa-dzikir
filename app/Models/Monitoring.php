@@ -11,7 +11,6 @@ class Monitoring extends Model
 
     protected $fillable = [
         'user_id',
-        'dzikir_today',
         'dzikir_list',
     ];
 
