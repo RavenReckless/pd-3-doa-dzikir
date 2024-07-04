@@ -13,6 +13,7 @@ class CreateMateriDzikirTable extends Migration
             $table->foreignId('language_id')->constrained()->onDelete('cascade');
             $table->string('title');
             $table->text('content');
+            $table->string('image')->nullable();
             $table->timestamps();
         });
     }

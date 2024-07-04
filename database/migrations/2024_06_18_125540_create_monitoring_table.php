@@ -4,20 +4,22 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateCommunitiesUserTable extends Migration
+class CreateMonitoringTable extends Migration
 {
     public function up()
     {
-        Schema::create('communities_user', function (Blueprint $table) {
+        Schema::create('monitorings', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('community_id')->constrained()->onDelete('cascade');
             $table->foreignId('user_id')->constrained()->onDelete('cascade');
+            $table->string('dzikir_today');
+            $table->string('dzikir_list');
             $table->timestamps();
         });
     }
 
     public function down()
     {
-        Schema::dropIfExists('communities_user');
+        Schema::dropIfExists('spiritual_monitoring');
     }
 }
+

@@ -10,8 +10,7 @@ class CreateDzikirRecordsTable extends Migration
     {
         Schema::create('dzikir_records', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('user_id')->constrained()->onDelete('cascade');
-            $table->foreignId('dzikir_group_id')->nullable()->constrained()->onDelete('cascade');
+            $table->foreignId('materi_dzikir_id')->constrained()->onDelete('cascade');
             $table->string('file_path');
             $table->timestamps();
         });

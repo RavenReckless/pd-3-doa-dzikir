@@ -13,7 +13,6 @@ class Monitoring extends Model
         'user_id',
         'dzikir_today',
         'dzikir_list',
-        'status'
     ];
 
     public function user()
