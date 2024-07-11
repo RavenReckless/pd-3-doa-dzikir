@@ -12,7 +12,7 @@ class MonitoringController extends Controller
     public function index()
     {
         $community = Auth::user()->community;
-        $messages = Monitoring::where('user_id', Auth::id())->get();
+        $messages = Monitoring::where('user_id', Auth::id())->orderBy('created_at', 'desc')->get();
         return view('monitoring', compact('community', 'messages'));
     }
 
