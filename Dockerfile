@@ -1,45 +1,31 @@
-# Gunakan PHP 8.1 dan image resmi Laravel
-FROM php:8.1-fpm
+# Gunakan PHP 8.2 atau versi yang kompatibel
+FROM php:8.2-fpm
 
-# Install dependensi yang diperlukan
-RUN apt-get update && apt-get install -y \
-    git \
-    unzip \
-    libpng-dev \
-    libjpeg-dev \
-    libfreetype6-dev \
-    libonig-dev \
-    libzip-dev \
-    libpq-dev \
-    nginx \
-    supervisor
-
-# Install PHP extensions
-RUN docker-php-ext-configure gd --with-freetype --with-jpeg \
-    && docker-php-ext-install gd pdo pdo_pgsql pdo_mysql zip mbstring exif pcntl bcmath opcache
-
-# Install Composer
-COPY --from=composer:latest /usr/bin/composer /usr/bin/composer
+# Install dependensi yang dibutuhkan
+RUN apt-get update \
+    && apt-get install -y \
+        git \
+        unzip \
+        libzip-dev \
+        libpng-dev \
+        libjpeg-dev \
+        libfreetype6-dev \
+    && docker-php-ext-configure gd --with-freetype --with-jpeg \
+    && docker-php-ext-install -j$(nproc) gd pdo pdo_mysql zip \
+    && apt-get clean \
+    && rm -rf /var/lib/apt/lists/*
 
 # Set working directory
 WORKDIR /var/www/html
 
-# Copy the application files
+# Salin dan instal dependensi aplikasi
 COPY . .
 
-# Install dependencies
+# Jalankan composer install dengan opsi yang diperlukan
 RUN composer install --no-dev --optimize-autoloader
 
-# Set permissions
-RUN chown -R www-data:www-data /var/www/html/storage /var/www/html/bootstrap/cache
-
-# Copy nginx configuration file
-COPY deployment/nginx.conf /etc/nginx/sites-available/default
-
-# Copy supervisor configuration file (if needed)
-# COPY deploy/supervisord.conf /etc/supervisor/conf.d/
-
+# Expose port 80
 EXPOSE 80
 
-# Start Nginx and PHP-FPM
-CMD ["nginx", "-g", "daemon off;"]
+# Perintah untuk menjalankan container
+CMD ["php-fpm"]
