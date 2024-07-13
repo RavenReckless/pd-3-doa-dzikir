@@ -52,7 +52,12 @@ RUN apt-get update \
 
 RUN setcap "cap_net_bind_service=+ep" /usr/bin/php8.2
 
-RUN groupadd --force -g $WWWGROUP sail
+# Debugging: Print the value of $WWWGROUP
+RUN echo "WWWGROUP is set to $WWWGROUP"
+
+# Attempt to create the group with a fixed ID if $WWWGROUP is not set correctly
+RUN if ! groupadd --force -g $WWWGROUP sail; then groupadd --force -g 1000 sail; fi
+
 RUN useradd -ms /bin/bash --no-user-group -g $WWWGROUP -u 1337 sail
 
 COPY start-container /usr/local/bin/start-container
