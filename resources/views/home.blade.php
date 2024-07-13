@@ -115,7 +115,7 @@
                     <h1 class="mb-4">Platform untuk Mendukung Kegiatan Doa dan Dzikir Anda</h1>
                     <p>
                         Website kami merupakan website yang menyediakan berbagai macam doa dan dzikir yang dapat Anda.
-                        Mulai dari doa harian, dzikir pagi dan petang, serta doa-doa lainnya yang dapat Anda pelajari.
+                        Mulai dari doa harian, dzikir pagi dan petang, dan doa-doa lainnya yang dapat Anda pelajari.
                         Website kami memiliki berbagai fitur untuk membantu Anda dalam berdzikir dan berdoa.
                     </p>
                     <div class="row pt-2 pb-4">
