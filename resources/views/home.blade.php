@@ -138,7 +138,7 @@
                                 </li>
                                 <li class="py-2 border-bottom">
                                     <i class="fa fa-check text-primary mr-3"></i>
-                                    Rekomendasi doa dan dzikir harian
+                                    Rekomendasi doa dan dzikir harian.
                                 </li>
                             </ul>
                         </div>
